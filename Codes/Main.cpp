@@ -1,8 +1,9 @@
 /*
  * Copyright (c) 2019-2026 OtSoftware
- * This code is licensed under the GNU Lesser General Public License v3.0 (LGPL-3.0).
- * For more information, including options for a more permissive commercial license,
- * please visit [otsoftware.tr] or contact us at [info@otsoftare.tr].
+ * This code is licensed under the GNU Lesser General Public License v3.0
+ * (LGPL-3.0). For more information, including options for a more permissive
+ * commercial license, please visit [otsoftware.tr] or contact us at
+ * [info@otsoftare.tr].
  */
 
 #include "Platform.h"
@@ -44,9 +45,10 @@ namespace ToolKit
   SDLEventPool<TK_PLATFORM>* g_sdlEventPool = nullptr;
   GameRenderer* g_gameRenderer              = nullptr;
 
-  // Owned by the game loop, released in Exit() before the engine tears down. It must not be a
-  // function local static: a viewport owns a render target and a framebuffer, so letting process
-  // exit destroy it would release engine resources after ToolKit is gone.
+  // Owned by the game loop, released in Exit() before the engine tears down. It
+  // must not be a function local static: a viewport owns a render target and a
+  // framebuffer, so letting process exit destroy it would release engine
+  // resources after ToolKit is gone.
   ViewportPtr g_viewport                    = nullptr;
 
   // Setup.
@@ -156,13 +158,29 @@ namespace ToolKit
     // Set defaults
     if constexpr (TK_PLATFORM != PLATFORM::TKWeb)
     {
-      if (!SDL_GL_SetSwapInterval(-1)) // Try adaptive VSync.
+      // The swap interval decides what a run measures, so it is a knob rather than a decision:
+      //
+      //   0  unpaced. The frame number is what the app can produce, which is what a performance run
+      //      wants - with any pacing on, a configuration faster than the panel measures the panel.
+      //   1  paced to the display. What the game actually shows, and what a visual comparison or a
+      //      screenshot has to be taken with.
+      //   -1 adaptive, which only the desktop window systems implement: EGL clamps it to 0, so asking
+      //      for it on mobile is how an app ends up unpaced while believing it was paced.
+      //
+      // The default is 1 on mobile, and the interval that ends up in use is logged either way: the
+      // first question a stale picture report asks is which one a run had.
+      const bool adaptivePossible = TK_PLATFORM == PLATFORM::TKWindows || TK_PLATFORM == PLATFORM::TKLinux;
+      const int requested         = Perf::ReadIntProperty("debug.tk.vsync", adaptivePossible ? -1 : 1);
+
+      if (!SDL_GL_SetSwapInterval(requested))
       {
         if (!SDL_GL_SetSwapInterval(1)) // VSync.
         {
           TK_ERR("VSync can't be set. SDL Error: %s", SDL_GetError());
         }
       }
+
+      TK_LOG("Present: swap interval requested %i, in use %i.", requested, SDL_GL_GetSwapInterval());
     }
 
     // ToolKit Init
@@ -219,16 +237,16 @@ namespace ToolKit
 
         g_gameRenderer->SetParams(params);
 
-        // cpu cost of building and submitting one frame, measured where it happens: the swap below
-        // is the other half of the frame, and the probe keeps them apart on purpose. Work that the
-        // gpu queues up returns here immediately; a gpu that is behind shows up in the swap instead.
-        GetRenderSystem()->AddRenderTask(
-            {[deltaTime](Renderer* renderer) -> void
-             {
-               const double start = Perf::NowMs();
-               g_gameRenderer->Render(renderer);
-               Perf::SetRenderCpuMs((float) (Perf::NowMs() - start));
-             }});
+        // cpu cost of building and submitting one frame, measured where it
+        // happens: the swap below is the other half of the frame, and the probe
+        // keeps them apart on purpose. Work that the gpu queues up returns here
+        // immediately; a gpu that is behind shows up in the swap instead.
+        GetRenderSystem()->AddRenderTask({[deltaTime](Renderer* renderer) -> void
+                                          {
+                                            const double start = Perf::NowMs();
+                                            g_gameRenderer->Render(renderer);
+                                            Perf::SetRenderCpuMs((float) (Perf::NowMs() - start));
+                                          }});
 
         g_running = g_running && g_game->m_currentState != PluginState::Stop;
       }
@@ -240,8 +258,9 @@ namespace ToolKit
     {
       SDL_GL_MakeCurrent(g_window, g_context);
 
-      // How long present blocks is the phone's answer to "who is late": a gpu bound frame spends
-      // most of its wall clock in here, waiting for a buffer the gpu has not finished with.
+      // How long present blocks is the phone's answer to "who is late": a gpu
+      // bound frame spends most of its wall clock in here, waiting for a buffer
+      // the gpu has not finished with.
       const double presentStart = Perf::NowMs();
       g_proxy->m_renderSys->Present();
       Perf::SetSwapWaitMs((float) (Perf::NowMs() - presentStart));
@@ -257,13 +276,14 @@ namespace ToolKit
 
     if (g_game != nullptr)
     {
-      // Game holds the viewport (GamePlugin::SetViewport), so it has to go before the engine.
+      // Game holds the viewport (GamePlugin::SetViewport), so it has to go before
+      // the engine.
       g_game->Destroy();
       SafeDel(g_game);
     }
 
-    // Release everything the game keeps alive that owns engine resources. Only the engine
-    // teardown below may outlive them.
+    // Release everything the game keeps alive that owns engine resources. Only
+    // the engine teardown below may outlive them.
     g_viewport       = nullptr;
     g_engineSettings = nullptr;
 
@@ -284,8 +304,9 @@ namespace ToolKit
   {
     if (g_proxy->SyncFrameTime())
     {
-      // Frame period is measured here rather than taken from the engine's delta: this is the same
-      // body to body span the display sees, and it does not depend on how the engine paces itself.
+      // Frame period is measured here rather than taken from the engine's delta:
+      // this is the same body to body span the display sees, and it does not
+      // depend on how the engine paces itself.
       static double lastBodyStart = 0.0;
       const double bodyStart      = Perf::NowMs();
 

@@ -47,6 +47,43 @@ Gradle 8.1.1 rejects newer JVMs. The native side is compiled by the NDK that AGP
 `deploy after build` = 1 in `PublishArguments.txt` installs and starts the APK on the
 attached device.
 
+## The two camera test
+
+`Codes/Game.cpp` can render a view that provably does not change, which is what a present path has to
+be judged on: a camera that moves every frame hides a stale buffer behind the motion, a camera that
+moves once exposes it.
+
+```
+adb shell setprop debug.tk.twocam 1        # camera A for the first frames, then camera B forever
+adb shell setprop debug.tk.twocamframe 60  # how many frames A gets (default 1)
+```
+
+Camera B is the scene camera's own copy standing 2 world units along its local X axis, so the two
+views differ by nothing but where the camera stands. Nothing else moves - the navigator is frozen
+while the test is on - so after the switch every frame has to repeat the one before it.
+
+Record the display and classify every frame against a still of view A and of view B
+(`PerfAnalysis/twocam/classify-frames.py`). Any frame of view A after the switch
+is a buffer that reached the screen without being drawn for that frame. Mode `3` sets camera B up but
+keeps drawing through A, which is the control.
+
+Run it several times per configuration: the reappearance is a race, and one run in four shows none
+even on the broken path.
+
+The measurement and what it found are in `PerfAnalysis/stage3-two-camera-report.md`, next to the
+frames classifier and the run logs the report quotes.
+
+One result of that pass is not about the test: the host asked for adaptive vsync, and EGL clamps the
+`-1` it asks for to `0`, which is no vsync at all. `Codes/Main.cpp` now takes the interval from
+`debug.tk.vsync` and logs the one it ends up with.
+
+**The present path is settled: do not remove the full window copy again.** It was tried (stage 2), it is
+reverted, and the report's "Settled: do not remove the blit again" section has the numbers. In short:
+the SM-G950F's Mali-G71 driver hands the display an older frame when a frame is drawn into the window
+instead of copied, 13 to 18 times per run; that copy costs the same device about 110 ms of frame time;
+and on the PowerVR device the copy is free and both shapes are correct, so removing it buys nothing
+where it is safe and breaks the picture where it would help.
+
 ## Performance analysis
 
 `PerfAnalysis/stage1-bottleneck-report.md` is the write-up, `PerfAnalysis/README.md` indexes every
@@ -74,7 +111,23 @@ so an experiment needs no rebuild:
 adb shell setprop debug.tk.res 50      render resolution percentage, 10..200
 adb shell setprop debug.tk.shadow 0    lights stop casting
 adb shell setprop debug.tk.mesh 0      every mesh entity hidden
+adb shell setprop debug.tk.vsync 0     unpaced: the frame the app can produce, not the one the panel takes
 ```
+
+**Vsync and what a run measures.** `debug.tk.vsync` decides it, and the interval that ends up in use is
+logged at startup either way:
+
+- `0`, unpaced, for a throughput number. Any pacing on and a configuration faster than the panel
+  measures the panel: at 60 Hz nothing above 60 fps is visible, so an optimisation that goes from 8 ms
+  to 4 ms looks like no change at all. On the scene here every frame is 58-200 ms, well past the
+  panel's 16.7 ms, so the two settings give the same throughput today - the knob matters as soon as an
+  optimisation, a lower render scale or a lighter scene gets close to the refresh.
+- `1`, paced, for anything visual: a screenshot, a colour or FXAA comparison, or the two camera test.
+  Unpaced, a driver is free to queue frames ahead of the display, and on the SM-G950F that is exactly
+  how a stale buffer ends up on screen - the present path matters here, see the stage 3 report.
+
+The default is `1` on mobile, because a picture that cannot be trusted makes every other measurement
+harder to read.
 
 Two of the numbers above need engine support that a plain GDTK checkout does not have: the real
 GPU frame time (`GL_EXT_disjoint_timer_query` on GL ES) and the per-pass profiler breakdown. Both

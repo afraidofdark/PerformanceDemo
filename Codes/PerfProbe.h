@@ -1,8 +1,9 @@
 /*
  * Copyright (c) 2019-2026 OtSoftware
- * This code is licensed under the GNU Lesser General Public License v3.0 (LGPL-3.0).
- * For more information, including options for a more permissive commercial license,
- * please visit [otsoftware.tr] or contact us at [info@otsoftare.tr].
+ * This code is licensed under the GNU Lesser General Public License v3.0
+ * (LGPL-3.0). For more information, including options for a more permissive
+ * commercial license, please visit [otsoftware.tr] or contact us at
+ * [info@otsoftare.tr].
  */
 
 #pragma once
@@ -10,43 +11,50 @@
 /**
  * @file PerfProbe.h Frame timing for a device run of the game build.
  *
- * Stats::GetRenderTime() reports one render span, which cannot answer the question a slow phone asks.
- * This probe splits a frame into the three spans that any platform can measure without a driver
- * feature:
+ * Stats::GetRenderTime() reports one render span, which cannot answer the
+ * question a slow phone asks. This probe splits a frame into the three spans
+ * that any platform can measure without a driver feature:
  *
- *   work   - wall clock spent inside one frame body, i.e. the cpu time the frame needs to build and
- *            submit all of its gpu commands.
- *   swap   - wall clock the present call blocks, i.e. the cpu waiting for a buffer the gpu is still
+ *   work   - wall clock spent inside one frame body, i.e. the cpu time the
+ * frame needs to build and submit all of its gpu commands. swap   - wall clock
+ * the present call blocks, i.e. the cpu waiting for a buffer the gpu is still
  *            reading from (or for the display to take one).
- *   period - wall clock from one frame body to the next, i.e. what the frame rate actually is.
+ *   period - wall clock from one frame body to the next, i.e. what the frame
+ * rate actually is.
  *
- * work close to period means the cpu is the limit. work far below period, with swap taking up the
- * difference, means the gpu is. The knobs below then attribute a gpu bound frame: each one turns a
- * single feature off, and the per pass snapshot says where the cpu time (and the stalls) land.
+ * work close to period means the cpu is the limit. work far below period, with
+ * swap taking up the difference, means the gpu is. The knobs below then
+ * attribute a gpu bound frame: each one turns a single feature off, and the per
+ * pass snapshot says where the cpu time (and the stalls) land.
  *
- * The same spans are also reported by the engine once GL_EXT_disjoint_timer_query is available, as
- * Stats::GetRenderTime(cpu, gpu). Both are logged here so a device that answers and a device that
- * does not can be read the same way; gpu reads 1.00 when the driver has no timer query.
+ * The same spans are also reported by the engine once
+ * GL_EXT_disjoint_timer_query is available, as Stats::GetRenderTime(cpu, gpu).
+ * Both are logged here so a device that answers and a device that does not can
+ * be read the same way; gpu reads 1.00 when the driver has no timer query.
  *
- * The knobs are system properties, so an experiment needs no rebuild. They are read once, when the
- * scene comes up; restart the app to apply a new set:
+ * The knobs are system properties, so an experiment needs no rebuild. They are
+ * read once, when the scene comes up; restart the app to apply a new set:
  *
- *   adb shell setprop debug.tk.res 50     render resolution percentage, 10 to 200
- *   adb shell setprop debug.tk.msaa 0    0 disables msaa, 2, 4 and 8 select a sample count
- *   adb shell setprop debug.tk.hdr 0     0 renders into rgba8 instead of rgba16f
- *   adb shell setprop debug.tk.ssao 0    0 disables screen space ambient occlusion
- *   adb shell setprop debug.tk.bloom 0   0 disables bloom, otherwise the iteration count
- *   adb shell setprop debug.tk.tm 0      tonemapping
- *   adb shell setprop debug.tk.cull 0    depth grid occlusion culling
- *   adb shell setprop debug.tk.batch 0   instanced batching
- *   adb shell setprop debug.tk.perf 0    silence the frame log
- *   adb shell setprop debug.tk.prof 0    silence the per pass breakdown
+ *   adb shell setprop debug.tk.res 50      render resolution percentage, 10 to 200
+ *   adb shell setprop debug.tk.msaa 0      0 disables msaa, 2, 4 and 8 select a sample count
+ *   adb shell setprop debug.tk.hdr 0       0 renders into rgba8 instead of rgba16f
+ *   adb shell setprop debug.tk.ssao 0      0 disables screen space ambient occlusion
+ *   adb shell setprop debug.tk.bloom 0     0 disables bloom, otherwise the iteration count
+ *   adb shell setprop debug.tk.tm 0        tonemapping
+ *   adb shell setprop debug.tk.cull 0      depth grid occlusion culling
+ *   adb shell setprop debug.tk.batch 0     instanced batching
+ *   adb shell setprop debug.tk.perf 0      silence the frame log
+ *   adb shell setprop debug.tk.prof 0      silence the per pass breakdown
+ *   adb shell setprop debug.tk.vsync 0     0 unpaced (a performance number), 1 paced (a picture)
+ *   adb shell setprop debug.tk.twocam 1    the two camera presentation test, see TwoCameras()
+ *   adb shell setprop debug.tk.twocamframe 60  frames of view A before the test switches to B
  *
- * To clear a knob again: adb shell setprop debug.tk.res 100 (or '' to unset it).
+ * To clear a knob again: adb shell setprop debug.tk.res 100, or `-1` for every knob, which reads as
+ * "not set" everywhere.
  */
 
-#include <ToolKit.h>
-
+#include "Camera.h"
+#include "DirectionComponent.h"
 #include "EngineSettings.h"
 #include "Light.h"
 #include "MeshComponent.h"
@@ -54,6 +62,8 @@
 #include "Scene.h"
 #include "Stats.h"
 #include "Viewport.h"
+
+#include <ToolKit.h>
 
 #include <algorithm>
 #include <chrono>
@@ -78,38 +88,47 @@ namespace ToolKit
       uint m_depth         = 0;
     };
 
-    /** Everything the probe holds. Plain values only: no engine object survives a frame in here. */
+    /** Everything the probe holds. Plain values only: no engine object survives a
+     * frame in here. */
     struct ProbeState
     {
-      bool m_enabled          = false;
-      bool m_profiler         = false;
+      bool m_enabled       = false;
+      bool m_profiler      = false;
 
-      uint m_warmupFrames     = 20;
-      uint m_frameCount       = 0;
-      double m_windowStart    = 0.0;
-      double m_periodSum      = 0.0;
-      double m_periodMax      = 0.0;
-      double m_workSum        = 0.0;
-      double m_swapSum        = 0.0;
-      double m_renderSum      = 0.0;
+      uint m_warmupFrames  = 20;
+      uint m_frameCount    = 0;
+      double m_windowStart = 0.0;
+      double m_periodSum   = 0.0;
+      double m_periodMax   = 0.0;
+      double m_workSum     = 0.0;
+      double m_swapSum     = 0.0;
+      double m_renderSum   = 0.0;
 
-      float m_renderCpuMs     = 0.0f;
-      float m_swapMs          = 0.0f;
+      float m_renderCpuMs  = 0.0f;
+      float m_swapMs       = 0.0f;
 
       // Applied configuration, so a log line says what produced the numbers.
-      int m_resPercent        = 100;
-      int m_msaa              = -1;
-      int m_hdr               = -1;
-      int m_ssao              = -1;
-      int m_bloom             = -1;
-      int m_tonemap           = -1;
-      int m_cull              = -1;
-      int m_batch             = -1;
-      int m_shadow            = -1;
-      int m_mesh              = -1;
+      int m_resPercent     = 100;
+      int m_msaa           = -1;
+      int m_hdr            = -1;
+      int m_ssao           = -1;
+      int m_bloom          = -1;
+      int m_tonemap        = -1;
+      int m_cull           = -1;
+      int m_batch          = -1;
+      int m_shadow         = -1;
+      int m_mesh           = -1;
+      int m_pose           = 0;
+      int m_oscillation    = 0;
+      int m_alternatePoses = 0;
+      CameraPtr m_camera   = nullptr;
+      int m_trace          = 0;
+      int m_navigation     = 1;
+      int m_twoCameras     = 0;
+      int m_twoCamerasAt   = 1;
 
-      uint m_renderWidth      = 0;
-      uint m_renderHeight     = 0;
+      uint m_renderWidth   = 0;
+      uint m_renderHeight  = 0;
 
       std::unordered_map<String, ProfilerEntry> m_profilerPrev;
     };
@@ -143,19 +162,26 @@ namespace ToolKit
 #endif
     }
 
-    /** Accumulates every scope of one frame's profiler tree into name keyed entries. */
-    inline void FlattenProfilerNode(ProfilerNode* node,
-                                    std::unordered_map<String, ProfilerEntry>& out,
-                                    uint depth)
+    /** Reads an integer from the environment, for the knobs a desktop run needs to
+     * set. */
+    inline int ReadEnvInt(const char* name)
+    {
+      const char* value = std::getenv(name);
+      return value != nullptr ? std::atoi(value) : 0;
+    }
+
+    /** Accumulates every scope of one frame's profiler tree into name keyed
+     * entries. */
+    inline void FlattenProfilerNode(ProfilerNode* node, std::unordered_map<String, ProfilerEntry>& out, uint depth)
     {
       if (node == nullptr)
       {
         return;
       }
 
-      ProfilerEntry& entry = out[node->name];
-      entry.m_inclusiveMs += (double) node->accumulatedIncl;
-      entry.m_exclusiveMs += (double) node->accumulatedExcl;
+      ProfilerEntry& entry  = out[node->name];
+      entry.m_inclusiveMs  += (double) node->accumulatedIncl;
+      entry.m_exclusiveMs  += (double) node->accumulatedExcl;
       if (depth > entry.m_depth)
       {
         entry.m_depth = depth;
@@ -168,9 +194,151 @@ namespace ToolKit
     }
 
     /**
+     * Moves the viewport camera to one of the fixed poses, relative to where the
+     * scene put it.
+     *
+     * A swipe driven pan is not reproducible: the same drag lands the camera
+     * somewhere else on the next run, and what is inside the frustum decides most
+     * of the frame. A pose is a fixed rotation of the authored camera, so two runs
+     * - and two builds - frame the same geometry. Pose 0, the default, leaves the
+     * scene's own camera untouched.
+     *
+     * @param pose is 0 for the authored camera, 1..5 for the fixed rotations below.
+     * @param viewport is the game viewport whose camera is moved.
+     * @return The pose that was actually applied.
+     */
+    inline int ApplyPose(int pose, Viewport* viewport)
+    {
+      if (pose <= 0 || viewport == nullptr)
+      {
+        return 0;
+      }
+
+      CameraPtr camera = viewport->GetCamera();
+      if (camera == nullptr)
+      {
+        return 0;
+      }
+
+      DirectionComponentPtr direction = camera->GetComponent<DirectionComponent>();
+      if (direction == nullptr)
+      {
+        return 0;
+      }
+
+      switch (pose)
+      {
+        case 1: // Turn toward the building on the left.
+          direction->RotateOnUpVector(glm::radians(40.0f));
+          break;
+        case 2: // Turn toward the corner on the right.
+          direction->RotateOnUpVector(glm::radians(-40.0f));
+          break;
+        case 3: // Down the street, the longest view of the block.
+          direction->RotateOnUpVector(glm::radians(-85.0f));
+          break;
+        case 4: // Tilt down so the ground plane and the shadow it catches fill the
+                // frame.
+          direction->Pitch(glm::radians(-18.0f));
+          break;
+        case 5: // Tilt up at the facade, which leaves mostly sky to shade.
+          direction->Pitch(glm::radians(22.0f));
+          break;
+        default:
+          return 0;
+      }
+
+      return pose;
+    }
+
+    /**
+     * Amplitude, in world units, of the per frame camera oscillation that
+     * Game::Frame applies along the camera's own X axis. Zero means the camera
+     * stays where the pose put it.
+     *
+     * The scene is otherwise static, so with this on every change on screen is a
+     * change the render path made: a frame that is presented late, or twice, shows
+     * up as the camera standing still for a frame instead of alternating.
+     */
+    inline int OscillationAmplitude() { return State().m_oscillation; }
+
+    /**
+     * When set, Game::Frame aims the camera at pose A on one frame and pose B on
+     * the next, so the frame content alternates between two views that are easy to
+     * tell apart. A presentation path that shows the previous frame next to the
+     * current one has nowhere to hide in that pattern.
+     */
+    inline bool AlternatePoses()
+    {
+      // Every knob uses -1 for "not set", so this has to test for enabled and not
+      // for non zero:
+      // `-1 != 0` is true and turned the alternation on whenever the knobs were
+      // reset.
+      return State().m_alternatePoses > 0;
+    }
+
+    /**
+     * When set, the first frame the game renders draws through the scene's camera
+     * and every frame after it through a second camera standing two units along the
+     * first one's local X axis.
+     *
+     * This is not a camera motion test, it is a buffer test. The scene and both
+     * cameras are still, so after the first frame the picture has to repeat
+     * exactly: one view of a motionless scene. A present path that alternates
+     * between two buffers - one holding the frame it just drew, the other holding
+     * an older one - turns that into two views flipping back and forth, and the
+     * flip is the only thing that moves on screen.
+     *
+     * The pattern is measured off the display, not from inside the app: the frames
+     * are recorded with `adb shell screenrecord` and every recorded frame is
+     * matched against a reference still of view A and of view B. Reading the window
+     * back in the app is not an option on this device - a `glReadPixels` between
+     * the frame and `SDL_GL_SwapWindow` left the window black for the whole run, on
+     * the SM-G950F's Mali driver, with no GL error reported, whether it read the
+     * default framebuffer or the view's own render target. Flushing or finishing
+     * before the swap breaks it the same way, which says the driver hands the frame
+     * over asynchronously and app side sync is not the answer.
+     *
+     * Mode 3 is the control: camera B is set up but the viewport keeps drawing
+     * through A, so a difference between 1 and 3 is the switch and not the second
+     * camera's presence.
+     */
+    inline bool TwoCameras() { return State().m_twoCameras > 0; }
+
+    /** The mode value itself, so a log line can say what the test is set to. */
+    inline int TwoCameraMode() { return State().m_twoCameras; }
+
+    /** True when the test sets camera B up but keeps drawing through A, the control
+     * case. */
+    inline bool TwoCameraKeepsA() { return State().m_twoCameras == 3; }
+
+    /**
+     * The frame the two camera test switches from A to B on.
+     *
+     * A switch on the very first frame measures the app's startup instead: the
+     * window stays black until the first frame is complete, and a first frame that
+     * spends two seconds compiling shaders is two seconds of black whatever the
+     * present path does. Switching later puts both views on a display that is
+     * already showing the scene, so what gets recorded is the present path and
+     * nothing else.
+     */
+    inline uint TwoCameraSwitchFrame() { return State().m_twoCamerasAt > 0 ? (uint) State().m_twoCamerasAt : 1u; }
+
+    /**
+     * When set, Game::Frame logs the camera every frame, so a view that changes
+     * between frames can be attributed to the frame it changed on.
+     */
+    inline bool FrameTrace() { return State().m_trace > 0; }
+
+    /** False when the navigator is frozen, see the nav knob. */
+    inline bool NavigationEnabled() { return State().m_navigation != 0; }
+
+    /**
      * Applies the knobs and describes what it applied.
-     * @param scene is the live scene, which owns the post process settings the knobs edit.
-     * @param viewport is the game viewport, rebuilt when a knob changes the render target format.
+     * @param scene is the live scene, which owns the post process settings the
+     * knobs edit.
+     * @param viewport is the game viewport, rebuilt when a knob changes the render
+     * target format.
      */
     inline void Configure(Scene* scene, Viewport* viewport)
     {
@@ -182,12 +350,12 @@ namespace ToolKit
       constexpr int defaultEnabled = 0;
 #endif
 
-      s.m_enabled  = ReadIntProperty("debug.tk.perf", defaultEnabled) != 0;
-      s.m_profiler = ReadIntProperty("debug.tk.prof", defaultEnabled) != 0;
+      s.m_enabled               = ReadIntProperty("debug.tk.perf", defaultEnabled) != 0;
+      s.m_profiler              = ReadIntProperty("debug.tk.prof", defaultEnabled) != 0;
 
       GraphicSettings* graphics = GetEngineSettings().m_graphics.get();
 
-      s.m_resPercent = ReadIntProperty("debug.tk.res", 100);
+      s.m_resPercent            = ReadIntProperty("debug.tk.res", 100);
       if (viewport != nullptr && s.m_resPercent > 0 && s.m_resPercent != 100)
       {
         graphics->SetRenderResolutionScaleVal(s.m_resPercent / 100.0f);
@@ -222,11 +390,11 @@ namespace ToolKit
         graphics->SetInstancedBatchingVal(s.m_batch != 0);
       }
 
-      // Two knobs that take work away instead of tuning it, to price the two biggest suspects.
-      // Shadows: a light that does not cast is dropped from the shadow pass entirely, so the
-      // difference against a normal run is what the shadow maps cost.
-      // Meshes: hides every mesh entity, which leaves the sky and the post chain; the difference is
-      // what drawing the scene costs.
+      // Two knobs that take work away instead of tuning it, to price the two
+      // biggest suspects. Shadows: a light that does not cast is dropped from the
+      // shadow pass entirely, so the difference against a normal run is what the
+      // shadow maps cost. Meshes: hides every mesh entity, which leaves the sky and
+      // the post chain; the difference is what drawing the scene costs.
       s.m_shadow = ReadIntProperty("debug.tk.shadow", -1);
       s.m_mesh   = ReadIntProperty("debug.tk.mesh", -1);
       if (scene != nullptr && (s.m_shadow == 0 || s.m_mesh == 0))
@@ -281,9 +449,26 @@ namespace ToolKit
         s.m_renderHeight = (uint) viewport->m_renderTarget->m_height;
       }
 
+      // Fixed camera poses, so a visual or timing comparison runs against the same
+      // view. Read once with the other knobs; restart the app to change it.
+      s.m_camera         = viewport != nullptr ? viewport->GetCamera() : nullptr;
+      s.m_pose           = ApplyPose(ReadIntProperty("debug.tk.pose", 0), viewport);
+      s.m_oscillation    = ReadIntProperty("debug.tk.osc", 0);
+      s.m_alternatePoses = ReadIntProperty("debug.tk.ab", 0);
+      s.m_trace          = ReadIntProperty("debug.tk.trace", 0);
+      // 0 freezes the navigator, so a measurement cannot be moved by a finger on
+      // the screen.
+      s.m_navigation     = ReadIntProperty("debug.tk.nav", 1);
+      // The property service is the only way to reach the game on a device; a
+      // desktop run sets the same switch in the environment, because
+      // ReadIntProperty answers with its fallback there.
+      s.m_twoCameras     = ReadIntProperty("debug.tk.twocam", ReadEnvInt("TK_TWOCAM"));
+      s.m_twoCamerasAt   = ReadIntProperty("debug.tk.twocamframe", 1);
+
       const UVec2 window = GetRenderSystem()->GetAppWindowSize();
-      TK_LOG("PERF config window=%ux%u render=%ux%u res=%i%% msaa=%i hdr=%i ssao=%i bloom=%i tm=%i cull=%i batch=%i "
-             "shadow=%i mesh=%i",
+      TK_LOG("PERF config window=%ux%u render=%ux%u res=%i%% msaa=%i hdr=%i "
+             "ssao=%i bloom=%i tm=%i cull=%i batch=%i "
+             "shadow=%i mesh=%i pose=%i osc=%i ab=%i twocam=%i at=%i",
              window.x,
              window.y,
              s.m_renderWidth,
@@ -297,7 +482,12 @@ namespace ToolKit
              s.m_cull,
              s.m_batch,
              s.m_shadow,
-             s.m_mesh);
+             s.m_mesh,
+             s.m_pose,
+             s.m_oscillation,
+             s.m_alternatePoses,
+             s.m_twoCameras,
+             s.m_twoCamerasAt);
 
       s.m_windowStart = NowMs();
     }
@@ -308,12 +498,14 @@ namespace ToolKit
     /** wall clock spent blocked in present. */
     inline void SetSwapWaitMs(float ms) { State().m_swapMs = ms; }
 
-    /** Wall clock the present call blocked, for the caller that measures around it. */
+    /** Wall clock the present call blocked, for the caller that measures around it.
+     */
     inline float GetSwapWaitMs() { return State().m_swapMs; }
 
     /**
      * Ends one frame and logs a window's worth of them.
-     * @param periodMs is the wall clock between this frame body and the previous one.
+     * @param periodMs is the wall clock between this frame body and the previous
+     * one.
      * @param workMs is the wall clock this frame body took, present included.
      */
     inline void Tick(float periodMs, float workMs)
@@ -341,7 +533,7 @@ namespace ToolKit
         s.m_periodMax = (double) periodMs;
       }
 
-      const double now = NowMs();
+      const double now     = NowMs();
       const double elapsed = now - s.m_windowStart;
       if (elapsed < 1000.0 || s.m_frameCount == 0)
       {
@@ -354,12 +546,26 @@ namespace ToolKit
       const double swapAvg   = s.m_swapSum / frames;
       const double renderAvg = s.m_renderSum / frames;
 
-      float engineCpu = 0.0f;
-      float engineGpu = 0.0f;
+      float engineCpu        = 0.0f;
+      float engineGpu        = 0.0f;
       Stats::GetRenderTime(engineCpu, engineGpu);
 
-      TK_LOG("PERF fps=%.2f period=%.2f work=%.2f swap=%.2f render=%.2f engcpu=%.2f gpu=%.2f max=%.2f "
-             "draws=%llu passes=%llu inst=%llu/%llu culled=%llu vram=%lluMB res=%ux%u",
+      char camInfo[96] = "cam=none";
+      if (s.m_camera != nullptr && s.m_camera->m_node != nullptr)
+      {
+        const Vec3 p = s.m_camera->m_node->GetTranslation(TransformationSpace::TS_WORLD);
+        Vec3 d(0.0f, 0.0f, -1.0f);
+        if (DirectionComponentPtr direction = s.m_camera->GetComponent<DirectionComponent>())
+        {
+          d = direction->GetDirection();
+        }
+        snprintf(camInfo, sizeof(camInfo), "cam=%.2f,%.2f,%.2f dir=%.3f,%.3f,%.3f", p.x, p.y, p.z, d.x, d.y, d.z);
+      }
+
+      TK_LOG("PERF fps=%.2f period=%.2f work=%.2f swap=%.2f render=%.2f "
+             "engcpu=%.2f gpu=%.2f max=%.2f "
+             "draws=%llu passes=%llu inst=%llu/%llu culled=%llu vram=%lluMB "
+             "res=%ux%u %s",
              1000.0 / periodAvg,
              periodAvg,
              workAvg,
@@ -375,10 +581,11 @@ namespace ToolKit
              (unsigned long long) Stats::GetStatPrev(FrameStatType::DepthGridCulledEntity),
              (unsigned long long) Stats::GetVRAMUsage(MemoryUnit::MB),
              s.m_renderWidth,
-             s.m_renderHeight);
+             s.m_renderHeight,
+             camInfo);
 
-      // Per pass breakdown: the profiler accumulates since the engine started, so a window's cost is
-      // the difference between two snapshots.
+      // Per pass breakdown: the profiler accumulates since the engine started, so a
+      // window's cost is the difference between two snapshots.
       if (s.m_profiler)
       {
         if (TKProfiler* profiler = Profiler::GetProfiler())
@@ -389,9 +596,9 @@ namespace ToolKit
             FlattenProfilerNode(root, current, 0);
           }
 
-          // Sorted by exclusive cost: the wall clock a scope owns once its children are subtracted is
-          // what a stall inside the driver actually shows up as, and inclusive time is dominated by
-          // whichever scope wraps the frame.
+          // Sorted by exclusive cost: the wall clock a scope owns once its children
+          // are subtracted is what a stall inside the driver actually shows up as,
+          // and inclusive time is dominated by whichever scope wraps the frame.
           std::vector<std::pair<String, ProfilerEntry>> sorted(current.begin(), current.end());
           std::sort(sorted.begin(),
                     sorted.end(),
@@ -413,7 +620,11 @@ namespace ToolKit
               continue;
             }
 
-            TK_LOG("PROF d%u %-34s inc %7.2f exc %7.2f ms/frame", entry.m_depth, name.c_str(), inclPerFrame, exclPerFrame);
+            TK_LOG("PROF d%u %-34s inc %7.2f exc %7.2f ms/frame",
+                   entry.m_depth,
+                   name.c_str(),
+                   inclPerFrame,
+                   exclPerFrame);
           }
 
           s.m_profilerPrev = std::move(current);
@@ -429,7 +640,8 @@ namespace ToolKit
       s.m_windowStart = now;
     }
 
-    /** Drops the probe's state. Called from the game's Destroy, while the engine is still alive. */
+    /** Drops the probe's state. Called from the game's Destroy, while the engine is
+     * still alive. */
     inline void Shutdown()
     {
       ProbeState& s = State();
