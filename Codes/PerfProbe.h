@@ -40,6 +40,7 @@
  *   adb shell setprop debug.tk.hdr 0       0 renders into rgba8 instead of rgba16f
  *   adb shell setprop debug.tk.ssao 0      0 disables screen space ambient occlusion
  *   adb shell setprop debug.tk.bloom 0     0 disables bloom, otherwise the iteration count
+ *   adb shell setprop debug.tk.fxaa 1      trade msaa for the post pass antialiasing instead
  *   adb shell setprop debug.tk.tm 0        tonemapping
  *   adb shell setprop debug.tk.cull 0      depth grid occlusion culling
  *   adb shell setprop debug.tk.batch 0     instanced batching
@@ -113,6 +114,7 @@ namespace ToolKit
       int m_hdr            = -1;
       int m_ssao           = -1;
       int m_bloom          = -1;
+      int m_fxaa           = -1;
       int m_tonemap        = -1;
       int m_cull           = -1;
       int m_batch          = -1;
@@ -426,6 +428,15 @@ namespace ToolKit
           pps->SetSSAOEnabledVal(s.m_ssao != 0);
         }
 
+        // Anti aliasing is a quality against frame time trade, so both halves of it are knobs: the
+        // sample count on the render target (msaa) and the post pass that costs a full screen shader
+        // instead (fxaa). Which one a project wants is a look decision that needs the numbers.
+        s.m_fxaa = ReadIntProperty("debug.tk.fxaa", -1);
+        if (s.m_fxaa >= 0)
+        {
+          pps->SetFXAAEnabledVal(s.m_fxaa != 0);
+        }
+
         s.m_bloom = ReadIntProperty("debug.tk.bloom", -1);
         if (s.m_bloom >= 0)
         {
@@ -468,7 +479,7 @@ namespace ToolKit
       const UVec2 window = GetRenderSystem()->GetAppWindowSize();
       TK_LOG("PERF config window=%ux%u render=%ux%u res=%i%% msaa=%i hdr=%i "
              "ssao=%i bloom=%i tm=%i cull=%i batch=%i "
-             "shadow=%i mesh=%i pose=%i osc=%i ab=%i twocam=%i at=%i",
+             "shadow=%i mesh=%i pose=%i osc=%i ab=%i fxaa=%i twocam=%i at=%i",
              window.x,
              window.y,
              s.m_renderWidth,
@@ -486,6 +497,7 @@ namespace ToolKit
              s.m_pose,
              s.m_oscillation,
              s.m_alternatePoses,
+             s.m_fxaa,
              s.m_twoCameras,
              s.m_twoCamerasAt);
 
