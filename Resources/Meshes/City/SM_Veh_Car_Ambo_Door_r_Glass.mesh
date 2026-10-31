@@ -1,0 +1,12 @@
+<meshContainer>
+	<mesh>
+		<ResourceRef Class="Material" File="City/PolygonCity_Glass_Veh_Mat.material"/>
+		<vertices VertexCount="12">
+			<Base64>MG+CwDES5T/5LQfA6zVwu3Vcsz6mxm+/BFjrPhBHrT2P/38/vkyouh79YLsAAIC/48WBwKxFyj/vOQzA6zVwu3Vcsz6mxm+/BFjrPhBHrT2P/38/vkyouh79YLsAAIC/II6LwHpDyj8XHwzAp/2Hu4tnsj4t9G+/BFjrPhBHrT1w/38/KYu9upnvfrsAAIC/AI6LwFQU5T/1IgfAp/2Hu4tnsj4t9G+/BFjrPhBHrT1w/38/KYu9upnvfrsAAIC/RPuUwHcW5T+iEgfAM+CXu3NysT5zIXC/BFjrPhBHrT1M/38/Z4zSumx2jrsAAIC/e/OWwIhDyj9U+gvAM+CXu3NysT5zIXC/BFjrPhBHrT1M/38/Z4zSumx2jrsAAIC/MyWCwG3Vqj9IaA/A5cMwu+RoTj6Mvnq/BFjrPhBHrT3D/38/MYYOugkjLbsAAIC/II6LwHpDyj8XHwzABUQ9u+MvUj5JjHq/BFjrPhBHrT26/38/XWUbulc8ObsAAIC/48WBwKxFyj/vOQzA5cMwu+RoTj6Mvnq/BFjrPhBHrT3D/38/MYYOugkjLbsAAIC/QY6LwCbRqj+8aA/ABUQ9u+MvUj5JjHq/BFjrPhBHrT26/38/XWUbulc8ObsAAIC/4faWwN3Mqj8waQ/AdcNJux/2VT4cWXq/BFjrPhBHrT2x/38/0KEoullPRbsAAIC/e/OWwIhDyj9U+gvAdcNJux/2VT4cWXq/BFjrPhBHrT2x/38/0KEoullPRbsAAIC/</Base64>
+		</vertices>
+		<faces FaceCount="24">
+			<Base64>AAAAAAEAAAACAAAAAAAAAAIAAAADAAAAAgAAAAQAAAADAAAAAgAAAAUAAAAEAAAABgAAAAcAAAAIAAAABgAAAAkAAAAHAAAABwAAAAkAAAAKAAAABwAAAAoAAAALAAAA</Base64>
+		</faces>
+	</mesh>
+</meshContainer>
+

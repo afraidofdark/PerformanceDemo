@@ -1,0 +1,25 @@
+# Build output, publish bundles and generated packs. Rebuild with CMake plus the Packer;
+# nothing below is a source file.
+/Intermediate/
+/Codes/Intermediate/
+/Codes/Bin/
+/Publish/
+/MinResources.pak
+/MinResources.pak.old
+/TkAndroidBuild/
+
+# Android build state (NDK/CMake work dirs, Gradle caches, the packed asset copy).
+/Android/.gradle/
+/Android/.idea/
+/Android/app/build/
+/Android/app/.cxx/
+/Android/local.properties
+/Android/app/src/main/assets/MinResources.pak
+
+# Tooling and editor state.
+.vs/
+/out/
+*.user
+*.suo
+Log.txt
+Assimplog.txt
