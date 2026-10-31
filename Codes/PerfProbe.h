@@ -476,10 +476,31 @@ namespace ToolKit
       s.m_twoCameras     = ReadIntProperty("debug.tk.twocam", ReadEnvInt("TK_TWOCAM"));
       s.m_twoCamerasAt   = ReadIntProperty("debug.tk.twocamframe", 1);
 
+      // What the app ends up rendering with, not what a knob asked for: the project's settings file and
+      // the scene both decide, and a run that does not say which msaa or fxaa it actually used is
+      // impossible to compare against another.
+      int msaaUsed   = (int) GetEngineSettings().m_graphics->GetMSAAVal().GetValue<int>();
+      auto scenePps  = scene ? scene->m_postProcessSettings : nullptr;
+      int fxaaUsed   = scenePps != nullptr && scenePps->GetFXAAEnabledVal() ? 1 : 0;
+
+      // The scene's own post process block, as opposed to engine defaults: a run whose settings silently
+      // came from the defaults is measuring a different scene than the one it names.
+      char ppsUsed[96] = "pps=none";
+      if (scenePps != nullptr)
+      {
+        snprintf(ppsUsed,
+                 sizeof(ppsUsed),
+                 "pps=radius%.2f bloom%i tm%i ssao%i",
+                 (double) scenePps->GetSSAORadiusVal(),
+                 (int) scenePps->GetBloomIterationCountVal(),
+                 scenePps->GetTonemappingEnabledVal() ? 1 : 0,
+                 scenePps->GetSSAOEnabledVal() ? 1 : 0);
+      }
+
       const UVec2 window = GetRenderSystem()->GetAppWindowSize();
       TK_LOG("PERF config window=%ux%u render=%ux%u res=%i%% msaa=%i hdr=%i "
              "ssao=%i bloom=%i tm=%i cull=%i batch=%i "
-             "shadow=%i mesh=%i pose=%i osc=%i ab=%i fxaa=%i twocam=%i at=%i",
+             "shadow=%i mesh=%i pose=%i osc=%i ab=%i fxaa=%i msaaUsed=%i fxaaUsed=%i twocam=%i at=%i %s",
              window.x,
              window.y,
              s.m_renderWidth,
@@ -498,8 +519,11 @@ namespace ToolKit
              s.m_oscillation,
              s.m_alternatePoses,
              s.m_fxaa,
+             msaaUsed,
+             fxaaUsed,
              s.m_twoCameras,
-             s.m_twoCamerasAt);
+             s.m_twoCamerasAt,
+             ppsUsed);
 
       s.m_windowStart = NowMs();
     }

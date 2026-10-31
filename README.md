@@ -84,6 +84,21 @@ instead of copied, 13 to 18 times per run; that copy costs the same device about
 and on the PowerVR device the copy is free and both shapes are correct, so removing it buys nothing
 where it is safe and breaks the picture where it would help.
 
+## Changing resources or settings
+
+The app keeps what it unpacked from the resource pak in its own data directory, and it reuses that on the
+next launch. Editing a scene, `Config/Engine.settings` or any other resource and reinstalling is
+therefore not enough - the run still loads what the previous install left behind, and a settings change
+looks like it was ignored. Clear the app's data between an install and a run that has to see the change:
+
+```
+adb shell pm clear com.otyazilim.toolkit.PerformanceDemo
+```
+
+The `PERF config` line in logcat says which settings a run actually used (`msaaUsed`, `fxaaUsed`, and the
+post process values the scene contributed), which is what tells the two cases apart: a setting that did not
+apply, or a run that is still on the old unpacked copy.
+
 ## Performance analysis
 
 `PerfAnalysis/stage1-bottleneck-report.md` is the write-up, `PerfAnalysis/README.md` indexes every
@@ -111,6 +126,8 @@ so an experiment needs no rebuild:
 adb shell setprop debug.tk.res 50      render resolution percentage, 10..200
 adb shell setprop debug.tk.shadow 0    lights stop casting
 adb shell setprop debug.tk.mesh 0      every mesh entity hidden
+adb shell setprop debug.tk.msaa 0      sample count on the render targets, 0 2 4 8
+adb shell setprop debug.tk.fxaa 1      post pass antialiasing instead
 adb shell setprop debug.tk.vsync 0     unpaced: the frame the app can produce, not the one the panel takes
 ```
 

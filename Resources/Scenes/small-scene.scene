@@ -6115,7 +6115,7 @@
 				<P t="2" name="FocusPoint" v="10.500000"/>
 				<P t="2" name="FocusScale" v="1.500000"/>
 				<P t="3" name="DofBlurQuality" v="2"/>
-				<P t="10" name="FXAAEnabled" v="0"/>
+				<P t="10" name="FXAAEnabled" v="1"/>
 			</PB>
 		</Object>
 	</PostProcessingSettings>
