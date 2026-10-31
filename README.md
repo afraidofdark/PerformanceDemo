@@ -22,9 +22,10 @@ CMakeLists.txt  project build, consumes the GDTK engine as a subproject
 
 ## Building
 
-The engine is not vendored. Point the project at a GDTK checkout, either through
-`%APPDATA%/ToolKit/Config/Path.txt` (one line, the engine root) or the `TOOLKIT_DIR`
-environment variable / cache variable.
+The engine is not vendored. Point the project at a GDTK checkout, either through `Path.txt`
+in the per-user ToolKit config directory (one line, the engine root) or the `TOOLKIT_DIR`
+environment variable / cache variable. That directory is `%APPDATA%/ToolKit/Config` on
+Windows and `$XDG_CONFIG_HOME/ToolKit/Config` (`~/.config/ToolKit/Config`) elsewhere.
 
 Desktop:
 
@@ -33,11 +34,18 @@ cmake -S . -B ./Intermediate/Windows -A x64 -DTK_PLATFORM=Windows -DCMAKE_BUILD_
 cmake --build ./Intermediate/Windows --config Release
 ```
 
-Android: run `BinRelease/Packer.exe` from the engine's `BinRelease` directory with a
+Android: run the engine's Packer from its `Bin<Config>` directory with a
 `PublishArguments.txt` for this project (project name, workspace path, app name, sdk range,
 platform 3 = Android). The Packer packs `Resources/` into `MinResources.pak`, regenerates the
-gradle project and icons, runs `gradlew assembleRelease` and drops the APK in `Publish/Android`.
+gradle project and icons, runs the gradle wrapper and drops the APK in `Publish/Android`.
 Build output, the pak and the gradle caches are ignored by git.
+
+The gradle step needs the Android SDK, and AGP 8.1.1 pins its own toolchain: `ANDROID_HOME`
+(the packer looks for `adb` in its `platform-tools`) and a JDK 17 as `JAVA_HOME`, because
+Gradle 8.1.1 rejects newer JVMs. The native side is compiled by the NDK that AGP picks
+(25.1.8937393) rather than by the desktop compiler, so the Linux build tree is not involved.
+`deploy after build` = 1 in `PublishArguments.txt` installs and starts the APK on the
+attached device.
 
 ## Performance analysis
 
