@@ -1,0 +1,9 @@
+10-31 21:48:03.272 10091 10124 I TK_LOG  : TWOCAM setup A=Camera at 44.770,8.332,-53.575 B=Camera at 43.296,8.332,-54.927 offset=2.000 along -0.737,-0.000,-0.676
+10-31 21:48:04.430 10091 10124 I TK_LOG  : SCENE camera Camera pos=44.770,8.332,-53.575 view=-3.198,2.029,-70.212 proj00=1.8107
+10-31 21:48:05.403 10091 10124 I TK_LOG  : PRESENT composite->window from=ForwardResolveFB(1080x2220) src=1080x2220 blit=no window=1080x2220
+10-31 21:48:09.097 10091 10124 I TK_LOG  : TWOCAM frame=60 viewport draws through B
+10-31 21:48:09.097 10091 10124 I TK_LOG  : SCENE camera Camera pos=43.296,8.332,-54.927 view=-5.198,2.029,-70.212 proj00=1.8107
+10-31 21:48:09.212 10091 10124 I TK_LOG  : PRESENT composite->window from=ForwardResolveFB(1080x2220) src=1080x2220 blit=no window=1080x2220
+10-31 21:48:12.892 10091 10124 I TK_LOG  : PRESENT composite->window from=ForwardResolveFB(1080x2220) src=1080x2220 blit=no window=1080x2220
+10-31 21:48:15.913 10091 10124 I TK_LOG  : PRESENT composite->window from=ForwardResolveFB(1080x2220) src=1080x2220 blit=no window=1080x2220
+10-31 21:48:19.951 10091 10124 I TK_LOG  : PRESENT composite->window from=ForwardResolveFB(1080x2220) src=1080x2220 blit=no window=1080x2220

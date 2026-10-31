@@ -1,0 +1,4 @@
+10-31 22:00:53.999 15614 15644 I TK_LOG  : Present: swap interval forced to 1.
+10-31 22:00:53.999 15614 15644 I TK_LOG  : Present: swap interval in use is 1.
+10-31 22:00:54.406 15614 15644 I TK_LOG  : TWOCAM setup A=Camera at 44.770,8.332,-53.575 B=Camera at 43.296,8.332,-54.927 offset=2.000 along -0.737,-0.000,-0.676
+10-31 22:01:00.268 15614 15644 I TK_LOG  : TWOCAM frame=60 viewport draws through B
