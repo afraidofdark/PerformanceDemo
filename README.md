@@ -99,6 +99,25 @@ The `PERF config` line in logcat says which settings a run actually used (`msaaU
 post process values the scene contributed), which is what tells the two cases apart: a setting that did not
 apply, or a run that is still on the old unpacked copy.
 
+## Shader cost, statically
+
+When the frame is bound by the forward shader rather than by draw count or resolution, `malioc` (Mali
+Offline Compiler, from Arm Performance Studio) reports where inside it the time goes: ALU, load/store,
+varying and texture cycles, plus register pressure. It needs the shader as one GLSL translation unit,
+which `PerfAnalysis/malioc/assemble-forward-shader.py` produces from the engine's `.shader` files and
+their includes:
+
+```
+PerfAnalysis/malioc/assemble-forward-shader.py ../../GitHub/GDTK/Resources/Engine/Shaders defaultFragment.shader > forward.frag
+malioc --fragment -c Mali-G71 -D ShadowPCF=4 -D CascadeBlend=1 -D ShadingMode=1 \
+       -D DrawAlphaMasked=0 -D highlightCascades=0 forward.frag
+```
+
+`PerfAnalysis/malioc/` keeps the output for the shipped variant and for one with the IBL term removed.
+Measured on the reference device with shadows and SSAO off and no post processing, that split matches
+the frame: 65 ms with the IBL term, 35 ms without it, and an albedo-only variant (which stops right
+after the material fetch) reaching the 60 fps cap.
+
 ## Performance analysis
 
 `PerfAnalysis/stage1-bottleneck-report.md` is the write-up, `PerfAnalysis/README.md` indexes every
