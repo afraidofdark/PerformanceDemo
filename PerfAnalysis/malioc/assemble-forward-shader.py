@@ -39,6 +39,7 @@ def assemble(shader_dir, root):
 
     emit(root)
     header = ("#version 300 es\n"
+              "precision highp float;\n"
               "precision highp sampler2D;\n"
               "precision highp sampler2DArray;\n"
               "precision highp samplerCube;\n"

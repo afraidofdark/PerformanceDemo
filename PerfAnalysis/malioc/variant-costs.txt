@@ -1,0 +1,21 @@
+# Forward shader variant costs, Mali-G71 (malioc 2026.5, driver r51p0)
+#
+# Written by dump-shader-variants.py with the engine's shading defaults: ShadowPCF=4, CascadeBlend=1,
+# DrawAlphaMasked=0, ShadingMode=1. A = arithmetic cycles, LS = load/store, T = texture,
+# regs = work registers, spill = spill bytes, fp16 = 16-bit arithmetic share.
+#
+# Reading it: every lighting variant is A bound with 64/64 work registers (100%, i.e. 50% occupancy)
+# and 80 bytes of spill, and 0% 16-bit arithmetic. Albedo only is 0.67 cycles: the whole cost of the
+# shader is the lighting path. CascadeBlend off (-6 A) and ShadowPCF 0 (-4 A, -12 T) are the two cheap
+# reductions; ShadowPCF 9 triples the spill to 212 bytes and must not be used on this hardware.
+
+wrote /tmp/variants/forward-normal.frag
+
+variant                      A      LS       T  bound  regs  spill  fp16
+forward-baseline         93.33   46.20   28.00      A    64     80     0
+forward-shadow0          89.33   43.50   16.00      A    64     60     0
+forward-shadow9          98.33   67.20   48.00      A    64    212     0
+forward-noblend          87.33   39.00   24.00      A    64     60     0
+forward-alphamask        93.67   46.20   28.00      A    64     80     0
+forward-albedo            0.67    0.00    1.00      T    18      ?     ?
+forward-normal            3.17    0.00    1.00      V    26      ?     0
