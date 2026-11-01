@@ -41,6 +41,7 @@
  *   adb shell setprop debug.tk.ssao 0      0 disables screen space ambient occlusion
  *   adb shell setprop debug.tk.bloom 0     0 disables bloom, otherwise the iteration count
  *   adb shell setprop debug.tk.fxaa 1      trade msaa for the post pass antialiasing instead
+ *   adb shell setprop debug.tk.stableshadow 1  sphere cascade fit, snapped to shadow texels
  *   adb shell setprop debug.tk.tm 0        tonemapping
  *   adb shell setprop debug.tk.cull 0      depth grid occlusion culling
  *   adb shell setprop debug.tk.batch 0     instanced batching
@@ -115,6 +116,7 @@ namespace ToolKit
       int m_ssao           = -1;
       int m_bloom          = -1;
       int m_fxaa           = -1;
+      int m_stableShadows  = -1;
       int m_tonemap        = -1;
       int m_cull           = -1;
       int m_batch          = -1;
@@ -437,6 +439,15 @@ namespace ToolKit
           pps->SetFXAAEnabledVal(s.m_fxaa != 0);
         }
 
+        // The stable shadow fit: a sphere around the view frustum, snapped to shadow texels, instead of a
+        // tight box that follows the camera. It is what decides whether a moving camera leaves the cascade
+        // matrices alone, so it is what decides whether the shadow atlas can be kept between frames.
+        s.m_stableShadows = ReadIntProperty("debug.tk.stableshadow", -1);
+        if (s.m_stableShadows >= 0)
+        {
+          GetEngineSettings().m_graphics->m_shadows->SetStableShadowMapVal(s.m_stableShadows != 0);
+        }
+
         s.m_bloom = ReadIntProperty("debug.tk.bloom", -1);
         if (s.m_bloom >= 0)
         {
@@ -500,7 +511,7 @@ namespace ToolKit
       const UVec2 window = GetRenderSystem()->GetAppWindowSize();
       TK_LOG("PERF config window=%ux%u render=%ux%u res=%i%% msaa=%i hdr=%i "
              "ssao=%i bloom=%i tm=%i cull=%i batch=%i "
-             "shadow=%i mesh=%i pose=%i osc=%i ab=%i fxaa=%i msaaUsed=%i fxaaUsed=%i twocam=%i at=%i %s",
+             "shadow=%i mesh=%i pose=%i osc=%i ab=%i fxaa=%i stable=%i msaaUsed=%i fxaaUsed=%i twocam=%i at=%i %s",
              window.x,
              window.y,
              s.m_renderWidth,
@@ -519,6 +530,7 @@ namespace ToolKit
              s.m_oscillation,
              s.m_alternatePoses,
              s.m_fxaa,
+             s.m_stableShadows,
              msaaUsed,
              fxaaUsed,
              s.m_twoCameras,
