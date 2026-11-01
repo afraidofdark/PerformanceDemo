@@ -19,3 +19,17 @@ forward-noblend          87.33   39.00   24.00      A    64     60     0
 forward-alphamask        93.67   46.20   28.00      A    64     80     0
 forward-albedo            0.67    0.00    1.00      T    18      ?     ?
 forward-normal            3.17    0.00    1.00      V    26      ?     0
+
+# Tried offline and rejected (malioc, Mali-G71, baseline variant unless noted):
+#
+#   lazy sky IBL       A 93.33 -> 98.67, spill 80 -> 116 B. Evaluating the sky only where it has weight
+#                      duplicates the inlined EvalSky at two call sites, and the compiler pays for it. The
+#                      device agreed when it was measured earlier: 86 ms against a 65 ms baseline.
+#   hoisted specular   A 93.33 -> 93.33, spill 80 -> 80 B. Compilers already CSE the shared term; no effect.
+#   mediump locals     fp16 stayed 0%, A 93.33 -> 94.00. GLSL ES promotes an operation to the highest
+#                      precision of its operands, so mediump locals fed by highp data compute in highp.
+#   mediump default    A 74.67 with fp16 at 77% when nothing else is qualified - the size of the prize -
+#                      but keeping the position varyings highp, which they have to be, drops it to fp16
+#                      1-2% and A back to 93. Requiring highp position/depth/normal data is the whole
+#                      lighting input, so fp16 needs the lighting rewritten around explicit mediump locals,
+#                      not a qualifier flipped at the top of the file.
