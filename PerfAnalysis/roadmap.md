@@ -147,9 +147,12 @@ which came from subtracting the two configurations in the wrong order. The `shad
 clears the per light caster flags, so the atlas stops being rendered while the shader keeps
 sampling it - that configuration measures the *sampling*, not the map.
 
-So the shadow work starts in `lighting.shader`, not in the shadow pass: what the taps cost,
-whether the cascade blend doubles the lookups, and whether the atlas fetch can be made cheaper.
-The `malioc` run on the forward variant with shadows compiled in is the next thing to read.
+Answered since: the taps and the variance blur are redundant and paying for both costs 32 ms.
+See `shadow-pcf-vs-vsm.md`. With `ShadowPCF` off and the 5x5 blur on, the frame goes from 87.8 to
+52.8 ms (11.4 to 19.0 fps) with 1.66 percent of pixels differing, which is the penumbra width.
+
+So the shadow work starts in `lighting.shader`, not in the shadow pass. It does not need `malioc` after all:
+the tap count was the whole story, and the fix is to stop asking for taps on top of a blurred atlas.
 ## What that leaves
 
 The list above stands with one change of order: the pass floor is answered, so the frame is mostly

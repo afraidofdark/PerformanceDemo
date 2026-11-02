@@ -45,7 +45,7 @@
 			<P t="11" name="Id" v="5250761863265191082"/>
 			<P t="19" name="ShadowPCF">
 				<List size="4">
-					<CurrVal v="1"/>
+					<CurrVal v="0"/>
 					<0 valType="3" valName="Off" v="0"/>
 					<1 valType="3" valName="4 sample" v="4"/>
 					<2 valType="3" valName="9 sample" v="9"/>
@@ -71,7 +71,7 @@
 			</P>
 			<P t="19" name="VSMBlurTapCount">
 				<List size="6">
-					<CurrVal v="0"/>
+					<CurrVal v="2"/>
 					<0 valType="3" valName="Off" v="0"/>
 					<1 valType="3" valName="1 tap" v="1"/>
 					<2 valType="3" valName="2 tap" v="2"/>
