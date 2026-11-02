@@ -35,7 +35,7 @@
 			<P t="10" name="InstancedBatching" v="1"/>
 			<P t="10" name="OcclusionCulling" v="1"/>
 			<P t="10" name="OcclusionReprojection" v="0"/>
-			<P t="2" name="RenderResolutionScale" v="0.650000"/>
+			<P t="2" name="RenderResolutionScale" v="0.800000"/>
 			<P t="10" name="MultiThreaded" v="1"/>
 			<P t="10" name="EnableGpuTimer" v="0"/>
 		</PB>
