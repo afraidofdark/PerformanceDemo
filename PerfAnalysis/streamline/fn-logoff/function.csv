@@ -1,0 +1,49 @@
+Range: 0 seconds to 8.673 seconds.
+
+Functions:
+
+Function Name,Self: Samples,% Self: Samples,Total: Samples,% Total: Samples,Instances,Stack Frame,Size,Location,Image
+<unknown code in libc.so>,"2,814",41.31%,"3,261",47.87%,79,0,-,-,-
+<unknown code in libGLES_mali.so>,"1,791",26.29%,"3,529",51.81%,13,0,-,-,-
+<unknown code in base.apk>,"1,473",21.62%,"2,086",30.62%,8,0,-,-,-
+<unknown code in libart.so>,380,5.58%,634,9.31%,20,0,-,-,-
+<unknown code in linker64>,101,1.48%,150,2.20%,13,0,-,-,-
+<unknown code in libaudioclient.so>,46,0.68%,253,3.71%,3,0,-,-,-
+<unknown code in libart-compiler.so>,41,0.60%,75,1.10%,1,0,-,-,-
+<unknown code in [vdso]>,36,0.53%,36,0.53%,8,0,-,-,-
+<unknown code in libbinder.so>,20,0.29%,119,1.75%,13,0,-,-,-
+<unknown code in libutils.so>,20,0.29%,372,5.46%,16,0,-,-,-
+<unknown code in libaaudio.so>,18,0.26%,45,0.66%,2,0,-,-,-
+<unknown code in libandroid_runtime.so>,12,0.18%,327,4.80%,10,0,-,-,-
+<unknown code in libGLESv3.so>,11,0.16%,11,0.16%,1,0,-,-,-
+<unknown code in dalvik-jit-code-cache_19832_19832 (deleted)>,8,0.12%,8,0.12%,2,0,-,-,-
+<unknown code in libhwui.so>,8,0.12%,24,0.35%,4,0,-,-,-
+<unknown code in libdl.so>,6,0.09%,156,2.29%,14,0,-,-,-
+<unknown code in libandroidfw.so>,5,0.07%,6,0.09%,2,0,-,-,-
+<unknown code in libc++.so>,3,0.04%,8,0.12%,6,0,-,-,-
+<unknown code in libgui.so>,3,0.04%,57,0.84%,6,0,-,-,-
+<unknown code in libvixl-arm64.so>,3,0.04%,3,0.04%,1,0,-,-,-
+<unknown code in boot-framework.oat>,2,0.03%,297,4.36%,3,0,-,-,-
+<unknown code in boot.oat>,2,0.03%,84,1.23%,2,0,-,-,-
+<unknown code in libdexfile.so>,2,0.03%,3,0.04%,2,0,-,-,-
+<unknown code in libEGL.so>,2,0.03%,94,1.38%,4,0,-,-,-
+<unknown code in libui.so>,2,0.03%,6,0.09%,3,0,-,-,-
+<unknown code in liblog.so>,1,0.01%,8,0.12%,3,0,-,-,-
+<unknown code in libopenjdk.so>,1,0.01%,4,0.06%,2,0,-,-,-
+<unknown code in libsensor.so>,1,0.01%,15,0.22%,2,0,-,-,-
+<unknown code in android.hardware.configstore@1.0.so>,0,0.00%,1,0.01%,1,0,-,-,-
+<unknown code in android.hardware.graphics.mapper@2.0-impl.so>,0,0.00%,2,0.03%,1,0,-,-,-
+<unknown code in android.hardware.graphics.mapper@2.0.so>,0,0.00%,3,0.04%,1,0,-,-,-
+<unknown code in boot-core-libart.oat>,0,0.00%,16,0.23%,2,0,-,-,-
+<unknown code in gralloc.exynos5.so>,0,0.00%,1,0.01%,1,0,-,-,-
+<unknown code in libcutils.so>,0,0.00%,4,0.06%,4,0,-,-,-
+<unknown code in libhardware.so>,0,0.00%,1,0.01%,1,0,-,-,-
+<unknown code in libhidltransport.so>,0,0.00%,4,0.06%,2,0,-,-,-
+<unknown code in libhwbinder.so>,0,0.00%,1,0.01%,1,0,-,-,-
+<unknown code in libinput.so>,0,0.00%,1,0.01%,1,0,-,-,-
+<unknown code in libion_exynos.so>,0,0.00%,1,0.01%,1,0,-,-,-
+<unknown code in libjavacore.so>,0,0.00%,1,0.01%,1,0,-,-,-
+<unknown code in libnativeloader.so>,0,0.00%,52,0.76%,1,0,-,-,-
+<unknown code in libopenjdkjvm.so>,0,0.00%,53,0.78%,1,0,-,-,-
+<unknown code in libTcpOptimizer.mobiledata.samsung.so>,0,0.00%,1,0.01%,1,0,-,-,-
+<unknown code in libvndksupport.so>,0,0.00%,21,0.31%,2,0,-,-,-

@@ -90,6 +90,67 @@ namespace ToolKit
       uint m_depth         = 0;
     };
 
+    /** The process's own memory figures, read from /proc/self. */
+    struct SelfMemory
+    {
+      uint64 m_rssBytes    = 0;
+      uint64 m_virtualBytes = 0;
+      uint64 m_minorFaults = 0;
+      uint64 m_majorFaults = 0;
+    };
+
+    /**
+     * Reads resident set size and the fault counters from the process's own /proc entries.
+     *
+     * The phone mounts /proc with hidepid=2, so nothing outside the process can read these - which
+     * is why Streamline's Linux_proc_statm_* counters come back empty on this device unless gatord
+     * runs as root. The app reading /proc/self is always allowed, and the two numbers that matter
+     * for a frame budget are here: how much is resident, and how many pages are being touched.
+     */
+    inline SelfMemory ReadSelfMemory()
+    {
+      SelfMemory mem;
+
+#if defined(TK_ANDROID) || defined(TK_LINUX)
+      if (FILE* statm = fopen("/proc/self/statm", "r"))
+      {
+        unsigned long long size = 0, resident = 0;
+        if (fscanf(statm, "%llu %llu", &size, &resident) == 2)
+        {
+          mem.m_virtualBytes = size * 4096ull;
+          mem.m_rssBytes     = resident * 4096ull;
+        }
+        fclose(statm);
+      }
+
+      if (FILE* stat = fopen("/proc/self/stat", "r"))
+      {
+        char line[512] = {};
+        if (fgets(line, sizeof(line), stat) != nullptr)
+        {
+          // The command name is in parentheses and may contain spaces, so the fields start
+          // after the last ')'.
+          if (char* tail = strrchr(line, ')'))
+          {
+            unsigned long long ignored = 0;
+            // After the ')': state, ppid, pgrp, session, tty_nr, tpgid, flags, minflt, cminflt,
+            // majflt, cmajflt. minflt is the eighth field, majflt the tenth, and everything that is
+            // not one of those two is suppressed - a format with more conversions than arguments
+            // makes sscanf read past the argument list.
+            const int matched = sscanf(tail + 1,
+                                       " %*c %*u %*u %*u %*u %*u %*u %llu %*u %llu",
+                                       &mem.m_minorFaults,
+                                       &mem.m_majorFaults);
+            (void) matched;
+          }
+        }
+        fclose(stat);
+      }
+#endif
+
+      return mem;
+    }
+
     /** Everything the probe holds. Plain values only: no engine object survives a
      * frame in here. */
     struct ProbeState
@@ -359,8 +420,11 @@ namespace ToolKit
 
       GraphicSettings* graphics = GetEngineSettings().m_graphics.get();
 
-      s.m_resPercent            = ReadIntProperty("debug.tk.res", 100);
-      if (viewport != nullptr && s.m_resPercent > 0 && s.m_resPercent != 100)
+      // The knob has to be able to say "100" as well: the shipped settings render at 65 % now, so a
+      // value of 100 is a real override and not "leave the project default alone". Not set reads as
+      // -1, like every other knob.
+      s.m_resPercent = ReadIntProperty("debug.tk.res", -1);
+      if (viewport != nullptr && s.m_resPercent > 0)
       {
         graphics->SetRenderResolutionScaleVal(s.m_resPercent / 100.0f);
         viewport->ReInitViewport();
@@ -610,9 +674,11 @@ namespace ToolKit
         snprintf(camInfo, sizeof(camInfo), "cam=%.2f,%.2f,%.2f dir=%.3f,%.3f,%.3f", p.x, p.y, p.z, d.x, d.y, d.z);
       }
 
+      const SelfMemory memInfo = ReadSelfMemory();
       TK_LOG("PERF fps=%.2f period=%.2f work=%.2f swap=%.2f render=%.2f "
              "engcpu=%.2f gpu=%.2f max=%.2f "
              "draws=%llu passes=%llu inst=%llu/%llu culled=%llu vram=%lluMB "
+             "rss=%lluMB faults=%llu/%llu "
              "res=%ux%u %s",
              1000.0 / periodAvg,
              periodAvg,
@@ -628,6 +694,9 @@ namespace ToolKit
              (unsigned long long) Stats::GetStatPrev(FrameStatType::InstancedObject),
              (unsigned long long) Stats::GetStatPrev(FrameStatType::DepthGridCulledEntity),
              (unsigned long long) Stats::GetVRAMUsage(MemoryUnit::MB),
+             (unsigned long long) (memInfo.m_rssBytes / (1024ull * 1024ull)),
+             (unsigned long long) memInfo.m_minorFaults,
+             (unsigned long long) memInfo.m_majorFaults,
              s.m_renderWidth,
              s.m_renderHeight,
              camInfo);

@@ -1,0 +1,310 @@
+Range: 0 seconds to 9.143 seconds.
+
+Call Paths:
+
+[Process]/{Thread}/Code,Total: Samples,% Total: Samples,Self: Samples,% Self: Samples,% Process: Samples,Stack Depth,Location
+com.otyazilim.toolkit.insomnia #18571,"7,367",100.00%,,,,,-
+"  SDLThread #18617","4,944",67.11%,,,67.11%,,-
+"    <unknown code in libGLES_mali.so>","2,396",32.52%,"1,264",17.16%,32.52%,0,-
+"      <unknown code in libc.so>","1,071",14.54%,"1,071",14.54%,14.54%,0,-
+"      <unknown code in libgui.so>",56,0.76%,3,0.04%,0.76%,0,-
+"        <unknown code in libbinder.so>",45,0.61%,6,0.08%,0.61%,0,-
+"          <unknown code in libc.so>",33,0.45%,33,0.45%,0.45%,0,-
+"          <unknown code in libTcpOptimizer.mobiledata.samsung.so>",2,0.03%,2,0.03%,0.03%,0,-
+"          <unknown code in libandroid_runtime.so>",1,0.01%,0,0.00%,0.01%,0,-
+"            <unknown code in libui.so>",1,0.01%,0,0.00%,0.01%,0,-
+"              <unknown code in android.hardware.graphics.mapper@2.0.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                <unknown code in android.hardware.graphics.mapper@2.0-impl.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                  <unknown code in gralloc.exynos5.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                    <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"          <unknown code in libcutils.so>",1,0.01%,0,0.00%,0.01%,0,-
+"            <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"          <unknown code in libgui.so>",1,0.01%,1,0.01%,0.01%,0,-
+"          <unknown code in libutils.so>",1,0.01%,1,0.01%,0.01%,0,-
+"        <unknown code in libc.so>",3,0.04%,3,0.04%,0.04%,0,-
+"        <unknown code in libui.so>",3,0.04%,1,0.01%,0.04%,0,-
+"          <unknown code in libutils.so>",2,0.03%,2,0.03%,0.03%,0,-
+"        <unknown code in libutils.so>",2,0.03%,0,0.00%,0.03%,0,-
+"          <unknown code in libc.so>",2,0.03%,0,0.00%,0.03%,0,-
+"            <unknown code in [vdso]>",2,0.03%,2,0.03%,0.03%,0,-
+"      <unknown code in libc++.so>",5,0.07%,0,0.00%,0.07%,0,-
+"        <unknown code in libc.so>",5,0.07%,5,0.07%,0.07%,0,-
+"    <unknown code in base.apk>","2,149",29.17%,"1,559",21.16%,29.17%,0,-
+"      <unknown code in libGLES_mali.so>",433,5.88%,295,4.00%,5.88%,0,-
+"        <unknown code in libc.so>",138,1.87%,138,1.87%,1.87%,0,-
+"      <unknown code in libc.so>",135,1.83%,116,1.57%,1.83%,0,-
+"        <unknown code in [vdso]>",18,0.24%,18,0.24%,0.24%,0,-
+"        <unknown code in libTcpOptimizer.mobiledata.samsung.so>",1,0.01%,0,0.00%,0.01%,0,-
+"          <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"      <unknown code in libGLESv3.so>",13,0.18%,13,0.18%,0.18%,0,-
+"      <unknown code in liblog.so>",4,0.05%,0,0.00%,0.05%,0,-
+"        <unknown code in libc.so>",4,0.05%,4,0.05%,0.05%,0,-
+"      <unknown code in libGLESv2.so>",3,0.04%,3,0.04%,0.04%,0,-
+"      <unknown code in libEGL.so>",1,0.01%,1,0.01%,0.01%,0,-
+"      <unknown code in libm.so>",1,0.01%,1,0.01%,0.01%,0,-
+"    <unknown code in libc.so>",271,3.68%,271,3.68%,3.68%,0,-
+"    <unknown code in libart.so>",105,1.43%,27,0.37%,1.43%,0,-
+"      <unknown code in base.apk>",78,1.06%,14,0.19%,1.06%,0,-
+"        <unknown code in libc.so>",55,0.75%,55,0.75%,0.75%,0,-
+"        <unknown code in libdl.so>",4,0.05%,0,0.00%,0.05%,0,-
+"          <unknown code in linker64>",4,0.05%,4,0.05%,0.05%,0,-
+"        <unknown code in liblog.so>",3,0.04%,0,0.00%,0.04%,0,-
+"          <unknown code in libc.so>",3,0.04%,3,0.04%,0.04%,0,-
+"        <unknown code in libaaudio.so>",1,0.01%,0,0.00%,0.01%,0,-
+"          <unknown code in libaudioclient.so>",1,0.01%,0,0.00%,0.01%,0,-
+"            <unknown code in libaaudio.so>",1,0.01%,0,0.00%,0.01%,0,-
+"              <unknown code in libaudioclient.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                <unknown code in libbinder.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                  <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"        <unknown code in libEGL.so>",1,0.01%,0,0.00%,0.01%,0,-
+"          <unknown code in libdl.so>",1,0.01%,0,0.00%,0.01%,0,-
+"            <unknown code in linker64>",1,0.01%,1,0.01%,0.01%,0,-
+"    <unknown code in boot-framework.oat>",22,0.30%,0,0.00%,0.30%,0,-
+"      <unknown code in libandroid_runtime.so>",20,0.27%,0,0.00%,0.27%,0,-
+"        <unknown code in libart.so>",11,0.15%,7,0.10%,0.15%,0,-
+"          <unknown code in libc.so>",4,0.05%,0,0.00%,0.05%,0,-
+"            <unknown code in [vdso]>",4,0.05%,4,0.05%,0.05%,0,-
+"        <unknown code in libbinder.so>",8,0.11%,1,0.01%,0.11%,0,-
+"          <unknown code in libc.so>",7,0.10%,7,0.10%,0.10%,0,-
+"        <unknown code in libinput.so>",1,0.01%,0,0.00%,0.01%,0,-
+"          <unknown code in libc++.so>",1,0.01%,0,0.00%,0.01%,0,-
+"            <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"      <unknown code in libart.so>",2,0.03%,2,0.03%,0.03%,0,-
+"    <unknown code in dalvik-jit-code-cache_18571_18571 (deleted)>",1,0.01%,1,0.01%,0.01%,0,-
+"  mali-cmar-backe #18615","1,242",16.86%,,,16.86%,,-
+"    <unknown code in libGLES_mali.so>",931,12.64%,248,3.37%,12.64%,0,-
+"      <unknown code in libc.so>",679,9.22%,679,9.22%,9.22%,0,-
+"      <unknown code in libTcpOptimizer.mobiledata.samsung.so>",4,0.05%,0,0.00%,0.05%,0,-
+"        <unknown code in libc.so>",4,0.05%,4,0.05%,0.05%,0,-
+"    <unknown code in libc.so>",311,4.22%,311,4.22%,4.22%,0,-
+"  SDLActivity #18571",590,8.01%,,,8.01%,,-
+"    <unknown code in libart.so>",252,3.42%,238,3.23%,3.42%,0,-
+"      <unknown code in libc.so>",13,0.18%,13,0.18%,0.18%,0,-
+"      <unknown code in libdexfile.so>",1,0.01%,1,0.01%,0.01%,0,-
+"    <unknown code in boot-framework.oat>",232,3.15%,5,0.07%,3.15%,0,-
+"      <unknown code in libandroid_runtime.so>",208,2.82%,3,0.04%,2.82%,0,-
+"        <unknown code in libutils.so>",83,1.13%,3,0.04%,1.13%,0,-
+"          <unknown code in libandroid_runtime.so>",52,0.71%,3,0.04%,0.71%,0,-
+"            <unknown code in libart.so>",30,0.41%,30,0.41%,0.41%,0,-
+"            <unknown code in libsensor.so>",18,0.24%,2,0.03%,0.24%,0,-
+"              <unknown code in libc.so>",16,0.22%,16,0.22%,0.22%,0,-
+"            <unknown code in libnativehelper.so>",1,0.01%,1,0.01%,0.01%,0,-
+"          <unknown code in libc.so>",26,0.35%,26,0.35%,0.35%,0,-
+"          <unknown code in libandroidfw.so>",2,0.03%,0,0.00%,0.03%,0,-
+"            <unknown code in libandroid_runtime.so>",1,0.01%,0,0.00%,0.01%,0,-
+"              <unknown code in libart.so>",1,0.01%,1,0.01%,0.01%,0,-
+"            <unknown code in libgui.so>",1,0.01%,0,0.00%,0.01%,0,-
+"              <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"        <unknown code in libbinder.so>",64,0.87%,11,0.15%,0.87%,0,-
+"          <unknown code in libc.so>",50,0.68%,50,0.68%,0.68%,0,-
+"          <unknown code in libutils.so>",3,0.04%,3,0.04%,0.04%,0,-
+"        <unknown code in libart.so>",38,0.52%,30,0.41%,0.52%,0,-
+"          <unknown code in libc.so>",7,0.10%,1,0.01%,0.10%,0,-
+"            <unknown code in [vdso]>",6,0.08%,6,0.08%,0.08%,0,-
+"          <unknown code in libc++.so>",1,0.01%,1,0.01%,0.01%,0,-
+"        <unknown code in libandroidfw.so>",4,0.05%,2,0.03%,0.05%,0,-
+"          <unknown code in libc++.so>",1,0.01%,0,0.00%,0.01%,0,-
+"            <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"          <unknown code in libgui.so>",1,0.01%,0,0.00%,0.01%,0,-
+"            <unknown code in libbinder.so>",1,0.01%,0,0.00%,0.01%,0,-
+"              <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"        <unknown code in libhwui.so>",4,0.05%,4,0.05%,0.05%,0,-
+"        <unknown code in libsensor.so>",4,0.05%,0,0.00%,0.05%,0,-
+"          <unknown code in libbinder.so>",4,0.05%,0,0.00%,0.05%,0,-
+"            <unknown code in libc.so>",4,0.05%,4,0.05%,0.05%,0,-
+"        <unknown code in liblog.so>",3,0.04%,1,0.01%,0.04%,0,-
+"          <unknown code in libc.so>",2,0.03%,2,0.03%,0.03%,0,-
+"        <unknown code in libbase.so>",2,0.03%,0,0.00%,0.03%,0,-
+"          <unknown code in libc.so>",2,0.03%,2,0.03%,0.03%,0,-
+"        <unknown code in libgui.so>",2,0.03%,0,0.00%,0.03%,0,-
+"          <unknown code in libbinder.so>",2,0.03%,0,0.00%,0.03%,0,-
+"            <unknown code in libc.so>",2,0.03%,2,0.03%,0.03%,0,-
+"        <unknown code in libaudioclient.so>",1,0.01%,0,0.00%,0.01%,0,-
+"          <unknown code in libbinder.so>",1,0.01%,0,0.00%,0.01%,0,-
+"            <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"      <unknown code in libart.so>",9,0.12%,9,0.12%,0.12%,0,-
+"      <unknown code in libbinder.so>",7,0.10%,1,0.01%,0.10%,0,-
+"        <unknown code in libc.so>",6,0.08%,6,0.08%,0.08%,0,-
+"      <unknown code in libhwui.so>",2,0.03%,1,0.01%,0.03%,0,-
+"        <unknown code in libc++.so>",1,0.01%,0,0.00%,0.01%,0,-
+"          <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"      <unknown code in libgui.so>",1,0.01%,0,0.00%,0.01%,0,-
+"        <unknown code in libutils.so>",1,0.01%,0,0.00%,0.01%,0,-
+"          <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"    <unknown code in boot.oat>",76,1.03%,1,0.01%,1.03%,0,-
+"      <unknown code in libopenjdkjvm.so>",51,0.69%,0,0.00%,0.69%,0,-
+"        <unknown code in libart.so>",51,0.69%,0,0.00%,0.69%,0,-
+"          <unknown code in libnativeloader.so>",51,0.69%,0,0.00%,0.69%,0,-
+"            <unknown code in libdl.so>",51,0.69%,0,0.00%,0.69%,0,-
+"              <unknown code in linker64>",51,0.69%,9,0.12%,0.69%,0,-
+"                <unknown code in base.apk>",42,0.57%,0,0.00%,0.57%,0,-
+"                  <unknown code in libc.so>",42,0.57%,42,0.57%,0.57%,0,-
+"      <unknown code in libart.so>",22,0.30%,19,0.26%,0.30%,0,-
+"        <unknown code in libdexfile.so>",2,0.03%,2,0.03%,0.03%,0,-
+"        <unknown code in libcutils.so>",1,0.01%,0,0.00%,0.01%,0,-
+"          <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"      <unknown code in libopenjdk.so>",2,0.03%,0,0.00%,0.03%,0,-
+"        <unknown code in libc.so>",2,0.03%,1,0.01%,0.03%,0,-
+"          <unknown code in [vdso]>",1,0.01%,1,0.01%,0.01%,0,-
+"    <unknown code in dalvik-jit-code-cache_18571_18571 (deleted)>",25,0.34%,24,0.33%,0.34%,0,-
+"      <unknown code in libart.so>",1,0.01%,1,0.01%,0.01%,0,-
+"    <unknown code in boot-core-libart.oat>",4,0.05%,0,0.00%,0.05%,0,-
+"      <unknown code in libart.so>",4,0.05%,4,0.05%,0.05%,0,-
+"    <unknown code in libutils.so>",1,0.01%,1,0.01%,0.01%,0,-
+"  AudioTrack #18626",259,3.52%,,,3.52%,,-
+"    <unknown code in libc.so>",259,3.52%,0,0.00%,3.52%,0,-
+"      <unknown code in libutils.so>",259,3.52%,8,0.11%,3.52%,0,-
+"        <unknown code in libaudioclient.so>",251,3.41%,40,0.54%,3.41%,0,-
+"          <unknown code in libc.so>",164,2.23%,164,2.23%,2.23%,0,-
+"          <unknown code in libaaudio.so>",39,0.53%,14,0.19%,0.53%,0,-
+"            <unknown code in base.apk>",24,0.33%,18,0.24%,0.33%,0,-
+"              <unknown code in libc.so>",6,0.08%,6,0.08%,0.08%,0,-
+"            <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"          <unknown code in libutils.so>",6,0.08%,1,0.01%,0.08%,0,-
+"            <unknown code in libc.so>",5,0.07%,0,0.00%,0.07%,0,-
+"              <unknown code in [vdso]>",5,0.07%,5,0.07%,0.07%,0,-
+"          <unknown code in libdl.so>",2,0.03%,2,0.03%,0.03%,0,-
+"  Jit thread pool #18576",110,1.49%,,,1.49%,,-
+"    <unknown code in libc.so>",110,1.49%,0,0.00%,1.49%,0,-
+"      <unknown code in libart.so>",110,1.49%,3,0.04%,1.49%,0,-
+"        <unknown code in libart-compiler.so>",104,1.41%,62,0.84%,1.41%,0,-
+"          <unknown code in libart.so>",31,0.42%,6,0.08%,0.42%,0,-
+"            <unknown code in libc.so>",24,0.33%,19,0.26%,0.33%,0,-
+"              <unknown code in [vdso]>",5,0.07%,5,0.07%,0.07%,0,-
+"            <unknown code in libdexfile.so>",1,0.01%,1,0.01%,0.01%,0,-
+"          <unknown code in libc.so>",5,0.07%,5,0.07%,0.07%,0,-
+"          <unknown code in libc++.so>",3,0.04%,1,0.01%,0.04%,0,-
+"            <unknown code in libc.so>",2,0.03%,2,0.03%,0.03%,0,-
+"          <unknown code in libvixl-arm64.so>",2,0.03%,2,0.03%,0.03%,0,-
+"          <unknown code in libdexfile.so>",1,0.01%,1,0.01%,0.01%,0,-
+"        <unknown code in libc.so>",3,0.04%,3,0.04%,0.04%,0,-
+"  Unresolved #18587",80,1.09%,,,1.09%,,-
+"    <unknown code in boot-framework.oat>",76,1.03%,0,0.00%,1.03%,0,-
+"      <unknown code in libandroid_runtime.so>",76,1.03%,0,0.00%,1.03%,0,-
+"        <unknown code in libEGL.so>",76,1.03%,0,0.00%,1.03%,0,-
+"          <unknown code in libdl.so>",56,0.76%,0,0.00%,0.76%,0,-
+"            <unknown code in linker64>",56,0.76%,56,0.76%,0.76%,0,-
+"          <unknown code in libvndksupport.so>",17,0.23%,0,0.00%,0.23%,0,-
+"            <unknown code in libdl.so>",17,0.23%,0,0.00%,0.23%,0,-
+"              <unknown code in linker64>",17,0.23%,8,0.11%,0.23%,0,-
+"                <unknown code in libGLES_mali.so>",9,0.12%,2,0.03%,0.12%,0,-
+"                  <unknown code in libc.so>",7,0.10%,7,0.10%,0.10%,0,-
+"          <unknown code in libGLES_mali.so>",2,0.03%,2,0.03%,0.03%,0,-
+"          <unknown code in liblog.so>",1,0.01%,0,0.00%,0.01%,0,-
+"            <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"    <unknown code in libGLES_mali.so>",4,0.05%,2,0.03%,0.05%,0,-
+"      <unknown code in libc.so>",2,0.03%,2,0.03%,0.03%,0,-
+"  RenderThread #18604",49,0.67%,,,0.67%,,-
+"    <unknown code in libc.so>",25,0.34%,4,0.05%,0.34%,0,-
+"      <unknown code in libutils.so>",21,0.29%,0,0.00%,0.29%,0,-
+"        <unknown code in libhwui.so>",21,0.29%,5,0.07%,0.29%,0,-
+"          <unknown code in libEGL.so>",7,0.10%,1,0.01%,0.10%,0,-
+"            <unknown code in libdl.so>",3,0.04%,0,0.00%,0.04%,0,-
+"              <unknown code in linker64>",3,0.04%,3,0.04%,0.04%,0,-
+"            <unknown code in libc++.so>",2,0.03%,0,0.00%,0.03%,0,-
+"              <unknown code in libc.so>",2,0.03%,2,0.03%,0.03%,0,-
+"            <unknown code in android.hardware.configstore@1.0.so>",1,0.01%,1,0.01%,0.01%,0,-
+"          <unknown code in libGLES_mali.so>",4,0.05%,2,0.03%,0.05%,0,-
+"            <unknown code in libc.so>",2,0.03%,2,0.03%,0.03%,0,-
+"          <unknown code in libc.so>",3,0.04%,3,0.04%,0.04%,0,-
+"          <unknown code in libandroid_runtime.so>",2,0.03%,0,0.00%,0.03%,0,-
+"            <unknown code in libhwui.so>",2,0.03%,1,0.01%,0.03%,0,-
+"              <unknown code in libandroid_runtime.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                <unknown code in libhwui.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                  <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"    <unknown code in libGLES_mali.so>",23,0.31%,6,0.08%,0.31%,0,-
+"      <unknown code in libgui.so>",12,0.16%,0,0.00%,0.16%,0,-
+"        <unknown code in libbinder.so>",8,0.11%,1,0.01%,0.11%,0,-
+"          <unknown code in libc.so>",5,0.07%,5,0.07%,0.07%,0,-
+"          <unknown code in libandroid_runtime.so>",1,0.01%,0,0.00%,0.01%,0,-
+"            <unknown code in libui.so>",1,0.01%,0,0.00%,0.01%,0,-
+"              <unknown code in android.hardware.graphics.mapper@2.0.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                <unknown code in android.hardware.graphics.mapper@2.0-impl.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                  <unknown code in gralloc.exynos5.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                    <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"          <unknown code in libutils.so>",1,0.01%,1,0.01%,0.01%,0,-
+"        <unknown code in libui.so>",4,0.05%,1,0.01%,0.05%,0,-
+"          <unknown code in android.hardware.graphics.mapper@2.0.so>",3,0.04%,0,0.00%,0.04%,0,-
+"            <unknown code in libhidltransport.so>",3,0.04%,0,0.00%,0.04%,0,-
+"              <unknown code in android.hardware.graphics.mapper@2.0-impl.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                <unknown code in libhardware.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                  <unknown code in libdl.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                    <unknown code in linker64>",1,0.01%,1,0.01%,0.01%,0,-
+"              <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"              <unknown code in libvndksupport.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                <unknown code in libdl.so>",1,0.01%,0,0.00%,0.01%,0,-
+"                  <unknown code in linker64>",1,0.01%,1,0.01%,0.01%,0,-
+"      <unknown code in libc.so>",5,0.07%,5,0.07%,0.07%,0,-
+"    <unknown code in libui.so>",1,0.01%,1,0.01%,0.01%,0,-
+"  mali-hist-dump #18616",19,0.26%,,,0.26%,,-
+"    <unknown code in libGLES_mali.so>",19,0.26%,11,0.15%,0.26%,0,-
+"      <unknown code in libc.so>",8,0.11%,8,0.11%,0.11%,0,-
+"  SDLThread #18619",14,0.19%,,,0.19%,,-
+"    <unknown code in libc.so>",14,0.19%,0,0.00%,0.19%,0,-
+"      <unknown code in base.apk>",14,0.19%,12,0.16%,0.19%,0,-
+"        <unknown code in libc.so>",2,0.03%,2,0.03%,0.03%,0,-
+"  SDLThread #18620",12,0.16%,,,0.16%,,-
+"    <unknown code in libc.so>",12,0.16%,0,0.00%,0.16%,0,-
+"      <unknown code in base.apk>",12,0.16%,10,0.14%,0.16%,0,-
+"        <unknown code in libc.so>",2,0.03%,2,0.03%,0.03%,0,-
+"  Binder:18571_1 #18583",10,0.14%,,,0.14%,,-
+"    <unknown code in libart.so>",8,0.11%,8,0.11%,0.11%,0,-
+"    <unknown code in boot-framework.oat>",1,0.01%,0,0.00%,0.01%,0,-
+"      <unknown code in libandroid_runtime.so>",1,0.01%,0,0.00%,0.01%,0,-
+"        <unknown code in libutils.so>",1,0.01%,0,0.00%,0.01%,0,-
+"          <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"    <unknown code in libc.so>",1,0.01%,0,0.00%,0.01%,0,-
+"      <unknown code in libandroid_runtime.so>",1,0.01%,0,0.00%,0.01%,0,-
+"        <unknown code in libutils.so>",1,0.01%,0,0.00%,0.01%,0,-
+"          <unknown code in libbinder.so>",1,0.01%,0,0.00%,0.01%,0,-
+"            <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"  mali-utility-wo #18614",10,0.14%,,,0.14%,,-
+"    <unknown code in libGLES_mali.so>",6,0.08%,6,0.08%,0.08%,0,-
+"    <unknown code in libc.so>",4,0.05%,0,0.00%,0.05%,0,-
+"      <unknown code in libGLES_mali.so>",4,0.05%,1,0.01%,0.05%,0,-
+"        <unknown code in libc.so>",3,0.04%,3,0.04%,0.04%,0,-
+"  SDLThread #18621",10,0.14%,,,0.14%,,-
+"    <unknown code in libc.so>",10,0.14%,0,0.00%,0.14%,0,-
+"      <unknown code in base.apk>",10,0.14%,8,0.11%,0.14%,0,-
+"        <unknown code in libc.so>",2,0.03%,2,0.03%,0.03%,0,-
+"  mali-mem-purge #18606",8,0.11%,,,0.11%,,-
+"    <unknown code in libGLES_mali.so>",6,0.08%,0,0.00%,0.08%,0,-
+"      <unknown code in libc.so>",6,0.08%,6,0.08%,0.08%,0,-
+"    <unknown code in libc.so>",2,0.03%,2,0.03%,0.03%,0,-
+"  SDLThread #18622",7,0.10%,,,0.10%,,-
+"    <unknown code in libc.so>",7,0.10%,0,0.00%,0.10%,0,-
+"      <unknown code in base.apk>",7,0.10%,6,0.08%,0.10%,0,-
+"        <unknown code in libc.so>",1,0.01%,1,0.01%,0.01%,0,-
+"  Profile Saver #18586",2,0.03%,,,0.03%,,-
+"    <unknown code in libc.so>",2,0.03%,0,0.00%,0.03%,0,-
+"      <unknown code in libart.so>",2,0.03%,2,0.03%,0.03%,0,-
+"  hwuiTask1 #18618",1,0.01%,,,0.01%,,-
+"    <unknown code in libc.so>",1,0.01%,0,0.00%,0.01%,0,-
+"      <unknown code in libandroid_runtime.so>",1,0.01%,0,0.00%,0.01%,0,-
+"        <unknown code in libutils.so>",1,0.01%,0,0.00%,0.01%,0,-
+"          <unknown code in libhwui.so>",1,0.01%,0,0.00%,0.01%,0,-
+"            <unknown code in libandroid_runtime.so>",1,0.01%,0,0.00%,0.01%,0,-
+"              <unknown code in libart.so>",1,0.01%,1,0.01%,0.01%,0,-
+"  ADB-JDWP Connec #18578",0,0.00%,,,0.00%,,-
+"  AudioPortEventH #18602",0,0.00%,,,0.00%,,-
+"  Binder:18571_2 #18584",0,0.00%,,,0.00%,,-
+"  Binder:18571_3 #18585",0,0.00%,,,0.00%,,-
+"  FinalizerDaemon #18580",0,0.00%,,,0.00%,,-
+"  FinalizerWatchd #18581",0,0.00%,,,0.00%,,-
+"  HeapTaskDaemon #18582",0,0.00%,,,0.00%,,-
+"  mali-utility-wo #18607",0,0.00%,,,0.00%,,-
+"  mali-utility-wo #18608",0,0.00%,,,0.00%,,-
+"  mali-utility-wo #18609",0,0.00%,,,0.00%,,-
+"  mali-utility-wo #18610",0,0.00%,,,0.00%,,-
+"  mali-utility-wo #18611",0,0.00%,,,0.00%,,-
+"  mali-utility-wo #18612",0,0.00%,,,0.00%,,-
+"  mali-utility-wo #18613",0,0.00%,,,0.00%,,-
+"  ReferenceQueueD #18579",0,0.00%,,,0.00%,,-
+"  SDLThread #18623",0,0.00%,,,0.00%,,-
+"  SDLThread #18624",0,0.00%,,,0.00%,,-
+"  SDLThread #18625",0,0.00%,,,0.00%,,-
+"  SDLThread #18627",0,0.00%,,,0.00%,,-
+"  SharedPreferenc #18603",0,0.00%,,,0.00%,,-
+"  Signal Catcher #18577",0,0.00%,,,0.00%,,-
+idle,0,0.00%,,,,,-
+"  idle",0,0.00%,,,,,-
