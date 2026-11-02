@@ -6102,7 +6102,7 @@
 						<2 valType="3" valName="32" v="32"/>
 					</List>
 				</P>
-				<P t="10" name="SSAOHalfResolution" v="1"/>
+				<P t="10" name="SSAOHalfResolution" v="0"/>
 				<P t="10" name="SSREnabled" v="0"/>
 				<P t="2" name="SSRIntensity" v="0.500000"/>
 				<P t="2" name="SSRMaxDistance" v="50.000000"/>

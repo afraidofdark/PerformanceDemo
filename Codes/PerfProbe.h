@@ -748,6 +748,14 @@ namespace ToolKit
           pps->SetSSAOStrengthVal((float) ssaoStrength / 100.0f);
         }
 
+        // Ambient occlusion renders its own map at half of the target it reads: half the frame with a
+        // half resolution target, a quarter of it when this is on as well.
+        const int ssaoHalf = ReadIntProperty("debug.tk.ssaohalf", -1);
+        if (ssaoHalf >= 0)
+        {
+          pps->SetSSAOHalfResolutionVal(ssaoHalf != 0);
+        }
+
         // Anti aliasing is a quality against frame time trade, so both halves of it are knobs: the
         // sample count on the render target (msaa) and the post pass that costs a full screen shader
         // instead (fxaa). Which one a project wants is a look decision that needs the numbers.
@@ -811,6 +819,14 @@ namespace ToolKit
 
       // Per pass gpu timing: every pass brackets itself with two timestamp queries and the results
       // are reported next to the cpu times in the PROF dump.
+      // Half resolution normal and depth target, the pass that ambient occlusion and depth of field
+      // read. Off builds it at the frame size, which is also what lets it act as a depth prepass.
+      const int prePassHalf = ReadIntProperty("debug.tk.prepasshalf", -1);
+      if (prePassHalf >= 0)
+      {
+        GetEngineSettings().m_graphics->SetHalfResolutionForwardPreProcessVal(prePassHalf != 0);
+      }
+
       const int passGpu = ReadIntProperty("debug.tk.passgpu", 0);
       if (passGpu > 0)
       {
