@@ -156,6 +156,74 @@ namespace ToolKit
       return mem;
     }
 
+    /**
+     * Spends a pass on nothing, so the per pass gpu numbers can be read against it.
+     *
+     * A pass that clears a 1x1 target has no draws, no textures and no pixels worth speaking of; whatever
+     * its gpu scope reports is the cost of the scope plus the pass start. If that already reads a
+     * millisecond or two, then what we read off the real passes is that floor as much as it is work, and
+     * only differences between configurations can be trusted.
+     */
+    inline void RunNullPasses(Renderer* renderer, bool includeFullSize)
+    {
+      if (renderer == nullptr)
+      {
+        return;
+      }
+
+      // A pass that draws nothing still needs a target it can bind, and a target needs its settings before
+      // it can be reconstructed.
+      const auto makeTarget = [](const String& name, int width, int height) -> FramebufferPtr
+      {
+        FramebufferPtr fb = MakeNewPtr<Framebuffer>(name);
+        fb->ReconstructIfNeeded({width, height, false, false});
+
+        TextureSettings settings;
+        settings.InternalFormat = GraphicTypes::FormatRGBA8;
+        settings.Format         = GraphicTypes::FormatRGBA;
+        settings.Type           = GraphicTypes::TypeUnsignedByte;
+        settings.MinFilter      = GraphicTypes::SampleNearest;
+        settings.MagFilter      = GraphicTypes::SampleNearest;
+        settings.GenerateMipMap = false;
+
+        RenderTargetPtr rt = MakeNewPtr<RenderTarget>(name + "RT");
+        rt->Settings(settings);
+        rt->ReconstructIfNeeded(width, height);
+        fb->SetColorAttachment(Framebuffer::Attachment::ColorAttachment0, rt);
+
+        return fb;
+      };
+
+      static FramebufferPtr small = nullptr;
+      if (small == nullptr)
+      {
+        small = makeTarget("NullPassSmall", 1, 1);
+      }
+
+      {
+        Stats::BeginGpuScope("NullPass1x1");
+        renderer->SetFramebuffer(small, GraphicBitFields::ColorBits, Vec4(0.0f));
+        renderer->FinishPass();
+        Stats::EndGpuScope();
+      }
+
+      if (!includeFullSize)
+      {
+        return;
+      }
+
+      static FramebufferPtr full = nullptr;
+      if (full == nullptr)
+      {
+        const UVec2 window = renderer->m_windowSize;
+        full              = makeTarget("NullPassFull", (int) window.x, (int) window.y);
+      }
+
+      Stats::BeginGpuScope("NullPassFull");
+      renderer->SetFramebuffer(full, GraphicBitFields::ColorBits, Vec4(0.0f));
+      renderer->FinishPass();
+      Stats::EndGpuScope();
+    }
     /** Everything the probe holds. Plain values only: no engine object survives a
      * frame in here. */
     struct ProbeState
@@ -199,6 +267,8 @@ namespace ToolKit
 
       /** Remaining frames of ambient occlusion map to write, see DumpSsaoMaps. */
       int m_ssaoDump       = 0;
+      int m_nullPasses     = 0;
+
 
       uint m_renderWidth   = 0;
       uint m_renderHeight  = 0;
@@ -824,6 +894,48 @@ namespace ToolKit
       // Frames of ambient occlusion map to write out, see DumpSsaoMaps. Two frames so the map has a
       // full frame of history behind it; 0 does nothing.
       s.m_ssaoDump       = ReadIntProperty("debug.tk.ssaodump", 0);
+      s.m_nullPasses     = ReadIntProperty("debug.tk.nullpass", 0);
+
+      // Shadow settings, so the cost of each one can be measured instead of guessed: the cascade count,
+      // the slot density (half resolution slots) and the pcf tap count.
+      if (ShadowSettingsPtr shadows = GetEngineSettings().m_graphics->m_shadows)
+      {
+        const int cascades = ReadIntProperty("debug.tk.cascades", -1);
+        if (cascades > 0)
+        {
+          shadows->SetCascadeCountVal(cascades);
+        }
+
+        const int denseSlots = ReadIntProperty("debug.tk.denseslots", -1);
+        if (denseSlots >= 0)
+        {
+          shadows->SetUse2XShadowAtlasSlotsVal(denseSlots != 0);
+        }
+
+        // Off, 4, 9 and 16 samples in that order; the value is a shader define, so a change rebuilds the
+        // forward variant.
+        // The variance shadow blur in the shadow pass: kernel choice (3x3, 5x5, 7x7) and tap count
+        // (Off, 1 to 5). The blur and the pcf taps are two ways to soften the same edge and should not be
+        // paid for at the same time.
+        const int vsmKernel = ReadIntProperty("debug.tk.vsmkernel", -1);
+        if (vsmKernel >= 0 && vsmKernel <= 2)
+        {
+          shadows->ParamVSMBlurKernelSize().GetVar<MultiChoiceVariant>().CurrentVal = (uint) vsmKernel;
+        }
+
+        const int vsmTaps = ReadIntProperty("debug.tk.vsmtaps", -1);
+        if (vsmTaps >= 0 && vsmTaps <= 5)
+        {
+          shadows->ParamVSMBlurTapCount().GetVar<MultiChoiceVariant>().CurrentVal = (uint) vsmTaps;
+        }
+
+        const int pcf = ReadIntProperty("debug.tk.shadowpcf", -1);
+        if (pcf >= 0 && pcf <= 3)
+        {
+          shadows->ParamShadowPCF().GetVar<MultiChoiceVariant>().CurrentVal = (uint) pcf;
+        }
+      }
+
 
       // Per pass gpu timing: every pass brackets itself with two timestamp queries and the results
       // are reported next to the cpu times in the PROF dump.

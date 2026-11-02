@@ -254,6 +254,17 @@ namespace ToolKit
                                               Perf::State().m_ssaoDump--;
                                               Perf::DumpSsaoMaps(renderer, g_gameRenderer);
                                             }
+
+                                            // debug.tk.nullpass: what does a pass cost when it does
+                                            // nothing? One clears a 1x1 target, the other a frame sized
+                                            // one, through the same gpu scope every real pass uses. A
+                                            // small one that still reads a millisecond means the per
+                                            // pass numbers measure the query, not the work.
+                                            if (Perf::State().m_nullPasses > 0)
+                                            {
+                                              Perf::RunNullPasses(renderer,
+                                                                  Perf::State().m_nullPasses > 1);
+                                            }
                                           }});
 
         g_running = g_running && g_game->m_currentState != PluginState::Stop;
