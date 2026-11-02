@@ -270,14 +270,25 @@ namespace ToolKit
       FramebufferPtr previous = renderer->GetFrameBuffer();
       renderer->SetFramebuffer(readBuffer, GraphicBitFields::None);
 
-      std::vector<ubyte> pixels(size_t(width) * size_t(height), 0);
+      // Read four channels, not the one the target holds. glReadPixels honours GL_PACK_ALIGNMENT,
+      // which defaults to 4, so a one byte per pixel read of a width that is not a multiple of four
+      // comes back with every row shifted by the padding: the image looks sheared, as if the pass
+      // had rendered through a wrong matrix, when the fault is in this readback. Four bytes per pixel
+      // are aligned whatever the width is.
+      std::vector<ubyte> rgba(size_t(width) * size_t(height) * 4, 0);
       renderer->GetBackend()->ReadPixels(0,
                                          0,
                                          width,
                                          height,
-                                         GraphicTypes::FormatRed,
+                                         GraphicTypes::FormatRGBA,
                                          GraphicTypes::TypeUnsignedByte,
-                                         pixels.data());
+                                         rgba.data());
+
+      std::vector<ubyte> pixels(size_t(width) * size_t(height), 0);
+      for (size_t i = 0, c = 0; i < pixels.size(); i++, c += 4)
+      {
+        pixels[i] = rgba[c];
+      }
 
       renderer->SetFramebuffer(previous, GraphicBitFields::None);
 
@@ -724,6 +735,13 @@ namespace ToolKit
         if (ssaoBias >= 0)
         {
           pps->SetSSAOBiasVal((float) ssaoBias / 1000.0f);
+        }
+
+        // Strength in hundredths: 100 leaves the map as it is, 200 doubles the darkening.
+        const int ssaoStrength = ReadIntProperty("debug.tk.ssaostrength", -1);
+        if (ssaoStrength >= 0)
+        {
+          pps->SetSSAOStrengthVal((float) ssaoStrength / 100.0f);
         }
 
         // Anti aliasing is a quality against frame time trade, so both halves of it are knobs: the
