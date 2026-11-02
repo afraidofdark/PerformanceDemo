@@ -6090,7 +6090,7 @@
 				<P t="3" name="BloomIterationCount" v="5"/>
 				<P t="10" name="GammaCorrectionEnabled" v="0"/>
 				<P t="2" name="Gamma" v="2.200000"/>
-				<P t="10" name="SSAOEnabled" v="0"/>
+				<P t="10" name="SSAOEnabled" v="1"/>
 				<P t="2" name="SSAORadius" v="1.000000"/>
 				<P t="2" name="SSAOBias" v="0.025000"/>
 				<P t="2" name="SSAOSpread" v="1.000000"/>
@@ -6102,7 +6102,7 @@
 						<2 valType="3" valName="32" v="32"/>
 					</List>
 				</P>
-				<P t="10" name="SSAOHalfResolution" v="0"/>
+				<P t="10" name="SSAOHalfResolution" v="1"/>
 				<P t="10" name="SSREnabled" v="0"/>
 				<P t="2" name="SSRIntensity" v="0.500000"/>
 				<P t="2" name="SSRMaxDistance" v="50.000000"/>
@@ -6115,7 +6115,7 @@
 				<P t="2" name="FocusPoint" v="10.500000"/>
 				<P t="2" name="FocusScale" v="1.500000"/>
 				<P t="3" name="DofBlurQuality" v="2"/>
-				<P t="10" name="FXAAEnabled" v="1"/>
+				<P t="10" name="FXAAEnabled" v="0"/>
 			</PB>
 		</Object>
 	</PostProcessingSettings>
