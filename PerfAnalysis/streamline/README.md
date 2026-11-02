@@ -122,6 +122,12 @@ before instruction count is.
 
 ## Resolution scaling, and the wall behind it
 
+**The three captures below were taken before the pak bug was fixed**, so they ran a two day old
+scene (SSAO on, the shadow terms still in the forward shader) and their fps column is not the
+project's any more. They are kept because the *shape* of the answer - stall shares that survive an 8x
+change in pixel count - is what they were taken for. The corrected baseline is under "Fresh
+baseline" below.
+
 `res99.apc`, `res65.apc` and `res35.apc` are the same counter set (clock, GPU active, fragment
 active, execution starvation, texture line fill, texture requests) captured at three render
 resolutions, one capture each, `debug.tk.res` set before the run. Same scene, same counters:
@@ -140,22 +146,54 @@ slides from 12 % to 9 %. The shader cores are waiting the same fraction of their
 how many pixels there are, so the fix is what a pixel fetches, not how many pixels are drawn.
 Resolution scaling buys frame rate by drawing the same stall fewer times.
 
-**At the project default the GPU is no longer the only limit.** 65 % puts the GPU at 70 % of a
-474 MHz clock while the frame still takes 44 ms, and the app's own probe puts 43 ms of that in the
-render path on the CPU. The capture's perf samples agree about where it goes:
+The CPU side of those same captures is further down: half the CPU samples sit in libc and the GL
+driver, which for this engine means buffer and uniform uploads plus draw submission - not scene
+traversal, culling or the profiler.
+
+## Fresh baseline (pak bug fixed)
+
+These are the numbers that describe the project as it is. Same six counters, one capture each,
+`debug.tk.res` set before the run, app freshly built from the current scene:
+
+| `debug.tk.res` | render target | GPU util | fragment active | starved | line fill | tex/cycle | clock | app |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 65 % (default) | 702x1443 | 85 % | 95 % | 73 % | 12 % | 4.31 | 524 MHz | 35.9 fps |
+| 100 % | 1080x2220 | 84 % | 97 % | 77 % | 12 % | 3.63 | 540 MHz | 16.5 fps |
+
+The frame is **GPU bound at 85 % of a clock that is nearly at its ceiling** (546 MHz on this part),
+the fragment stage owns 95-97 % of the shader cores, and at full resolution the present call blocks
+12.5 ms because the CPU has run ahead of the GPU - the plain signature of a gpu bound frame.
+
+The earlier reading of the same counters said 70 % and made this look CPU co-limited. It was the
+stale pak: the old scene ran SSAO and the shadow terms, which is more work *and* a different
+balance. With the corrected scene the CPU is not in the frame's way at all.
+
+`report-stall/timeline.csv` breaks the 77 % starvation down:
 
 ```
-<unknown code in libc.so>           42.6 % self samples
-<unknown code in libGLES_mali.so>   25.0 % self
-<unknown code in base.apk>          22.1 % self   (the game's own libmain.so)
-<unknown code in libart.so>          5.3 % self
+fragment active          95.7 % per core
+execution engine starved 77.2 % per core
+  texture line fill      22.3 %
+  texture partial data    3.0 %
+  texture coordinate      0.4 %
+varying interpolation     0.2 per gpu cycle
 ```
 
-Half the CPU samples are inside libc and the GL driver, which for this engine means buffer and
-uniform uploads plus draw submission - not scene traversal, culling or the profiler. The functions
-are unsymbolised because a local capture does not retrieve the device images; symbolising them needs
-the libraries pulled off the device (`/system/lib64/libc.so`, `libGLES_mali.so`, and the app's
-`libmain.so`) and pointed at from Streamline.
+The named texture stalls explain a third of the starvation. The rest has no counter of its own, and
+the offline compiler already said what it is: `../malioc/variant-costs.txt` reports the forward
+shader at **64 of 64 work registers and 80 bytes of spill** for every lighting variant. A shader at
+the register ceiling runs at the occupancy floor, so a stalled warp has nothing to switch to - which
+is exactly what "active but starved" looks like from the counters. Reducing live registers in the
+forward shader is the lever the two tools agree on; nothing in the variant table gets below 64
+registers, so no define fixes it.
+
+One lever that malioc predicted a win for, and did not deliver: `ShadowPCF 0` (-4 arithmetic,
+-12 texture requests on the variant table). Measured at 65 %: 32.1 fps against the 35.9 fps baseline,
+with util 87 %, starved 76 %, line fill 11 % - no gain, inside the difference the two runs show on
+their own. The reason is in `e732e14`: the shadow terms were taken out of the forward shader, so the
+define is dead code in this scene. `CascadeBlend` is already off in the shipped settings, so
+`forward-noblend` was the variant being measured all along.
+
 
 `report-res65-fn` is that profile; `fn-logon` / `fn-logoff` are the same capture with the app's own
 logging on and off, and they answer the question the probe raised about itself: libc goes 42.27 % to
