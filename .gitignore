@@ -6,6 +6,7 @@
 /Publish/
 /MinResources.pak
 /MinResources.pak.old
+/MinResources.pak.hash
 /TkAndroidBuild/
 
 # Android build state (NDK/CMake work dirs, Gradle caches, the packed asset copy).
@@ -15,6 +16,7 @@
 /Android/app/.cxx/
 /Android/local.properties
 /Android/app/src/main/assets/MinResources.pak
+/Android/app/src/main/assets/MinResources.pak.hash
 
 # Tooling and editor state.
 .vs/
