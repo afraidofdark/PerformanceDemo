@@ -1,5 +1,4 @@
 # SSAO: a pass that sampled an incomplete texture
-## Ambient occlusion: a pass that sampled an incomplete texture
 
 The occlusion term is multiplied into the ambient lighting before anything reaches the screen, so a
 broken map looks like "the frame got darker", never like a bug in a pass. This is what it took to
