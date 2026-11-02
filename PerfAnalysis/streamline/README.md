@@ -119,3 +119,47 @@ toggles said in `../stage1-bottleneck-report.md` (pixel count dominates, colour 
 sharpens it: the per-pixel cost is the dependent fetch chain of the forward shader, mostly texture
 cache misses, so mip/aniso selection, distinct textures per pixel and UV locality are the levers
 before instruction count is.
+
+## Resolution scaling, and the wall behind it
+
+`res99.apc`, `res65.apc` and `res35.apc` are the same counter set (clock, GPU active, fragment
+active, execution starvation, texture line fill, texture requests) captured at three render
+resolutions, one capture each, `debug.tk.res` set before the run. Same scene, same counters:
+
+| `debug.tk.res` | render target | GPU util | fragment active | starved | texture line fill | tex/cycle | clock | app |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 99 % | 1069x2198 | 84 % | 94 % | 69 % | 12 % | 3.79 | 457 MHz | 15.0 fps |
+| 65 % (default) | 702x1443 | 70 % | 91 % | 70 % | 10 % | 4.44 | 474 MHz | 22.5 fps |
+| 35 % | 378x777 | 68 % | 74 % | 62 % | 9 % | 4.32 | 344 MHz | 34.4 fps |
+
+Two things come out of it.
+
+**The stall profile is per pixel, not per frame.** Pixels drop 8x from the top row to the bottom one
+(2.35 Mpix to 0.29 Mpix) while execution starvation stays at 62-70 % and texture line fill only
+slides from 12 % to 9 %. The shader cores are waiting the same fraction of their cycles no matter
+how many pixels there are, so the fix is what a pixel fetches, not how many pixels are drawn.
+Resolution scaling buys frame rate by drawing the same stall fewer times.
+
+**At the project default the GPU is no longer the only limit.** 65 % puts the GPU at 70 % of a
+474 MHz clock while the frame still takes 44 ms, and the app's own probe puts 43 ms of that in the
+render path on the CPU. The capture's perf samples agree about where it goes:
+
+```
+<unknown code in libc.so>           42.6 % self samples
+<unknown code in libGLES_mali.so>   25.0 % self
+<unknown code in base.apk>          22.1 % self   (the game's own libmain.so)
+<unknown code in libart.so>          5.3 % self
+```
+
+Half the CPU samples are inside libc and the GL driver, which for this engine means buffer and
+uniform uploads plus draw submission - not scene traversal, culling or the profiler. The functions
+are unsymbolised because a local capture does not retrieve the device images; symbolising them needs
+the libraries pulled off the device (`/system/lib64/libc.so`, `libGLES_mali.so`, and the app's
+`libmain.so`) and pointed at from Streamline.
+
+### Caveat on the knob
+
+`debug.tk.res` in `Codes/PerfProbe.h` only applies when the value is not 100, so it cannot override
+a project default that is not 1.0 - the 99 % row above is how the full resolution case was measured
+after `res=100` silently kept the 65 % default.
+
