@@ -204,6 +204,10 @@ namespace ToolKit
       uint m_renderHeight  = 0;
 
       std::unordered_map<String, ProfilerEntry> m_profilerPrev;
+
+      /** Per pass gpu milliseconds, summed over the log window so the line reports an average. */
+      std::unordered_map<String, double> m_gpuPassSum;
+      uint m_gpuPassSamples = 0;
     };
 
     inline ProbeState& State()
@@ -805,6 +809,14 @@ namespace ToolKit
       // full frame of history behind it; 0 does nothing.
       s.m_ssaoDump       = ReadIntProperty("debug.tk.ssaodump", 0);
 
+      // Per pass gpu timing: every pass brackets itself with two timestamp queries and the results
+      // are reported next to the cpu times in the PROF dump.
+      const int passGpu = ReadIntProperty("debug.tk.passgpu", 0);
+      if (passGpu > 0)
+      {
+        TK_LOG("PERF pass gpu timing: %s.", Stats::EnablePassGpuTiming(true) ? "on" : "unavailable");
+      }
+
       // What the app ends up rendering with, not what a knob asked for: the project's settings file and
       // the scene both decide, and a run that does not say which msaa or fxaa it actually used is
       // impossible to compare against another.
@@ -890,6 +902,16 @@ namespace ToolKit
       }
 
       s.m_frameCount++;
+
+      // Accumulate the per pass gpu times for the window this frame belongs to.
+      {
+        const std::unordered_map<String, float> gpuTimes = Stats::GetPassGpuTimes();
+        for (const auto& [passName, ms] : gpuTimes)
+        {
+          s.m_gpuPassSum[passName] += (double) ms;
+        }
+        s.m_gpuPassSamples++;
+      }
       s.m_periodSum += (double) periodMs;
       s.m_workSum   += (double) workMs;
       s.m_swapSum   += (double) s.m_swapMs;
@@ -991,14 +1013,28 @@ namespace ToolKit
               continue;
             }
 
-            TK_LOG("PROF d%u %-34s inc %7.2f exc %7.2f ms/frame",
+            // The gpu time of the same scope, when per pass timing is on: a pass whose gpu time is
+            // far above its cpu time is waiting on the gpu, and the other way round.
+            TK_LOG("PROF d%u %-34s inc %7.2f exc %7.2f gpu %7.2f ms/frame",
                    entry.m_depth,
                    name.c_str(),
                    inclPerFrame,
-                   exclPerFrame);
+                   exclPerFrame,
+                   (double) Stats::GetPassGpuMs(name));
           }
 
           s.m_profilerPrev = std::move(current);
+
+          // Per pass gpu times, averaged over the same window the cpu numbers cover.
+          if (s.m_gpuPassSamples > 0)
+          {
+            for (const auto& [passName, sum] : s.m_gpuPassSum)
+            {
+              TK_LOG("PROFGPU %-30s %7.2f ms/frame", passName.c_str(), sum / (double) s.m_gpuPassSamples);
+            }
+          }
+          s.m_gpuPassSum.clear();
+          s.m_gpuPassSamples = 0;
         }
       }
 
