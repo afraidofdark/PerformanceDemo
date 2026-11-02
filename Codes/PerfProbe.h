@@ -465,6 +465,15 @@ namespace ToolKit
       // the post chain; the difference is what drawing the scene costs.
       s.m_shadow = ReadIntProperty("debug.tk.shadow", -1);
       s.m_mesh   = ReadIntProperty("debug.tk.mesh", -1);
+
+      // The shadow master switch. Unlike debug.tk.shadow, which clears the per light flags, this is
+      // the engine setting: the pass renders nothing and the shader is rebuilt without the sampling.
+      const int castShadow = ReadIntProperty("debug.tk.castshadow", -1);
+      if (castShadow >= 0)
+      {
+        GetEngineSettings().m_graphics->m_shadows->SetCastShadowVal(castShadow != 0);
+      }
+
       if (scene != nullptr && (s.m_shadow == 0 || s.m_mesh == 0))
       {
         for (const EntityPtr& entity : scene->GetEntities())

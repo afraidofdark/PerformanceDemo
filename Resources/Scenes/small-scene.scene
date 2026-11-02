@@ -20,7 +20,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_TrashBag_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -62,7 +62,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_TrashBag_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -121,7 +121,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_SatDish_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -163,7 +163,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_SatDish_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -205,7 +205,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Gutter_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -247,7 +247,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Tree_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -289,7 +289,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Tree_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -331,7 +331,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -373,7 +373,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -415,7 +415,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -457,7 +457,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -499,7 +499,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -541,7 +541,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -583,7 +583,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -625,7 +625,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -667,7 +667,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -709,7 +709,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Skip_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -751,7 +751,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -793,7 +793,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -835,7 +835,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -877,7 +877,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -919,7 +919,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -961,7 +961,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1003,7 +1003,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1045,7 +1045,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1087,7 +1087,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1129,7 +1129,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1171,7 +1171,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1213,7 +1213,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_PlanterWindow_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1255,7 +1255,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1297,7 +1297,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_PlanterWindow_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1339,7 +1339,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_PlanterWindow_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1381,7 +1381,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_PlanterWindow_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1423,7 +1423,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1465,7 +1465,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_PlanterWindow_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1507,7 +1507,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_End_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1549,7 +1549,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_Corner_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1591,7 +1591,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_End_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1633,7 +1633,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_Exhaust_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1675,7 +1675,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_End_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1717,7 +1717,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_Exhaust_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1759,7 +1759,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_Corner_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1801,7 +1801,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_Corner_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1843,7 +1843,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_Corner_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1885,7 +1885,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_Corner_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1927,7 +1927,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Road_Bare_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -1969,7 +1969,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Road_Bare_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2011,7 +2011,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Dip_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2053,7 +2053,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Roof_Access_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2095,7 +2095,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Road_Bare_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2137,7 +2137,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Road_Bare_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2179,7 +2179,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Shop_06.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2221,7 +2221,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Skylight_01_Glass.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2263,7 +2263,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Skylight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2305,7 +2305,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Skylight_01_Glass.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2347,7 +2347,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Prop_Skylight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2389,7 +2389,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2431,7 +2431,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2473,7 +2473,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_Corner_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2515,7 +2515,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2557,7 +2557,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Dip_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2599,7 +2599,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2641,7 +2641,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2683,7 +2683,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2725,7 +2725,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2767,7 +2767,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Dip_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2809,7 +2809,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2851,7 +2851,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2893,7 +2893,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2935,7 +2935,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -2977,7 +2977,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3019,7 +3019,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3061,7 +3061,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3103,7 +3103,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3145,7 +3145,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_Corner_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3187,7 +3187,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stack_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3229,7 +3229,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3271,7 +3271,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3313,7 +3313,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3355,7 +3355,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3397,7 +3397,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Roof_Access_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3439,7 +3439,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3481,7 +3481,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3523,7 +3523,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Roof_Access_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3565,7 +3565,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Tree_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3607,7 +3607,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Corner_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3649,7 +3649,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Tree_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3691,7 +3691,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Tree_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3733,7 +3733,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Planter_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3775,7 +3775,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Planter_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3817,7 +3817,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Planter_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3859,7 +3859,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Planter_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3901,7 +3901,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3943,7 +3943,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -3985,7 +3985,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4027,7 +4027,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4069,7 +4069,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4111,7 +4111,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4153,7 +4153,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4195,7 +4195,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4237,7 +4237,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Planter_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4279,7 +4279,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4321,7 +4321,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4363,7 +4363,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4405,7 +4405,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stack_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4447,7 +4447,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4489,7 +4489,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4531,7 +4531,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stack_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4573,7 +4573,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4615,7 +4615,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4657,7 +4657,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Planter_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4699,7 +4699,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4741,7 +4741,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4783,7 +4783,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4825,7 +4825,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Tree_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4867,7 +4867,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4909,7 +4909,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4951,7 +4951,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -4993,7 +4993,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5035,7 +5035,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5077,7 +5077,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_02.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5119,7 +5119,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5161,7 +5161,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5203,7 +5203,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5245,7 +5245,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5287,7 +5287,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5329,7 +5329,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5371,7 +5371,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5413,7 +5413,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5455,7 +5455,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5497,7 +5497,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5539,7 +5539,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5581,7 +5581,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5623,7 +5623,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5665,7 +5665,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5707,7 +5707,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5749,7 +5749,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5791,7 +5791,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Dip_Corner_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5833,7 +5833,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -5875,7 +5875,7 @@
 						<P t="12" name="Mesh">
 							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_03.mesh"/>
 						</P>
-						<P t="10" name="CastShadow" v="0"/>
+						<P t="10" name="CastShadow" v="1"/>
 					</PB>
 					<Component>
 						<MeshComponent/>
@@ -6047,7 +6047,7 @@
 			<P t="10" name="TransformLock" v="0"/>
 			<P t="5" name="Color" x="1.000000" y="1.000000" z="1.000000"/>
 			<P t="2" name="Intensity" v="3.800000"/>
-			<P t="10" name="CastShadow" v="0"/>
+			<P t="10" name="CastShadow" v="1"/>
 			<P t="2" name="ShadowBias" v="0.200000"/>
 			<P t="2" name="BleedingReduction" v="0.100000"/>
 		</PB>
