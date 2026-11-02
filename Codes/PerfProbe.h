@@ -58,10 +58,15 @@
 #include "Camera.h"
 #include "DirectionComponent.h"
 #include "EngineSettings.h"
+#include "ForwardSceneRenderPath.h"
+#include "Framebuffer.h"
+#include "GameRenderer.h"
+#include "Image.h"
 #include "Light.h"
 #include "MeshComponent.h"
 #include "RenderSystem.h"
 #include "Scene.h"
+#include "SsaoPass.h"
 #include "Stats.h"
 #include "Viewport.h"
 
@@ -192,6 +197,9 @@ namespace ToolKit
       int m_twoCameras     = 0;
       int m_twoCamerasAt   = 1;
 
+      /** Remaining frames of ambient occlusion map to write, see DumpSsaoMaps. */
+      int m_ssaoDump       = 0;
+
       uint m_renderWidth   = 0;
       uint m_renderHeight  = 0;
 
@@ -233,6 +241,206 @@ namespace ToolKit
     {
       const char* value = std::getenv(name);
       return value != nullptr ? std::atoi(value) : 0;
+    }
+
+    /**
+     * Reads one render target back and writes it as a single channel PNG into the app's data
+     * folder, next to the pak. A phone has no frame debugger attached by default, so a file is the
+     * only way to look at what a pass actually produced.
+     */
+    inline void DumpRenderTarget(Renderer* renderer, const RenderTargetPtr& target, const String& name)
+    {
+      if (renderer == nullptr || target == nullptr || target->m_width <= 0 || target->m_height <= 0)
+      {
+        return;
+      }
+
+      const int width  = target->m_width;
+      const int height = target->m_height;
+
+      FramebufferSettings settings;
+      settings.width           = width;
+      settings.height          = height;
+      settings.useDefaultDepth = false;
+
+      FramebufferPtr readBuffer = MakeNewPtr<Framebuffer>(settings, "DumpReadFB");
+      readBuffer->Init();
+      readBuffer->SetColorAttachment(Framebuffer::Attachment::ColorAttachment0, target);
+
+      FramebufferPtr previous = renderer->GetFrameBuffer();
+      renderer->SetFramebuffer(readBuffer, GraphicBitFields::None);
+
+      std::vector<ubyte> pixels(size_t(width) * size_t(height), 0);
+      renderer->GetBackend()->ReadPixels(0,
+                                         0,
+                                         width,
+                                         height,
+                                         GraphicTypes::FormatRed,
+                                         GraphicTypes::TypeUnsignedByte,
+                                         pixels.data());
+
+      renderer->SetFramebuffer(previous, GraphicBitFields::None);
+
+      // GL hands the rows back bottom up, a PNG wants the top row first.
+      const size_t rowBytes = size_t(width);
+      for (int y = 0; y < height / 2; y++)
+      {
+        ubyte* top    = pixels.data() + size_t(y) * rowBytes;
+        ubyte* bottom = pixels.data() + size_t(height - 1 - y) * rowBytes;
+        for (size_t i = 0; i < rowBytes; i++)
+        {
+          std::swap(top[i], bottom[i]);
+        }
+      }
+
+      const String file = ConcatPaths({ResourcePath(), "..", name});
+      if (WritePNG(file, width, height, 1, pixels.data(), 0) == 0)
+      {
+        TK_ERR("SSAO dump: could not write %s", file.c_str());
+        return;
+      }
+
+      TK_LOG("SSAO dump: wrote %s (%ix%i)", file.c_str(), width, height);
+    }
+
+    /**
+     * Reads one render target back as RGBA and writes it as a 4 channel PNG. For inputs that pack
+     * several signals per pixel - the ambient occlusion pass reads normal.xy and linear depth out of
+     * one RGBA16F target - so each channel can be looked at on its own.
+     */
+    inline void DumpTextureRgba(Renderer* renderer, const TexturePtr& target, const String& name)
+    {
+      if (renderer == nullptr || target == nullptr || target->m_width <= 0 || target->m_height <= 0)
+      {
+        return;
+      }
+
+      const int width  = target->m_width;
+      const int height = target->m_height;
+
+      FramebufferSettings settings;
+      settings.width           = width;
+      settings.height          = height;
+      settings.useDefaultDepth = false;
+
+      RenderTargetPtr renderTarget = Cast<RenderTarget>(target);
+      if (renderTarget == nullptr)
+      {
+        return;
+      }
+
+      FramebufferPtr readBuffer = MakeNewPtr<Framebuffer>(settings, "DumpReadFB");
+      readBuffer->Init();
+      readBuffer->SetColorAttachment(Framebuffer::Attachment::ColorAttachment0, renderTarget);
+
+      FramebufferPtr previous = renderer->GetFrameBuffer();
+      renderer->SetFramebuffer(readBuffer, GraphicBitFields::None);
+
+      const int channels        = 4;
+      std::vector<float> values(size_t(width) * size_t(height) * channels, 0.0f);
+      renderer->GetBackend()->ReadPixels(0,
+                                         0,
+                                         width,
+                                         height,
+                                         GraphicTypes::FormatRGBA,
+                                         GraphicTypes::TypeFloat,
+                                         values.data());
+
+      renderer->SetFramebuffer(previous, GraphicBitFields::None);
+
+      // The target is float, so the channels are reported as numbers first: a normal that packs to
+      // 0..1 and a depth in the scene's own units do not look the same, and the ranges say at once
+      // which one came back empty.
+      float minimum[channels] = {1e30f, 1e30f, 1e30f, 1e30f};
+      float maximum[channels] = {-1e30f, -1e30f, -1e30f, -1e30f};
+      for (size_t i = 0; i < values.size(); i += channels)
+      {
+        for (int c = 0; c < channels; c++)
+        {
+          minimum[c] = std::min(minimum[c], values[i + c]);
+          maximum[c] = std::max(maximum[c], values[i + c]);
+        }
+      }
+
+      TK_LOG("SSAO dump: %s ranges r[%.3f %.3f] g[%.3f %.3f] b[%.3f %.3f] a[%.3f %.3f]",
+             name.c_str(),
+             minimum[0],
+             maximum[0],
+             minimum[1],
+             maximum[1],
+             minimum[2],
+             maximum[2],
+             minimum[3],
+             maximum[3]);
+
+      // R and G are the packed normal, B a linear depth in the scene's own units: the depth is
+      // scaled to a hundred units so the gradient is visible instead of saturated.
+      std::vector<ubyte> pixels(size_t(width) * size_t(height) * channels, 0);
+      for (size_t i = 0, p = 0; i < values.size(); i += channels, p += channels)
+      {
+        pixels[p + 0] = (ubyte) (std::min(std::max(values[i + 0], 0.0f), 1.0f) * 255.0f);
+        pixels[p + 1] = (ubyte) (std::min(std::max(values[i + 1], 0.0f), 1.0f) * 255.0f);
+        pixels[p + 2] = (ubyte) (std::min(std::max(values[i + 2] / 100.0f, 0.0f), 1.0f) * 255.0f);
+        pixels[p + 3] = 255;
+      }
+
+      const size_t rowBytes = size_t(width) * channels;
+      for (int y = 0; y < height / 2; y++)
+      {
+        ubyte* top    = pixels.data() + size_t(y) * rowBytes;
+        ubyte* bottom = pixels.data() + size_t(height - 1 - y) * rowBytes;
+        for (size_t i = 0; i < rowBytes; i++)
+        {
+          std::swap(top[i], bottom[i]);
+        }
+      }
+
+      const String file = ConcatPaths({ResourcePath(), "..", name});
+      if (WritePNG(file, width, height, channels, pixels.data(), 0) == 0)
+      {
+        TK_ERR("SSAO dump: could not write %s", file.c_str());
+        return;
+      }
+
+      TK_LOG("SSAO dump: wrote %s (%ix%i)", file.c_str(), width, height);
+    }
+
+    /**
+     * Writes the ambient occlusion maps the pass produced.
+     *
+     * The occlusion is multiplied into the lighting before anything reaches the screen, so a wrong
+     * map only shows up as "the scene got darker". This pulls both targets out - the raw pass output
+     * and the blurred one the forward pass samples - so the map itself can be looked at.
+     */
+    inline void DumpSsaoMaps(Renderer* renderer, GameRenderer* gameRenderer)
+    {
+      if (renderer == nullptr || gameRenderer == nullptr)
+      {
+        return;
+      }
+
+      auto path = std::static_pointer_cast<ForwardSceneRenderPath>(gameRenderer->GetSceneRenderPath());
+      if (path == nullptr || path->m_ssaoPass == nullptr)
+      {
+        TK_LOG("SSAO dump: the scene path has no ssao pass.");
+        return;
+      }
+
+      DumpRenderTarget(renderer, path->m_ssaoPass->GetRawSsaoTarget(), "ssao_raw.png");
+      DumpRenderTarget(renderer, path->m_ssaoPass->m_ssaoTexture, "ssao_blur.png");
+
+      // The pass's input, so a map that shows nothing can be told apart from an input that carries
+      // nothing: R and G are the packed normal, B the linear depth.
+      TexturePtr normalDepth = path->m_ssaoPass->m_params.GNormalDepthBuffer;
+      if (normalDepth != nullptr && normalDepth->IsMultiSampled())
+      {
+        normalDepth = normalDepth->GetResolvedTexture();
+      }
+
+      if (normalDepth != nullptr)
+      {
+        DumpTextureRgba(renderer, normalDepth, "ssao_normaldepth.png");
+      }
     }
 
     /** Accumulates every scope of one frame's profiler tree into name keyed
@@ -503,6 +711,21 @@ namespace ToolKit
           pps->SetSSAOEnabledVal(s.m_ssao != 0);
         }
 
+        // SSAO scale knobs, for the case where the map comes out as a flat veil instead of corner
+        // darkening. Radius is in the scene's own units; bias is given in thousandths so it stays an
+        // integer property.
+        const int ssaoRadius = ReadIntProperty("debug.tk.ssaoradius", -1);
+        if (ssaoRadius >= 0)
+        {
+          pps->SetSSAORadiusVal((float) ssaoRadius);
+        }
+
+        const int ssaoBias = ReadIntProperty("debug.tk.ssaobias", -1);
+        if (ssaoBias >= 0)
+        {
+          pps->SetSSAOBiasVal((float) ssaoBias / 1000.0f);
+        }
+
         // Anti aliasing is a quality against frame time trade, so both halves of it are knobs: the
         // sample count on the render target (msaa) and the post pass that costs a full screen shader
         // instead (fxaa). Which one a project wants is a look decision that needs the numbers.
@@ -559,6 +782,10 @@ namespace ToolKit
       // ReadIntProperty answers with its fallback there.
       s.m_twoCameras     = ReadIntProperty("debug.tk.twocam", ReadEnvInt("TK_TWOCAM"));
       s.m_twoCamerasAt   = ReadIntProperty("debug.tk.twocamframe", 1);
+
+      // Frames of ambient occlusion map to write out, see DumpSsaoMaps. Two frames so the map has a
+      // full frame of history behind it; 0 does nothing.
+      s.m_ssaoDump       = ReadIntProperty("debug.tk.ssaodump", 0);
 
       // What the app ends up rendering with, not what a knob asked for: the project's settings file and
       // the scene both decide, and a run that does not say which msaa or fxaa it actually used is

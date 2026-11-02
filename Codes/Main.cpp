@@ -246,6 +246,14 @@ namespace ToolKit
                                             const double start = Perf::NowMs();
                                             g_gameRenderer->Render(renderer);
                                             Perf::SetRenderCpuMs((float) (Perf::NowMs() - start));
+
+                                            // debug.tk.ssaodump: pull the ambient occlusion maps out
+                                            // as PNGs, one file per frame requested.
+                                            if (Perf::State().m_ssaoDump > 0)
+                                            {
+                                              Perf::State().m_ssaoDump--;
+                                              Perf::DumpSsaoMaps(renderer, g_gameRenderer);
+                                            }
                                           }});
 
         g_running = g_running && g_game->m_currentState != PluginState::Stop;
