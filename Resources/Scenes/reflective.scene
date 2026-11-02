@@ -1,0 +1,6168 @@
+<S name="reflective" version="v0.5.1">
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="17050534395590181954"/>
+			<P t="9" name="Name" v="SM_Prop_TrashBag_13"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="17.999998" y="0.351103" z="-40.499996"/>
+				<R x="0.000000" y="0.327136" z="0.000000" w="0.944977"/>
+				<S x="1.000001" y="1.000000" z="1.000001"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="15747020537647007167"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_TrashBag_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="17766008404155053803"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="13831398973291082306"/>
+			<P t="9" name="Name" v="SM_Prop_TrashBag_12"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="18.500000" y="0.351054" z="-40.499996"/>
+				<R x="0.000000" y="0.146098" z="0.000000" w="0.989270"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="12572842578596633241"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_TrashBag_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="10216325902280077308"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="4073899658046045170"/>
+			<P t="9" name="Name" v="Cars"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="0.000000" y="0.000000" z="0.000000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca/>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="5645654059958828141"/>
+			<P t="9" name="Name" v="SM_Prop_SatDish_21"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000003" y="11.351078" z="-20.000000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="1357510670103175081"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_SatDish_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="9563606407238026579"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="8616969020035196360"/>
+			<P t="9" name="Name" v="SM_Prop_SatDish_22"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="34.500000" y="12.351063" z="-24.999998"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="11961440634300105759"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_SatDish_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="16024805008683030598"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="4101602566274436204"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Gutter_06"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="4.999998" y="0.351054" z="-35.000000"/>
+				<R x="0.000000" y="-0.707105" z="0.000000" w="0.707108"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="2447818327583684277"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Gutter_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="2656399141857044759"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="3289380517675579820"/>
+			<P t="9" name="Name" v="SM_Env_Tree_42"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="0.851057" z="-17.000002"/>
+				<R x="0.000000" y="0.591729" z="0.000000" w="0.806137"/>
+				<S x="1.000001" y="1.000000" z="1.000001"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="12594758325500618265"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Tree_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="2607393192879728728"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7867075430057532632"/>
+			<P t="9" name="Name" v="SM_Env_Tree_41"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="12.000001" y="0.851057" z="-40.000000"/>
+				<R x="0.000000" y="0.885846" z="0.000000" w="0.463979"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="9125767193168208449"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Tree_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="14461220204549662054"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="18105030277630617970"/>
+			<P t="9" name="Name" v="SM_Bld_FireEscape_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="6148090671039999770">
+			<N is="1">
+				<T x="-0.000004" y="-6.000018" z="-0.000017"/>
+				<R x="0.000000" y="-0.000000" z="0.000000" w="1.000000"/>
+				<S x="0.999921" y="1.000000" z="0.999922"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="16065699630646952300"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="12323886821099586865"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7454063262424837695"/>
+			<P t="9" name="Name" v="SM_Bld_FireEscape_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="6148090671039999770">
+			<N is="1">
+				<T x="-0.000004" y="-2.999995" z="-0.000017"/>
+				<R x="0.000000" y="-0.000000" z="0.000000" w="1.000000"/>
+				<S x="0.999921" y="1.000000" z="0.999922"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="14990758744326749752"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="14963061629479729266"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="6148090671039999770"/>
+			<P t="9" name="Name" v="SM_Bld_FireEscape_76"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="24.999998" y="9.351070" z="-30.099998"/>
+				<R x="0.000000" y="0.707109" z="0.000000" w="0.707105"/>
+				<S x="0.999995" y="1.000000" z="0.999993"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="1043431250346913287"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="7308134077973854109"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="14499128658012662814"/>
+			<P t="9" name="Name" v="SM_Bld_FireEscape_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="6582596744543183971">
+			<N is="1">
+				<T x="-0.000017" y="-5.999993" z="0.000034"/>
+				<R x="0.000000" y="-0.000000" z="0.000000" w="1.000000"/>
+				<S x="0.999921" y="1.000000" z="0.999922"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="3704040513605039730"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="14101262407912374893"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="5573222851330757475"/>
+			<P t="9" name="Name" v="SM_Bld_FireEscape_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="6582596744543183971">
+			<N is="1">
+				<T x="-0.000017" y="-2.999970" z="0.000034"/>
+				<R x="0.000000" y="-0.000000" z="0.000000" w="1.000000"/>
+				<S x="0.999921" y="1.000000" z="0.999922"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="8434145998378842619"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="12511046415853247611"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="6582596744543183971"/>
+			<P t="9" name="Name" v="SM_Bld_FireEscape_77"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="7.851059" z="-20.000000"/>
+				<R x="0.000000" y="0.707109" z="0.000000" w="0.707105"/>
+				<S x="0.999995" y="1.000000" z="0.999993"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="9391065561734155664"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="6488288206037574125"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="11381792839198079150"/>
+			<P t="9" name="Name" v="SM_Bld_FireEscape_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="13942062437400587463">
+			<N is="1">
+				<T x="-0.000002" y="-5.999977" z="-0.000004"/>
+				<R x="0.000000" y="0.000001" z="0.000000" w="1.000000"/>
+				<S x="0.999992" y="1.000000" z="0.999992"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="6670415207327616693"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="16715613041739647113"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="6376999952339213043"/>
+			<P t="9" name="Name" v="SM_Bld_FireEscape_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="13942062437400587463">
+			<N is="1">
+				<T x="-0.000002" y="-2.999968" z="-0.000004"/>
+				<R x="0.000000" y="0.000001" z="0.000000" w="1.000000"/>
+				<S x="0.999992" y="1.000000" z="0.999992"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="2690551629528237667"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="14225894878668473856"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="13942062437400587463"/>
+			<P t="9" name="Name" v="SM_Bld_FireEscape_75"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000000" y="7.851059" z="-30.000000"/>
+				<R x="0.000000" y="-0.707105" z="0.000000" w="0.707108"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="9470849056114111023"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_FireEscape_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="4429420776920316793"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="2643943952154667884"/>
+			<P t="9" name="Name" v="SM_Prop_Skip_22"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="16.439999" y="0.251055" z="-40.900002"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000002"/>
+				<S x="1.000001" y="1.000000" z="1.000001"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="9007062614900259970"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Skip_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="4241454214053805252"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="13701117410902442984"/>
+			<P t="9" name="Name" v="SM_Prop_Aircon_151"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="24.860004" y="9.471050" z="-34.090000"/>
+				<R x="0.000000" y="0.707109" z="0.000000" w="0.707105"/>
+				<S x="0.999995" y="1.000000" z="0.999993"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="12115992352836999606"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="3901154611733057708"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="1145634825867271684"/>
+			<P t="9" name="Name" v="SM_Prop_Aircon_150"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="24.858995" y="6.834057" z="-34.088997"/>
+				<R x="0.000000" y="0.707109" z="0.000000" w="0.707105"/>
+				<S x="0.999995" y="1.000000" z="0.999993"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="11724854596579632137"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="2131010428023042862"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="8873798849334665611"/>
+			<P t="9" name="Name" v="SM_Prop_Aircon_149"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="30.840000" y="6.798046" z="-29.693005"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000002"/>
+				<S x="1.000001" y="1.000000" z="1.000001"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="15412161337205616132"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="8999846329626915523"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7442323633495780393"/>
+			<P t="9" name="Name" v="SM_Prop_Aircon_148"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="30.840000" y="3.466049" z="-29.693005"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000002"/>
+				<S x="1.000001" y="1.000000" z="1.000001"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="10083621120649673959"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="1074103910900760284"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="15601513016973545300"/>
+			<P t="9" name="Name" v="SM_Prop_Aircon_147"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="19.139997" y="5.341061" z="-39.750000"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000002"/>
+				<S x="1.000001" y="1.000000" z="1.000001"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="8325832917061815411"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="56547603057194135"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="6066013131611550251"/>
+			<P t="9" name="Name" v="SM_Prop_Aircon_146"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="19.139997" y="8.361069" z="-39.750000"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000002"/>
+				<S x="1.000001" y="1.000000" z="1.000001"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="2145302373451351881"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="10050028190318807562"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="11606449851430180982"/>
+			<P t="9" name="Name" v="SM_Prop_Aircon_145"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.379993" y="8.361069" z="-35.879997"/>
+				<R x="0.000000" y="-0.707105" z="0.000000" w="0.707108"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="13926061026858372288"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="14239097161634139087"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="14974959813226197409"/>
+			<P t="9" name="Name" v="SM_Prop_Aircon_144"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.379993" y="5.341061" z="-35.879997"/>
+				<R x="0.000000" y="-0.707105" z="0.000000" w="0.707108"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="6560548917132620611"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="17361988503085489482"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="15664667705908862431"/>
+			<P t="9" name="Name" v="SM_Prop_Aircon_143"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.379978" y="4.961060" z="-22.500000"/>
+				<R x="0.000000" y="-0.707105" z="0.000000" w="0.707108"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="11556361964639221906"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="3085325534680221767"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="11679521195799853192"/>
+			<P t="9" name="Name" v="SM_Prop_Aircon_142"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.379978" y="8.261078" z="-22.500000"/>
+				<R x="0.000000" y="-0.707105" z="0.000000" w="0.707108"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="13676795855680772268"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="7553875431122760857"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="13226336888891486943"/>
+			<P t="9" name="Name" v="SM_Prop_Aircon_141"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="32.500000" y="8.351074" z="-20.288998"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="5370610732793841764"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="5811055797601571346"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="2545973027376198286"/>
+			<P t="9" name="Name" v="SM_Prop_PlanterWindow_99"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="34.094002" y="8.364075" z="-19.993994"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="11865224623055690370"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_PlanterWindow_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="2692029835885560636"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="8166163439340573528"/>
+			<P t="9" name="Name" v="SM_Prop_Aircon_140"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="32.500000" y="5.351055" z="-20.288998"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="2680529623876602877"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="11268726890627205719"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="15706093007596557914"/>
+			<P t="9" name="Name" v="SM_Prop_PlanterWindow_98"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="17.486000" y="5.028061" z="-19.991001"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="11607076397673883747"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_PlanterWindow_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="12862881487282663492"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="8740728440317737432"/>
+			<P t="9" name="Name" v="SM_Prop_PlanterWindow_97"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="29.370998" y="8.546066" z="-19.959002"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="15110618724437573786"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_PlanterWindow_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="10226640776259790891"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="11574715765632500747"/>
+			<P t="9" name="Name" v="SM_Prop_PlanterWindow_96"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="30.850002" y="5.391064" z="-19.979998"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="9777075421409691456"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_PlanterWindow_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="5244664628396153074"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="4482246537496794374"/>
+			<P t="9" name="Name" v="SM_Prop_Aircon_139"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="24.121002" y="8.341049" z="-20.386997"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="15354417546534606699"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Aircon_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="9070771761505116819"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="2479479622732416717"/>
+			<P t="9" name="Name" v="SM_Prop_PlanterWindow_95"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="19.082005" y="8.356064" z="-19.966000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="5723578704954197157"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_PlanterWindow_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="9358727700868479201"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="1857981824998357961"/>
+			<P t="9" name="Name" v="SM_Prop_Vents_End_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="9074492351685466065">
+			<N is="1">
+				<T x="0.000004" y="0.000059" z="0.000008"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000003"/>
+				<S x="0.999993" y="1.000000" z="0.999994"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="6275023869477632070"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_End_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="6358495255766106945"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="9074492351685466065"/>
+			<P t="9" name="Name" v="SM_Prop_Vents_Corner_11"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="20.999994" y="12.851070" z="-35.500000"/>
+				<R x="0.000000" y="0.707109" z="0.000000" w="0.707105"/>
+				<S x="0.999995" y="1.000000" z="0.999993"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="1482916330411156117"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_Corner_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="1223005757602059964"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="10327151843084049160"/>
+			<P t="9" name="Name" v="SM_Prop_Vents_End_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="15137577642853681360">
+			<N is="1">
+				<T x="-0.000008" y="0.000059" z="0.000008"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000003"/>
+				<S x="0.999993" y="1.000000" z="0.999994"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="5483094915911061679"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_End_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="513312937924809331"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="15137577642853681360"/>
+			<P t="9" name="Name" v="SM_Prop_Vents_Exhaust_26"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="32.500000" y="12.851070" z="-29.000000"/>
+				<R x="0.000000" y="0.707109" z="0.000000" w="0.707105"/>
+				<S x="0.999995" y="1.000000" z="0.999993"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="740056714677445423"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_Exhaust_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="17875691921838719344"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="5465133942926827580"/>
+			<P t="9" name="Name" v="SM_Prop_Vents_End_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="7798301358359895924">
+			<N is="1">
+				<T x="-0.000315" y="0.000089" z="0.000553"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="0.999980" y="1.000000" z="0.999980"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="1181387725530118705"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_End_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="1876000306978135138"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="9686107533752913743"/>
+			<P t="9" name="Name" v="SM_Prop_Vents_Exhaust_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="7798301358359895924">
+			<N is="1">
+				<T x="-2.500011" y="0.000089" z="2.500021"/>
+				<R x="0.000000" y="-0.707105" z="0.000000" w="0.707108"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="17735391612759931785"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_Exhaust_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="7708133176383138635"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7798301358359895924"/>
+			<P t="9" name="Name" v="SM_Prop_Vents_Corner_12"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="17.999998" y="11.351078" z="-25.000000"/>
+				<R x="0.000000" y="-0.707105" z="0.000000" w="0.707108"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="6493597841947744247"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Vents_Corner_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="2538245577998873083"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="13428617481405731840"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Roof_Corner_14"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="10.851063" z="-20.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="0.707107"/>
+				<S x="0.999994" y="1.000000" z="0.999994"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="17765912699586825220"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_Corner_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="17187918377943883004"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="9433210201001568214"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Roof_Corner_13"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000002" y="10.851063" z="-40.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="13835228535919642483"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_Corner_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="18242755910015396669"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="1671464701084960916"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Roof_Corner_15"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000003" y="10.851063" z="-20.000000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="17149523813902632647"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_Corner_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="14416615914101092985"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="3152727822442111686"/>
+			<P t="9" name="Name" v="SM_Env_Road_Bare_09"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="39.999992" y="0.351054" z="-35.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="0.707107"/>
+				<S x="0.999994" y="1.000000" z="0.999994"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="12877934048458938033"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Road_Bare_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="485077419369553278"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_Road_01.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="6543347016746657453"/>
+			<P t="9" name="Name" v="SM_Env_Road_Bare_19"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="0.351054" z="-45.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="7081666529871525163"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Road_Bare_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="4218212589690651334"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_Road_01.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="15295199101449226797"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Dip_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="0.351054" z="-35.000000"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="17558314203123231116"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Dip_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="13564034053280871173"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="9843894307822502658"/>
+			<P t="9" name="Name" v="SM_Bld_Roof_Access_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="23.000008" y="12.851070" z="-32.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="4494961120562101055"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Roof_Access_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="16866670001979975451"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="11750271280776664535"/>
+			<P t="9" name="Name" v="SM_Env_Road_Bare_11"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="29.999998" y="0.351054" z="-40.000000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="6533096224089571810"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Road_Bare_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="3356717459809334208"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_Road_01.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="2644051602050289959"/>
+			<P t="9" name="Name" v="SM_Env_Road_Bare_10"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="30.000000" y="0.351054" z="-35.000000"/>
+				<R x="0.000000" y="0.000001" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="14105911018937757188"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Road_Bare_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="12952899022944789831"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_Road_01.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="9881826370721300339"/>
+			<P t="9" name="Name" v="SM_Bld_Shop_06"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="0.351054" z="-29.999998"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="6607689934461330307"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Shop_06.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="6242117924371301745"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="496257493167402783"/>
+			<P t="9" name="Name" v="SM_Prop_Skylight_01_Glass"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="9834582363897108451">
+			<N is="1">
+				<T x="-0.000031" y="0.000012" z="0.000164"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="2692349965908498401"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Skylight_01_Glass.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="18066822553456105579"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Glass_Mat.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="9834582363897108451"/>
+			<P t="9" name="Name" v="SM_Prop_Skylight_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="17.329990" y="11.359058" z="-23.219999"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="12480290387187385332"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Skylight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="3769321826962592241"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="3311310462171292"/>
+			<P t="9" name="Name" v="SM_Prop_Skylight_01_Glass"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="12196340057864069258">
+			<N is="1">
+				<T x="-0.000057" y="0.000012" z="0.000303"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="6393572414352572485"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Skylight_01_Glass.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="3945968893948116256"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Glass_Mat.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="12196340057864069258"/>
+			<P t="9" name="Name" v="SM_Prop_Skylight_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="17.329998" y="11.359058" z="-21.110001"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="8224479479490248350"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Prop_Skylight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="3947189855122215897"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="1985705746269266990"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Roof_06"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="24.999998" y="12.351063" z="-30.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="0.707107"/>
+				<S x="0.999994" y="1.000000" z="0.999994"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="4646055899548518629"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="5599228188840947642"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="3557299889789938929"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_08"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="9.351070" z="-25.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="0.707107"/>
+				<S x="0.999994" y="1.000000" z="0.999994"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="13363158637290212580"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="9524244668128585420"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="382378417355164979"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Roof_Corner_04"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="12.351063" z="-40.000000"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="4864871069243435023"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_Corner_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="11990476442821217667"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7705307958929719319"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_14"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="6.351055" z="-29.999998"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="17675671175030004372"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="16882534668208099190"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="2249880368573998029"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Dip_Corner_06"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="0.351054" z="-10.000000"/>
+				<R x="0.000000" y="-0.000004" z="0.000000" w="1.000000"/>
+				<S x="1.000001" y="1.000000" z="1.000001"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="9094989617220537343"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Dip_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="2076035046361911541"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_04_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="11590846943094784944"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_44"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="30.000000" y="0.351054" z="-35.000000"/>
+				<R x="0.000000" y="0.707111" z="0.000000" w="0.707103"/>
+				<S x="0.999989" y="1.000000" z="0.999989"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="3086854018539347008"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="6532978094910931916"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="9277754660476776395"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Corner_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="30.000000" y="0.351054" z="-45.000004"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="10506218532740306377"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="133600743067326028"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_04_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="1588810662077653584"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_43"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="0.351054" z="-45.000004"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000006"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="438817369672090879"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="5156650161261608264"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="16199307619231195830"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_42"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="20.000004" y="0.351054" z="-45.000000"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000006"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="13722737194995386277"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="12966196979908409854"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="8996463497535110684"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Dip_Corner_05"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="9.999995" y="0.351054" z="-45.000004"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="0.000004"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="2417361028105767435"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Dip_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="3119436525764523543"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_04_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="17025348228938577897"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="24.999998" y="6.351055" z="-30.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="0.707107"/>
+				<S x="0.999994" y="1.000000" z="0.999994"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="4328883993248897926"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="4955452220329620478"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="15056176951766254788"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_07"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="24.999998" y="9.351070" z="-30.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="0.707107"/>
+				<S x="0.999994" y="1.000000" z="0.999994"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="8574716673133938689"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="10266283077103856420"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="3492381083284421873"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="24.999998" y="3.351063" z="-30.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="0.707107"/>
+				<S x="0.999994" y="1.000000" z="0.999994"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="15700488144154937727"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="15826745428906263141"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="11558301825504851322"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Corner_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="39.999992" y="0.351054" z="-35.000000"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="12497578274988305123"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="15921876260451820219"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_04_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="6413633487958550637"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_05"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000002" y="7.851059" z="-40.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="13387035093287342778"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="11137140209774395884"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="13167488124700509048"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_48"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="39.999992" y="0.351054" z="-15.000000"/>
+				<R x="0.000000" y="0.707111" z="0.000000" w="0.707103"/>
+				<S x="0.999989" y="1.000000" z="0.999989"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="6592728460610611102"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="4265004168772343391"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="1599539195642730326"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Roof_07"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="29.999996" y="12.351063" z="-29.999996"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="11300605018030847095"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="15207084948611289976"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="14738246500692968548"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Roof_Corner_06"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="19.999992" y="12.351063" z="-25.000000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="1274976622601486883"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="14421178586655409267"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="12357879218996128727"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Roof_Corner_05"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="12.351063" z="-29.999998"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="6548055967530383013"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_Corner_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="1925331668273267223"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="16171592111618515231"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stack_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="29.999996" y="3.351063" z="-29.999996"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="6750059292627872483"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stack_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="6876159504651758952"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_04_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="1094385950039471743"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Door_07"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="29.999996" y="0.351054" z="-29.999996"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="8086896910605449873"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="11990251672111772799"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_04_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7254800381155411861"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_13"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="3.351063" z="-29.999998"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="7784957416039998892"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="13513791987062558008"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7560290794937791647"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_12"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="9.351070" z="-29.999998"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="1478932952463629182"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="9217867901578797119"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7359808299377771497"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_11"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="1.851059" z="-20.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="0.707107"/>
+				<S x="0.999994" y="1.000000" z="0.999994"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="13879193016814183112"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="3483007684906322367"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_03_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="14940064059302467573"/>
+			<P t="9" name="Name" v="SM_Bld_Roof_Access_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="17.999998" y="11.351078" z="-38.000000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="15510231972172074063"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Roof_Access_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="2569095771565522301"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="6889692944731098613"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_10"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="4.851074" z="-20.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="0.707107"/>
+				<S x="0.999994" y="1.000000" z="0.999994"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="11783073989601459065"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="16833286330243610983"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_03_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="11653864034614462603"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_09"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="7.851059" z="-20.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="0.707107"/>
+				<S x="0.999994" y="1.000000" z="0.999994"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="156023536751986802"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="5153801817167686336"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_03_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="6085596404786423235"/>
+			<P t="9" name="Name" v="SM_Bld_Roof_Access_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="28.500000" y="11.351078" z="-23.499998"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="11240687829196548319"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Roof_Access_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="10610998512792176283"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="17193914809628189210"/>
+			<P t="9" name="Name" v="SM_Env_Tree_05"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="0.851057" z="-17.000000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="281673317202821365"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Tree_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="5144749866805401385"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="1239235906031915713"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Corner_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="30.000000" y="0.351054" z="-35.000000"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="7235760522179113356"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Corner_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="7103910590243125606"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_04_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="350304340647174691"/>
+			<P t="9" name="Name" v="SM_Env_Tree_04"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="29.999996" y="0.851057" z="-16.499998"/>
+				<R x="0.000000" y="-0.635223" z="0.000000" w="0.772329"/>
+				<S x="1.000001" y="1.000000" z="1.000001"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="14544308797663682275"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Tree_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="11680999680695005089"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="9651032777606264578"/>
+			<P t="9" name="Name" v="SM_Env_Tree_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="19.999996" y="0.851057" z="-16.499996"/>
+				<R x="0.000000" y="0.581203" z="0.000000" w="0.813759"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="14594360134390023962"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Tree_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="2630274476863373961"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="5783252973227702500"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stairs_Planter_04"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="29.999998" y="0.351054" z="-14.999998"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="10263219171967106182"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Planter_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="3072927951932790319"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="3100627722044052161"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stairs_Planter_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="0.351054" z="-15.000000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="5270428903545767763"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Planter_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="6951778766399220286"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="6974179132495363536"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stairs_Planter_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="19.999994" y="0.351054" z="-14.999996"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="12288186640906675152"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Planter_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="7116067542372226194"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="12064477341206178706"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stairs_Planter_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="9.999999" y="0.351054" z="-15.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="14726541200977646325"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Planter_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="17161259170602360926"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="6302363981861689540"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Door_04"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="24.999998" y="0.351054" z="-30.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="0.707107"/>
+				<S x="0.999995" y="1.000000" z="0.999995"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="1254769073423287268"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="11587096319598667006"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7700586337054627395"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stairs_05"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="0.351054" z="-15.000000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="3438293175147175386"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="8667720574106254138"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7199568460292638674"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_08"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="9.351070" z="-40.000000"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="4908323829716405661"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="9573670048894165018"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_02_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="4546900252185452289"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_07"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="6.351055" z="-40.000000"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="20384354232600306"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="13760057296563443079"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_02_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="17227094255296048594"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_06"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="3.351063" z="-40.000000"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="10497358653780109051"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="4104361149787711827"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_02_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="3922441035638441725"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Door_Corner_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="0.351054" z="-40.000000"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000001"/>
+				<S x="1.000002" y="1.000000" z="1.000002"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="4395259696885714650"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="17582931209160665871"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_02_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="17633086472712549373"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Roof_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000000" y="10.851063" z="-35.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="4187211764319551007"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="25093142913936184"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="3582340292596139326"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_06"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="7.851059" z="-19.999998"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="12265449813102205098"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="6443981632792202386"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7834580251697074652"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stairs_Planter_06"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="35.000000" y="0.351054" z="-14.999996"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="3692446807521053528"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Planter_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="9836359360858542263"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="14838435597783570234"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_05"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="4.851074" z="-19.999998"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="343031496057256864"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="7164400415986480326"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="9041726680134522354"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_04"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000002" y="4.851074" z="-40.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="904006148080325876"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="6401731949088340568"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="13076575466244449177"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000002" y="1.851059" z="-40.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="18111995575876360409"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="8538755143639057801"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="11853218092718900836"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stack_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000000" y="1.851059" z="-30.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="18441936435188132693"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stack_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="7445806139594505505"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7544052189054300242"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_47"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="39.999992" y="0.351054" z="-20.000000"/>
+				<R x="0.000000" y="0.707111" z="0.000000" w="0.707103"/>
+				<S x="0.999989" y="1.000000" z="0.999989"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="6539890860370652981"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="15953395040843187937"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="5894049346874112731"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_46"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="39.999992" y="0.351054" z="-25.000000"/>
+				<R x="0.000000" y="0.707111" z="0.000000" w="0.707103"/>
+				<S x="0.999989" y="1.000000" z="0.999989"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="14417325266758206835"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="10532647829719989368"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="9707943997526471440"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stack_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="19.999998" y="1.851059" z="-19.999996"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="2415954393271000273"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stack_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="3917884093729110368"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="16940113358387779981"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Door_06"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000002" y="-1.148947" z="-40.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="1029600864396588762"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="5977835012464771689"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7005775742824804121"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Door_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="1.851059" z="-19.999998"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="393183017838089096"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="6434355376013839968"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="73684599738549687"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stairs_Planter_05"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="10.000002" y="0.351054" z="-40.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="1686870297827071664"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Planter_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="11371002336541526049"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="15955788988686062968"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Door_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000000" y="-1.148947" z="-30.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="4487814014063009786"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="854457633980716922"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="12285773060115362144"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_41"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000004" y="0.351054" z="-45.000004"/>
+				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000006"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="8606563434465893274"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="9175196276911431733"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="2188369672126644743"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_31"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="29.999998" y="0.351054" z="-10.000000"/>
+				<R x="0.000000" y="0.000005" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="1954112198666967054"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="17448618164892622365"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="12223736607656691400"/>
+			<P t="9" name="Name" v="SM_Env_Tree_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="11.500000" y="-0.148945" z="-16.500000"/>
+				<R x="0.000000" y="0.959430" z="0.000000" w="0.281946"/>
+				<S x="1.000014" y="1.000000" z="1.000014"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="13321652016336044618"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Tree_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="12359577654383094763"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="2132752523803667900"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_15"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="4.999990" y="0.351054" z="-29.999996"/>
+				<R x="0.000000" y="-0.707102" z="0.000000" w="0.707111"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="3874149794727846184"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="12462096780468501530"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="4928194040638403734"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Roof_05"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="25.000000" y="10.851063" z="-19.999998"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="11396630094865037882"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="11082988986271205503"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="11853325822095148569"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Roof_04"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="19.999998" y="10.851063" z="-19.999996"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="15895937606173270305"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="4145938164387174370"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="15307112521485245655"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Roof_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000000" y="10.851063" z="-30.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="11720277324978586731"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Roof_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="6536024965923646462"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="13928586047952551724"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000003" y="7.851059" z="-20.000000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="8868754354712188562"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="4193812392366077238"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_02_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="13280783257700539672"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Corner_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000003" y="4.851074" z="-20.000000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="17678682749973341203"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Corner_02.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="8948987616032638698"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_02_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="2708424159622732363"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_04"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000000" y="7.851059" z="-35.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="5203053970973102823"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="12911714519081692047"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_04_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="10585027334441502993"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000000" y="4.851074" z="-35.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="6643244160407478849"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="4108364493760872777"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_04_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="14626075890837277979"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Door_05"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="29.999996" y="-1.148947" z="-19.999994"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="2800976912623413865"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="12340789445414496165"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_03_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="18281393241392707310"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Door_Corner_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000003" y="1.851059" z="-20.000000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="2937399346214541068"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="794062850613077805"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_02_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="17082884632778233731"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Door_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000000" y="1.851059" z="-35.000000"/>
+				<R x="0.000000" y="0.707107" z="0.000000" w="-0.707106"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="15709194995016476911"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Door_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="17152322460311198508"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_04_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="11573272167376974053"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_39"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="5.000000" y="0.351054" z="-40.000000"/>
+				<R x="0.000000" y="-0.707102" z="0.000000" w="0.707111"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="18326765065320069236"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="10663243961590504221"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="2961687617560017198"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_14"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="4.999996" y="0.351054" z="-25.000000"/>
+				<R x="0.000000" y="-0.707102" z="0.000000" w="0.707111"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="15420877001584201578"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="15737409782814184060"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="1755238331301345241"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stairs_Corner_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="10.000000" y="0.351054" z="-25.000000"/>
+				<R x="0.000000" y="-0.707105" z="0.000000" w="0.707108"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="4025816677421794137"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="13497460731257216138"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_02_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="8892751885326477081"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stairs_02"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="19.999994" y="0.351054" z="-14.999996"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="13708148058713714946"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="8177474320670398546"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="9499420681169377676"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="5.000001" y="0.351054" z="-20.000000"/>
+				<R x="0.000000" y="-0.707102" z="0.000000" w="0.707111"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="5349216888976146186"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="13747789013056629862"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="15835663209010578496"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stairs_01"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="10.000000" y="0.351054" z="-35.000000"/>
+				<R x="0.000000" y="-0.707105" z="0.000000" w="0.707108"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="9204699616391841867"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="9918381732386189501"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_04_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="10808932969375306866"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stairs_03"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="9.999997" y="0.351054" z="-29.999998"/>
+				<R x="0.000000" y="-0.707105" z="0.000000" w="0.707108"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="11479619235362195603"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="13436075435340387459"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="1605048426780904790"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_19"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="20.000000" y="0.351054" z="-10.000000"/>
+				<R x="0.000000" y="0.000005" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="9160170769852925355"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="631067290341281000"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="426917871981262794"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_05"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="9.999996" y="0.351054" z="-9.999996"/>
+				<R x="0.000000" y="0.000005" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="1018920724249139437"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="10780745597030599725"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="6091917070443721602"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stairs_04"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="10.000002" y="0.351054" z="-40.000000"/>
+				<R x="0.000000" y="-0.707105" z="0.000000" w="0.707108"/>
+				<S x="0.999996" y="1.000000" z="0.999996"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="4915842033420908763"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="8990910304108203439"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="4927465999148632492"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_30"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="24.999998" y="0.351054" z="-10.000000"/>
+				<R x="0.000000" y="0.000005" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="17171924436176017098"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="16290267794222025049"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="2458420707101076187"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Dip_Corner_04"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="5.000000" y="0.351054" z="-15.000000"/>
+				<R x="0.000000" y="0.707109" z="0.000000" w="-0.707105"/>
+				<S x="0.999995" y="1.000000" z="0.999995"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="9298612151389796684"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Dip_Corner_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="2361928436750608272"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_04_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="7461986218637515105"/>
+			<P t="9" name="Name" v="SM_Env_Sidewalk_Straight_18"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="15.000001" y="0.351054" z="-10.000000"/>
+				<R x="0.000000" y="0.000005" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="16913840624893670879"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Env_Sidewalk_Straight_01.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="3057498673128080359"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="9245900902873801240"/>
+			<P t="9" name="Name" v="SM_Bld_Apartment_Stairs_06"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="29.999998" y="0.351054" z="-14.999998"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="11639580674421440774"/>
+						<P t="12" name="Mesh">
+							<ResourceRef Class="Mesh" File="City/SM_Bld_Apartment_Stairs_03.mesh"/>
+						</P>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="16827988389730214177"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="City/PolygonCity_Mat_01_A.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="13429495951820062303"/>
+			<P t="9" name="Name" v="Main Camera"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="-48.052517" y="17.116774" z="43.708782"/>
+				<R x="0.052281" y="0.946490" z="-0.199072" w="0.248585"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca/>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="9004274546608584571"/>
+			<P t="9" name="Name" v="Directional Light"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity pi="8484159512428905102">
+			<N is="1">
+				<T x="0.000000" y="3.000000" z="0.000000"/>
+				<R x="0.117292" y="0.870703" z="-0.406016" w="0.251534"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca/>
+		</Entity>
+	</Object>
+	<Object Cl="Entity">
+		<PB>
+			<P t="11" name="Id" v="8484159512428905102"/>
+			<P t="9" name="Name" v="ROOT"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+		</PB>
+		<Entity>
+			<N is="1">
+				<T x="0.000000" y="0.000000" z="0.000000"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca/>
+		</Entity>
+	</Object>
+	<Object Cl="GradientSky">
+		<PB>
+			<P t="11" name="Id" v="10156527899216923320"/>
+			<P t="9" name="Name" v="GradientSky"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+			<P t="10" name="DrawSky" v="1"/>
+			<P t="10" name="Illuminate" v="1"/>
+			<P t="2" name="Intensity" v="1.000000"/>
+			<P t="18" name="BakeIrradianceMap"/>
+			<P t="9" name="IrradianceBakeFile" v=""/>
+			<P t="5" name="TopColor" x="0.300000" y="0.300000" z="1.000000"/>
+			<P t="5" name="MiddleColor" x="1.000000" y="1.000000" z="0.800000"/>
+			<P t="5" name="BottomColor" x="0.500000" y="0.300000" z="0.100000"/>
+			<P t="2" name="GradientExponent" v="0.300000"/>
+			<P t="18" name="ReGenerateIrradianceMap"/>
+		</PB>
+		<Entity>
+			<N is="0">
+				<T x="-86.308197" y="42.628941" z="98.571762"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="EnvironmentComponent">
+					<PB>
+						<P t="11" name="Id" v="14998872232794740073"/>
+						<P t="15" name="Hdri"/>
+						<P t="5" name="PositionOffset" x="0.000000" y="0.000000" z="0.000000"/>
+						<P t="5" name="Size" x="340282346638528859811704183484516925440.000000" y="340282346638528859811704183484516925440.000000" z="340282346638528859811704183484516925440.000000"/>
+						<P t="10" name="Illuminate" v="1"/>
+						<P t="10" name="ParallaxCorrection" v="0"/>
+						<P t="10" name="Interior" v="0"/>
+						<P t="2" name="Intensity" v="1.000000"/>
+						<P t="2" name="Fade" v="1.000000"/>
+						<P t="2" name="CaptureFar" v="0.000000"/>
+						<P t="19" name="CaptureResolution">
+							<List size="3">
+								<CurrVal v="1"/>
+								<0 valType="3" valName="128" v="128"/>
+								<1 valType="3" valName="256" v="256"/>
+								<2 valType="3" valName="512" v="512"/>
+							</List>
+						</P>
+						<P t="18" name="Capture"/>
+						<P t="18" name="CenterToEnvironment"/>
+					</PB>
+					<Component>
+						<EnvironmentComponent/>
+					</Component>
+				</Object>
+			</Ca>
+			<SkyBase>
+				<GradientSky/>
+			</SkyBase>
+		</Entity>
+	</Object>
+	<Object Cl="Camera">
+		<PB>
+			<P t="11" name="Id" v="11520611283193552269"/>
+			<P t="9" name="Name" v="Camera"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+			<P t="2" name="Fov" v="45.000000"/>
+			<P t="2" name="NearClip" v="0.010000"/>
+			<P t="2" name="FarClip" v="1000.000000"/>
+			<P t="10" name="Orthographic" v="0"/>
+			<P t="2" name="OrthographicScale" v="0.001000"/>
+			<P t="18" name="Free"/>
+		</PB>
+		<Entity>
+			<N is="0">
+				<T x="39.404732" y="2.608104" z="-46.053898"/>
+				<R x="-0.006695" y="0.922438" z="0.016008" w="0.385757"/>
+				<S x="1.000045" y="1.000006" z="1.000042"/>
+			</N>
+			<Ca>
+				<Object Cl="DirectionComponent">
+					<PB>
+						<P t="11" name="Id" v="12346028983678515370"/>
+					</PB>
+					<Component>
+						<DirectionComponent/>
+					</Component>
+				</Object>
+			</Ca>
+			<Camera fov="0.785398" aspect="2.031812" near="0.010000" far="1000.000000" ortographic="0" left="-10.000000" right="10.000000" top="10.000000" bottom="-10.000000" scale="0.001000"/>
+		</Entity>
+	</Object>
+	<Object Cl="DirectionalLight">
+		<PB>
+			<P t="11" name="Id" v="7709019057578436438"/>
+			<P t="9" name="Name" v="DirectionalLight"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+			<P t="5" name="Color" x="1.000000" y="1.000000" z="1.000000"/>
+			<P t="2" name="Intensity" v="3.800000"/>
+			<P t="10" name="CastShadow" v="1"/>
+			<P t="2" name="ShadowBias" v="0.200000"/>
+			<P t="2" name="BleedingReduction" v="0.100000"/>
+		</PB>
+		<Entity>
+			<N is="0">
+				<T x="55.563107" y="22.010567" z="-34.455395"/>
+				<R x="-0.253887" y="0.335206" z="0.094312" w="0.902376"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="DirectionComponent">
+					<PB>
+						<P t="11" name="Id" v="486868350323847468"/>
+					</PB>
+					<Component>
+						<DirectionComponent/>
+					</Component>
+				</Object>
+			</Ca>
+			<Light>
+				<DirectionalLight/>
+			</Light>
+		</Entity>
+	</Object>
+	<Object Cl="Sphere">
+		<PB>
+			<P t="11" name="Id" v="16094373674765363480"/>
+			<P t="9" name="Name" v="Sphere"/>
+			<P t="9" name="Tag" v=""/>
+			<P t="10" name="Visible" v="1"/>
+			<P t="10" name="TransformLock" v="0"/>
+			<P t="2" name="Radius" v="1.000000"/>
+			<P t="3" name="NumRing" v="32"/>
+			<P t="3" name="NumSeg" v="32"/>
+		</PB>
+		<Entity>
+			<N is="0">
+				<T x="31.156448" y="1.321591" z="-38.060482"/>
+				<R x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+				<S x="1.000000" y="1.000000" z="1.000000"/>
+			</N>
+			<Ca>
+				<Object Cl="MeshComponent">
+					<PB>
+						<P t="11" name="Id" v="7492049954789324406"/>
+						<P t="12" name="Mesh"/>
+						<P t="10" name="CastShadow" v="1"/>
+					</PB>
+					<Component>
+						<MeshComponent/>
+					</Component>
+				</Object>
+				<Object Cl="MaterialComponent">
+					<PB>
+						<P t="11" name="Id" v="2955695569503452033"/>
+					</PB>
+					<Component>
+						<MaterialComponent MaterialCount="1">
+							<0>
+								<ResourceRef Class="Material" File="Mirror.material"/>
+							</0>
+						</MaterialComponent>
+					</Component>
+				</Object>
+			</Ca>
+			<Sphere/>
+		</Entity>
+	</Object>
+	<PostProcessingSettings>
+		<Object Cl="PostProcessingSettings">
+			<PB>
+				<P t="11" name="Id" v="2817930163747301601"/>
+				<P t="19" name="TonemapperMode">
+					<List size="2">
+						<CurrVal v="0"/>
+						<0 valType="3" valName="Reinhard" v="0"/>
+						<1 valType="3" valName="ACES" v="1"/>
+					</List>
+				</P>
+				<P t="10" name="TonemappingEnabled" v="1"/>
+				<P t="10" name="BloomEnabled" v="1"/>
+				<P t="2" name="BloomIntensity" v="1.000000"/>
+				<P t="2" name="BloomThreshold" v="1.000000"/>
+				<P t="3" name="BloomIterationCount" v="5"/>
+				<P t="10" name="GammaCorrectionEnabled" v="0"/>
+				<P t="2" name="Gamma" v="2.200000"/>
+				<P t="10" name="SSAOEnabled" v="1"/>
+				<P t="2" name="SSAORadius" v="1.000000"/>
+				<P t="2" name="SSAOBias" v="0.025000"/>
+				<P t="2" name="SSAOSpread" v="1.000000"/>
+				<P t="2" name="SSAOStrength" v="1.500000"/>
+				<P t="19" name="SSAOKernelSize">
+					<List size="3">
+						<CurrVal v="2"/>
+						<0 valType="3" valName="8" v="8"/>
+						<1 valType="3" valName="16" v="16"/>
+						<2 valType="3" valName="32" v="32"/>
+					</List>
+				</P>
+				<P t="10" name="SSAOHalfResolution" v="0"/>
+				<P t="10" name="SSREnabled" v="1"/>
+				<P t="2" name="SSRIntensity" v="1.000000"/>
+				<P t="2" name="SSRMaxDistance" v="50.000000"/>
+				<P t="2" name="SSRThickness" v="0.400000"/>
+				<P t="3" name="SSRStepCount" v="16"/>
+				<P t="2" name="SSRRoughnessCutoff" v="1.000000"/>
+				<P t="10" name="SSRDebugView" v="0"/>
+				<P t="3" name="SSRDebugViewMode" v="0"/>
+				<P t="10" name="DepthOfFieldEnabled" v="0"/>
+				<P t="2" name="FocusPoint" v="10.500000"/>
+				<P t="2" name="FocusScale" v="1.500000"/>
+				<P t="3" name="DofBlurQuality" v="2"/>
+				<P t="10" name="FXAAEnabled" v="1"/>
+			</PB>
+		</Object>
+	</PostProcessingSettings>
+</S>
+
