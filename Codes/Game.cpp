@@ -52,12 +52,26 @@ namespace ToolKit
       return bounds;
     }
 
-    /** Returns the first camera the scene ships with, or null when it has none. */
+    /**
+     * Returns the camera the scene was authored around, or null when it has none.
+     *
+     * Scenes name that camera Camera. The first camera in the scene is not necessarily it - a scene with a
+     * second camera, or one whose cameras were added in another order, opened looking at a corner of nothing,
+     * which is exactly how the reflective scene came up black on the device.
+     */
     CameraPtr SceneCamera(const ScenePtr& scene)
     {
       if (scene == nullptr)
       {
         return nullptr;
+      }
+
+      if (EntityPtr named = scene->GetFirstByName("Camera"))
+      {
+        if (named->IsA<Camera>())
+        {
+          return std::static_pointer_cast<Camera>(named);
+        }
       }
 
       for (const EntityPtr& entity : scene->GetEntities())

@@ -750,6 +750,14 @@ namespace ToolKit
 
         // Ambient occlusion renders its own map at half of the target it reads: half the frame with a
         // half resolution target, a quarter of it when this is on as well.
+        // Screen space reflections read the normal and depth target at full resolution and are the one
+        // consumer that cannot run on a reduced one, so enabling this also turns the half size target off.
+        const int ssr = ReadIntProperty("debug.tk.ssr", -1);
+        if (ssr >= 0)
+        {
+          pps->SetSSREnabledVal(ssr != 0);
+        }
+
         const int ssaoHalf = ReadIntProperty("debug.tk.ssaohalf", -1);
         if (ssaoHalf >= 0)
         {
