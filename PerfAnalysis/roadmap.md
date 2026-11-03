@@ -472,9 +472,25 @@ the draws that used to read the resolve instead read that texture - and on this 
 the counters and the culling stayed right. The extension's implicit resolve is not visible to a
 shader in the same frame the way the engine needs it.
 
-The one thing not tried is forcing the resolve before it is read - a `glFlush()` after the pass that
-wrote the multisampled target, which is what the driver would need to write the tile back and make the
-texture readable. That is a one line experiment and the next step for this thread.
+### It was not the driver, it was the copy
+
+A RenderDoc capture of the PC build with the path forced on (`TK_MSRT=1`, so the engine takes it on a
+driver that does not have the extension) settled it in one frame. The forward pass image was correct,
+the copy that stands in for the resolve was black, and the reason is the oldest bug in this file: the
+copy sampled the render target with **mip filtering** on a texture with no mip chain. An incomplete
+texture samples as zero. `CopyTexture` now states nearest and clamp on its source, the same fix the
+occlusion pass needed, and the captured frame comes out right.
+
+On the phone, with the extension doing the multisampling for real, the project's own settings:
+
+| configuration | frame | fps |
+| --- | --- | --- |
+| renderbuffer and blit resolve (before) | 76.8 ms | 13.0 |
+| **multisampled in place** | **60.5 / 59.1 / 61.9 ms** | **16.5 / 16.9 / 16.2** |
+
+Sixteen milliseconds, twenty five percent, with MSAA x2 still doing the edge work and the picture
+unchanged. The remaining cost is the two copies that replace the two blits - the extension cannot be
+read back any other way.
 ## So the order of work is
 
 1. **Cuts that cost no picture: the clear and bind budget.** A target that a pass overwrites in full
