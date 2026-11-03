@@ -333,6 +333,48 @@ make the shadows look like they do.
 | MSAA x2 to off, FXAA in its place | fragment work halves, the term with it | edge quality moves to FXAA |
 | fewer casters | about 7 ms of atlas render (119 down to ~70 draws) | small objects stop casting |
 | cascade blend off | 2 to 3 ms | a seam at the cascade split |
+## The four trades, measured
+
+Each change run once against the baseline, then everything twice, twelve seconds of frames each:
+
+| configuration | frame | fps |
+| --- | --- | --- |
+| baseline: two cascades, MSAA x2, blend on | 71.5 / 71.0 ms | 14.0 |
+| **cascade blend off** | 56.4 / 54.1 ms | **18.5** |
+| **MSAA off** | 55.5 / 51.4 ms | **19.5** |
+| one cascade instead of two | 66.8 / 66.9 ms | 15.0 |
+| MSAA off and blend off | 34.1 / 34.1 ms | 29.3 |
+| that plus one cascade | 32.8 / 31.0 ms | 30.5 / 32.3 |
+
+Two of these are far larger than the shader cycles predicted, and one is smaller.
+
+- **The cascade blend is worth 15.5 ms**, not the two or three the cycle count implied. The blend adds a
+  second cascade evaluation to the shader, which pushes it over the register cliff: 72 bytes of spill
+  against 44 without it, at 64 registers and 50 percent occupancy. The cost is not the band; it is that
+  every pixel now runs a spilled shader.
+- **MSAA x2 is worth 17 ms.** Every fragment is executed twice.
+- **One cascade is only 4.5 ms**, less than the atlas render it saves (about 10 ms) because the far
+  cascade also stops paying for its own blur and slot, and the term still has to select between fewer
+  cascades.
+- The two big ones **stack almost linearly**: 71 to 34 ms, 14 to 29 fps, by giving up MSAA and the
+  cascade blend and nothing else.
+### Replacing MSAA with FXAA, measured
+
+The 17 ms MSAA x2 costs can be bought back on the edges with FXAA, which is a fragment pass and not a
+multisample cost:
+
+| configuration | frame | fps | pixels differing from the baseline |
+| --- | --- | --- | --- |
+| baseline: MSAA x2, FXAA off | 71.2 ms | 14.0 | - |
+| **MSAA off, FXAA on** | 50.4 ms | **19.9** | 2.84 % |
+| **that, and the cascade blend off** | 33.2 ms | **30.1** | 2.76 % |
+| MSAA off, FXAA off | 53.5 ms | 18.7 | 3.18 % |
+
+FXAA puts the edges back: turning MSAA off alone moves 3.18 percent of pixels, adding FXAA moves 2.84,
+and the picture at `trade2-msaa0-fxaa1.png` reads the same as the baseline at a glance.
+
+The pair of them, MSAA off with FXAA on and the cascade blend off, is **14.0 to 30.1 fps** - the frame
+more than halves - for about three percent of pixels, all of them on edges and on the cascade split.
 ## So the order of work is
 
 1. **Cuts that cost no picture: the clear and bind budget.** A target that a pass overwrites in full
