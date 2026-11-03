@@ -375,6 +375,45 @@ and the picture at `trade2-msaa0-fxaa1.png` reads the same as the baseline at a 
 
 The pair of them, MSAA off with FXAA on and the cascade blend off, is **14.0 to 30.1 fps** - the frame
 more than halves - for about three percent of pixels, all of them on edges and on the cascade split.
+## MSAA through GL_EXT_multisampled_render_to_texture
+
+The 17 to 21 ms MSAA x2 costs is not per sample shading. Rendering at four samples costs the same as
+two - 72.2 and 72.4 ms against 75.6 and 76.6 - which it could not if the fragment shader ran per sample.
+What is being paid for is the shape of the path: every multisampled colour attachment is a
+*renderbuffer*, and every one of them is blitted into a single sample texture afterwards, so the frame
+carries a second copy of the main target in memory and a resolve pass over it.
+
+Mali exposes `GL_EXT_multisampled_render_to_texture`, which keeps the samples in tile memory and writes
+back one resolved value: the attachment stays a plain texture, there is nothing to blit, and no second
+copy exists. The engine already loaded the entry points and never used them.
+
+An implementation was written and measured:
+
+- colour attachments for a multisampled frame become single sample textures, attached with
+  `glFramebufferTexture2DMultisampleEXT`;
+- depth renderbuffers are allocated with the extension's own storage call;
+- `ResolveFramebuffer` turns into a no-op for those targets, and the destination framebuffer is handed
+  the same texture so the passes downstream still find an attachment.
+
+**It runs, and it is worth 26 ms**: 76.4 ms down to 50.1, 13.1 fps to 19.9, with MSAA x2 still on - the
+same picture the multisamples were giving, not FXAA's approximation.
+
+**It presents black.** Nothing is missing anymore, the passes run and the counters are right, but the
+screen is empty: the frame is copied to the window from a framebuffer whose attachment is multisampled
+by the extension, and that copy reads nothing back. Two ways out, both of them work rather than
+experiment: present by *sampling* the resolved texture in a full quad instead of blitting it, or keep
+the last target out of the extension path so the present blit still has a resolve to read.
+
+Two things learned on the way and worth keeping:
+
+- Resolving into a framebuffer that still carries its own single sample depth is
+  `GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE` as soon as the colour side is multisampled. The resolve
+  target never writes depth, so its depth has to be detached first.
+- **An incomplete framebuffer draws nothing and says nothing in a release build**, because the only
+  check was an assert. That is what turned this into a black screen with no explanation instead of an
+  error, and it now logs the status, the size and the sample counts of both attachments.
+
+The experiment is not in the tree; it is reverted until the present path is dealt with.
 ## So the order of work is
 
 1. **Cuts that cost no picture: the clear and bind budget.** A target that a pass overwrites in full
