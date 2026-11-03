@@ -291,6 +291,48 @@ the atlas render is 15 to 20 ms across 119 draws, the per pixel term 20 to 28, a
 distinct meshes**, so instancing tops out around fifty batches per cascade and it is already there.
 Fewer draws from here means fewer meshes, which is the merging that was ruled out.
 
+## The forward shader, measured with malioc
+
+`malioc --fragment -c Mali-G71` on the assembled forward shader, current defines
+(`CascadeBlend=1 CastShadow=1 ShadowPCF=0`), and on patched copies of the same file to attribute the
+cost. Cycles are the tool's four totals: arithmetic, load/store, varying, texture.
+
+| variant | spill | A | LS | T |
+| --- | --- | --- | --- | --- |
+| current | 72 B | 94.67 | 52.00 | 16 |
+| evsm maths replaced by a raw moment | 48 B | 86.67 | 45.00 | 16 |
+| `WarpDepth` exp replaced by a multiply | 72 B | 93.33 | 52.00 | 16 |
+| `ShadowAtlasLut` replaced by constants | 60 B | 95.00 | 47.80 | 16 |
+| no cascade blend | 44 B | 89.00 | 37.80 | 15 |
+| no shadow code at all | 4 B | 68.67 | 15.50 | 12 |
+
+What each piece costs, in the direction the numbers moved:
+
+- **The evsm maths** (the Chebyshev bound and the warp): 8 arithmetic cycles, 7 load/store, and a third
+  of the spill. It is the most expensive single piece inside the shadow block.
+- **Cascade blend**: 5.7 arithmetic, 14 load/store, 28 bytes of spill, because it runs a second full
+  cascade evaluation in the band. Sharing the jitter and the distance fade between the two evaluations
+  saves a few cycles, not the block.
+- **`ShadowAtlasLut` is free.** It divides per pixel, but the divides are uniform - the compiler puts
+  them in the uniform pipeline, and removing the whole function leaves the arithmetic total unchanged
+  (94.67 to 95.00, which is noise) and only trims load/store. Hoisting it to the cpu would have been a
+  day of uniform layout work for nothing.
+- **The exp in `WarpDepth` is worth 1.3 cycles.** Not an approximation worth making.
+- The rest of the shadow block, about 18 arithmetic cycles, is cascade selection, the projection matrix
+  multiply, the uv clamp and the dither. That is what shadow mapping is.
+
+So the shader is arithmetic bound at 94.67 cycles, 64 registers, 50 percent occupancy and 72 bytes of
+spill, and the quality neutral well here is nearly dry: the pieces that could go are the pieces that
+make the shadows look like they do.
+
+## What is left, and each one costs picture
+
+| change | what it buys | what it costs |
+| --- | --- | --- |
+| one cascade instead of two | about 10 ms of atlas render and part of the term | no far shadows |
+| MSAA x2 to off, FXAA in its place | fragment work halves, the term with it | edge quality moves to FXAA |
+| fewer casters | about 7 ms of atlas render (119 down to ~70 draws) | small objects stop casting |
+| cascade blend off | 2 to 3 ms | a seam at the cascade split |
 ## So the order of work is
 
 1. **Cuts that cost no picture: the clear and bind budget.** A target that a pass overwrites in full
