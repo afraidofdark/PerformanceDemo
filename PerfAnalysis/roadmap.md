@@ -435,6 +435,46 @@ So the extension is usable only for a target nothing reads again, and every targ
 read again - by the post chain, by the occlusion grid, by the present copy. That makes it a dead end
 for this renderer on this driver, and the change is reverted for the second time. Worth knowing before
 anyone tries it a third time: the 26 ms is real, the read back is what is missing.
+## What the frame capture shows about the MSAA path
+
+A PC standalone capture, taken with the RenderDoc module the engine now carries, and read with
+`rdc_report.py`. The window was 1088x612 and the frame is correct there, which makes it a usable
+reference for what the phone's extension path was trying to change.
+
+The resources the resolve step touches, from `capture.json`:
+
+| resource | size | samples | what it is |
+| --- | --- | --- | --- |
+| `ViewportRT` | 1088x612 | **2** | the scene colour the forward pass draws into |
+| `Renderbuffer 97` | 1088x612 | **2** | the frame depth |
+| `Texture 535`, `Texture 579` | 1088x612 | 1 | resolve targets for the colour |
+| `Texture 465` | 1088x612 | 1 | resolve target for the depth |
+| `NormalDepthRT` | 544x306 | **2** | the g buffer, at half the frame |
+| `Renderbuffer 461` | 544x306 | **2** | the g buffer depth |
+| `Texture 500` | 544x306 | 1 | resolve target for the g buffer |
+
+And the resolves themselves, in recording order, one set per frame:
+
+```
+glBlitFramebuffer()  inside ForwardPreProcessPass   -> Texture 500   (the g buffer)
+glBlitFramebuffer()  inside ForwardRenderPass       -> Texture 535   (the scene colour)
+glBlitFramebuffer()  inside the present quad        -> Backbuffer Color
+```
+
+So the engine's contract is exactly this: a multisampled target is written as a **renderbuffer**, and
+every consumer downstream reads a **single sample texture** that a blit produced. That is two offscreen
+resolves and one present copy per frame at the sizes above, and it is what the extension was meant to
+remove.
+
+Which makes the phone's behaviour precise: with the extension the multisampled target is a texture, and
+the draws that used to read the resolve instead read that texture - and on this driver they read
+**black**, which is why the picture was empty while the UI (drawn to the backbuffer) survived, and why
+the counters and the culling stayed right. The extension's implicit resolve is not visible to a
+shader in the same frame the way the engine needs it.
+
+The one thing not tried is forcing the resolve before it is read - a `glFlush()` after the pass that
+wrote the multisampled target, which is what the driver would need to write the tile back and make the
+texture readable. That is a one line experiment and the next step for this thread.
 ## So the order of work is
 
 1. **Cuts that cost no picture: the clear and bind budget.** A target that a pass overwrites in full
