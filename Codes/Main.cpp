@@ -28,11 +28,13 @@
 #include "OpenGL/TKOpenGL.h"
 #include "PerfProbe.h"
 #include "Plugin.h"
+#include "RenderDocCapture.h"
 #include "SDL.h"
 #include "Scene.h"
 #include "ToolKit.h"
 #include "Types.h"
 #include "UIManager.h"
+#include "Util.h"
 
 namespace ToolKit
 {
@@ -74,6 +76,15 @@ namespace ToolKit
     g_proxy->PreInit();
 
     PlatformPreInit(g_proxy);
+
+#if defined(TK_WIN) || defined(TK_LINUX)
+    // Frame capture, PC only - the Android and Web builds do not compile this in.
+    // Before any graphics object exists, because RenderDoc's hooks have to be in
+    // place by then: started through renderdoccmd, the engine binds its API and
+    // RequestFrameCapture() works from game code; started normally it finds
+    // nothing and every request is a no-op. Captures land in <cwd>/Captures.
+    RenderDocCapture::Init([]() -> String { return ConcatPaths({GetCurrentPath(), "Captures"}); });
+#endif
   }
 
   void Init()
@@ -291,6 +302,12 @@ namespace ToolKit
 
   void Exit()
   {
+#if defined(TK_WIN) || defined(TK_LINUX)
+    // Before anything else: the capture core drops the engine request handler and
+    // its RenderDoc API while the engine is still alive.
+    RenderDocCapture::Shutdown();
+#endif
+
     SafeDel(g_gameRenderer);
 
     if (g_game != nullptr)
@@ -329,9 +346,19 @@ namespace ToolKit
       static double lastBodyStart = 0.0;
       const double bodyStart      = Perf::NowMs();
 
+#if defined(TK_WIN) || defined(TK_LINUX)
+      // A capture has to bracket a whole frame, present included, so it opens
+      // before the frame and closes once the frame has been presented.
+      RenderDocCapture::BeginFrame();
+#endif
+
       g_proxy->FrameBegin();
       g_proxy->FrameUpdate();
       g_proxy->FrameEnd();
+
+#if defined(TK_WIN) || defined(TK_LINUX)
+      RenderDocCapture::EndFrame();
+#endif
 
       const float period = lastBodyStart > 0.0 ? (float) (bodyStart - lastBodyStart) : 0.0f;
       lastBodyStart      = bodyStart;
