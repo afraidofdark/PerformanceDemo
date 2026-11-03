@@ -47,6 +47,61 @@ Gradle 8.1.1 rejects newer JVMs. The native side is compiled by the NDK that AGP
 `deploy after build` = 1 in `PublishArguments.txt` installs and starts the APK on the
 attached device.
 
+The desktop build writes `Codes/Bin/insomnia.exe`. It is not a bundle: the exe loads the engine
+from its own build folder (`ToolKitd.dll` for Debug from `BinDebug`, `ToolKit.dll` for Release from
+`BinRelease`), so either put that folder on `PATH` or copy the DLLs next to the exe. Mixing a Debug
+exe with the Release engine (or the other way round) trips the CRT's fast fail - `0xc0000409` in
+`ucrtbase`, no log of any kind, which reads exactly like a crash in the game.
+
+## Frame capture (PC)
+
+The host starts the engine's capture core in `PreInit` and brackets the frame with it
+(`Codes/Main.cpp`); everything else lives in the engine (`ToolKit/Source/RenderDocCapture`) and in
+`Modules/RenderDoc` of the GDTK checkout. It is guarded to `TK_WIN || TK_LINUX`, so the Android and
+Web builds compile none of it.
+
+A normal run pays for none of that: the core looks for `renderdoc.dll` in its own process, does not
+find it, and every request becomes a no-op. To capture, start the game through RenderDoc:
+
+```
+$env:PATH = "<GDTK>/BinDebug;" + $env:PATH        # Debug exe; see Building above
+renderdoccmd capture -d Codes Codes/Bin/insomnia.exe
+```
+
+`-d Codes` is the working directory the host resolves `../Resources` and `../Config` from.
+
+Then ask for a capture, any of three ways - all of them end up in the same queue:
+
+```
+echo boss_intro 1 > Codes/Captures/request        # what a script or an agent uses
+```
+
+```cpp
+ToolKit::RequestFrameCapture("boss_intro");       // from game code, anywhere
+```
+
+or RenderDoc's own F12. A request is queued, not opened inside the call: the capture starts at the
+next frame boundary and closes after that frame's present, so it always covers a whole frame.
+
+```
+Codes/Captures/<label>_<stamp>_capture.rdc    the capture
+Codes/Captures/<label>_<stamp>_capture.json   sidecar: host frame, engine version, config
+Codes/Captures/last_capture.json              points at the newest one
+```
+
+Reading it is a second command, from the GDTK checkout:
+
+```
+python <GDTK>/Modules/RenderDoc/Scripts/rdc_report.py Codes/Captures/<capture>.rdc
+```
+
+That replays the frame under `qrenderdoc` and writes `<capture>.report/`: `capture.md` (the pass
+table with one image per pass, the shaders and sampled textures of each pass, the largest
+resources, mechanical findings), `capture.json` for a tool that would rather parse, and `images/` +
+`shaders/`. `--out DIR` writes somewhere else, `--no-images` skips the replay-heavy half.
+
+Captures and their reports are debug output and are gitignored.
+
 ## The two camera test
 
 `Codes/Game.cpp` can render a view that provably does not change, which is what a present path has to
