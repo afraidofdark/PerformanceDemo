@@ -26,7 +26,7 @@ namespace ToolKit
   {
     /** The scene a standalone or web build opens; under PIE the editor brings its
      * own. */
-    constexpr const char* StartupScene = "small-scene.scene";
+    constexpr const char* StartupScene = "unity-city.scene";
 
     /**
      * World bounds of the scene. The aabb tree is filled as entities are added, so

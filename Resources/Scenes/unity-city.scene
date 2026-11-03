@@ -286101,10 +286101,10 @@
 				<P t="10" name="BloomEnabled" v="1"/>
 				<P t="2" name="BloomIntensity" v="1.000000"/>
 				<P t="2" name="BloomThreshold" v="1.000000"/>
-				<P t="3" name="BloomIterationCount" v="5"/>
+				<P t="3" name="BloomIterationCount" v="3"/>
 				<P t="10" name="GammaCorrectionEnabled" v="0"/>
 				<P t="2" name="Gamma" v="2.200000"/>
-				<P t="10" name="SSAOEnabled" v="1"/>
+				<P t="10" name="SSAOEnabled" v="0"/>
 				<P t="2" name="SSAORadius" v="1.000000"/>
 				<P t="2" name="SSAOBias" v="0.025000"/>
 				<P t="2" name="SSAOSpread" v="1.000000"/>

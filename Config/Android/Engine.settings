@@ -59,7 +59,7 @@
 			<P t="10" name="UseParallelSplitPartitioning" v="1"/>
 			<P t="2" name="ParallelSplitLambda" v="0.090000"/>
 			<P t="10" name="StableShadowMap" v="0"/>
-			<P t="10" name="CascadeBlend" v="1"/>
+			<P t="10" name="CascadeBlend" v="0"/>
 			<P t="10" name="CastShadow" v="1"/>
 			<P t="3" name="ShadowAtlasResolution" v="1024"/>
 			<P t="10" name="Use2XShadowAtlasSlots" v="0"/>
