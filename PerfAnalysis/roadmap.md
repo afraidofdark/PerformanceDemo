@@ -247,6 +247,59 @@ it helps. Ordered by what there is to gain.
   queue.
 - **pcf taps** - done: four taps to none was 32 ms, and the variance blur already softened the edge.
 
+## What the scale sweep and the cpu profile changed
+
+Two measurements were run against the baseline before touching anything else.
+
+**Scaling the render resolution** (a diagnostic only, the picture moves with it) separates the part of
+the frame that follows pixels from the part that does not:
+
+| render scale | frame | fps | engine cpu | gpu |
+| --- | --- | --- | --- | --- |
+| 0.85, the baseline | 79.6 / 70.7 ms | 12.6 / 14.2 | 85.9 / 79.1 | 58.0 / 57.2 |
+| 0.60 | 60.0 ms | 16.7 | 48.8 | 44.4 |
+| 0.40 | 46.2 ms | 21.6 | 50.5 | 30.0 |
+| 0.20 | 42.7 ms | 23.4 | 33.7 | 39.1 |
+
+Pixels fall by eighteen times between 0.85 and 0.20 and the frame only falls by half: there is a **floor
+around 42 ms that does not care about resolution**, and 211 draws and 15 passes are what it is made of.
+At the baseline the gpu still costs more (58 of 73 ms), so both sides matter, but the floor is what will
+stop us: no gpu optimisation can take the frame under it.
+
+**The cpu profile** says where that floor is:
+
+| scope, per frame | inclusive | exclusive |
+| --- | --- | --- |
+| `Render` | 117.5 ms | 11.1 |
+| `PreRender` | 53.9 ms | 0.6 |
+| **`SetFramebuffer`** | - | **20.6 ms** |
+| `RenderBatch` | 9.6 ms | 0.3 |
+| `RenderShadowMaps` | 8.2 - 10.8 ms | 0.1 |
+| `RenderShadowCasters` | 10.7 ms | 1.8 |
+| `FeedUniforms` | - | **6.7 ms** |
+| `BlurShadowAtlas` | 5.2 ms | 0.7 |
+| `RenderOpaque` | 5.0 ms | 1.9 |
+
+`SetFramebuffer` at 20.6 ms is not binding: the backend already caches framebuffer ids. It is the bind
+plus the clear, thirty-odd times a frame - bloom alone is ten sub passes, the shadow blur four. Each of
+those is a full screen clear of a target that is often about to be overwritten entirely.
+
+**Where the shadows go** (frame deltas against the baseline, not scopes): of the 43 ms the shadows cost,
+the atlas render is 15 to 20 ms across 119 draws, the per pixel term 20 to 28, and the blur 7.
+
+**And the drawer of the 119 draws** is not a batching failure: the scene has 140 casters but only **49
+distinct meshes**, so instancing tops out around fifty batches per cascade and it is already there.
+Fewer draws from here means fewer meshes, which is the merging that was ruled out.
+
+## So the order of work is
+
+1. **Cuts that cost no picture: the clear and bind budget.** A target that a pass overwrites in full
+   does not need clearing first, and passes that only read do not need a bind at all. That is `20.6 ms`
+   with nothing visible to lose, and it is the largest single line in the cpu profile.
+2. **`FeedUniforms`, 6.7 ms.** One upload per draw is still one upload per draw; sorting batches so
+   consecutive draws share a program and a material lets most of them go.
+3. **The shadow cpu work, 9 to 11 ms** of culling and job packing per frame, twice per cascade.
+4. Only then the gpu side, because the floor caps whatever the gpu savings buy.
 ### How to measure a candidate
 
 One cold start each, interleaved A B A B, and read `PERF fps=` plus `engcpu` and `gpu` from the same
