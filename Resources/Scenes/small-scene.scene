@@ -1,4 +1,4 @@
-<S name="small-scene" version="v0.5.0">
+<S name="small-scene" version="v0.5.1">
 	<Object Cl="Entity">
 		<PB>
 			<P t="11" name="Id" v="2471340896024957524"/>
@@ -6094,6 +6094,7 @@
 				<P t="2" name="SSAORadius" v="1.000000"/>
 				<P t="2" name="SSAOBias" v="0.025000"/>
 				<P t="2" name="SSAOSpread" v="1.000000"/>
+				<P t="2" name="SSAOStrength" v="1.000000"/>
 				<P t="19" name="SSAOKernelSize">
 					<List size="3">
 						<CurrVal v="0"/>
@@ -6102,7 +6103,7 @@
 						<2 valType="3" valName="32" v="32"/>
 					</List>
 				</P>
-				<P t="10" name="SSAOHalfResolution" v="1"/>
+				<P t="10" name="SSAOHalfResolution" v="0"/>
 				<P t="10" name="SSREnabled" v="0"/>
 				<P t="2" name="SSRIntensity" v="0.500000"/>
 				<P t="2" name="SSRMaxDistance" v="50.000000"/>

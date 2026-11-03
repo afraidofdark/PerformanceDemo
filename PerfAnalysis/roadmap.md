@@ -5,6 +5,53 @@ next to it (`stage1-bottleneck-report.md`, `stage3-two-camera-report.md`,
 `ssao-incomplete-texture.md`). Numbers here were re-measured on the same device with the same
 method, so they can be compared with each other.
 
+## The baseline
+
+Everything below is measured against this, and this is what a change has to beat **without making the
+picture worse** - the project's own settings, no probe overrides:
+
+| setting | value |
+| --- | --- |
+| scene | `small-scene.scene` |
+| render scale | 0.85 -> 918x1887 out of 1080x2220 |
+| frame rate target | 0, unlocked (the engine gates the frame on this value) |
+| MSAA | x2 |
+| FXAA | off (the scene's own setting) |
+| shadows | on, 2 cascades, distances 23.84 / 50.0, parallel split lambda 0.09 |
+| shadow softening | `ShadowPCF` off, the variance blur at 5x5 with 2 taps |
+| ambient occlusion | on, radius 1.0, bias 0.025, strength 1.0, occlusion target at the pre process size, pre process at half size |
+| bloom | 5 iterations |
+| tonemapping | on |
+| depth of field, reflections | off |
+
+What that costs, one cold start, twelve seconds of frames:
+
+```
+fps 13.7   period 72.8 ms   engine cpu 67.8 ms   gpu 59.2 ms   draws 211   passes 15
+```
+
+**The frame is now cpu bound**: the engine spends 67.8 ms submitting a 59.2 ms gpu frame. That is the
+opposite of where this file started (a 162 ms frame that was entirely gpu), and it changes what to
+optimise: a draw call, a program switch and a uniform upload are now worth more than a texel.
+
+The per pass numbers for this baseline, from the gpu scopes:
+
+| scope | time |
+| --- | --- |
+| ShadowPass (parent) | 38.7 ms |
+| Directioal Shadow Map (inside it) | 2.5 ms |
+| Shadow Blur (inside it) | 4.4 ms |
+| Gamma Pass | 8.2 ms |
+| CubeMapPass | 7.1 ms |
+| ForwardPreProcessPass | 5.0 ms |
+| GammaTonemapFxaaPass | 1.5 ms |
+| ForwardRenderPass | 0.9 ms |
+| CopyTexture | 0.7 ms |
+
+Read the parent with care: a scope measures the gap between two timestamps on the gpu stream, so a
+pass that waits on a cpu bound frame reports the wait as its own time. `ShadowPass` reports 38.7 ms
+while the map render and the blur inside it report 2.5 and 4.4 - the other thirty is the gpu idling
+while the cpu submits. Nested scopes are the real work; parents on a cpu bound frame are not.
 ## How these were measured
 
 Device SM-G950F (Exynos 8895, Mali-G71 MP20), Release build, one cold start per configuration,
@@ -23,7 +70,7 @@ Per-pass gpu times come from the timestamp queries behind `debug.tk.passgpu`
 `PROFGPU` lines. They have a floor of roughly one to two milliseconds on this driver, so read the
 *differences* between configurations, never one absolute number on its own.
 
-## The frame today (80 percent render scale, shadows off, scene draws)
+## The frame back then (80 percent render scale, shadows off, scene draws)
 
 | configuration | frame | fps | draws |
 | --- | --- | --- | --- |
@@ -56,7 +103,7 @@ scene is drawn or not. Two readings, and they decide everything that follows:
 
 Nothing else in this list matters as much as that question, because it is worth up to 30 ms.
 
-## The list, ranked
+## The list as it stood before the pass floor was measured
 
 1. **Pass overhead** - see above. One experiment settles it (below).
 2. **Shadows, 65 ms** - 53 draws and 16.67 ms becomes 146 draws and 81.84 ms. Inside it: the
@@ -153,17 +200,59 @@ See `shadow-pcf-vs-vsm.md`. With `ShadowPCF` off and the 5x5 blur on, the frame 
 
 So the shadow work starts in `lighting.shader`, not in the shadow pass. It does not need `malioc` after all:
 the tap count was the whole story, and the fix is to stop asking for taps on top of a blurred atlas.
-## What that leaves
+## The plan: same picture, fewer milliseconds
 
-The list above stands with one change of order: the pass floor is answered, so the frame is mostly
-the scene passes themselves.
+The rule is now fixed: nothing on this list may look worse than the baseline above. That rules out the
+obvious dials (lower resolution, MSAA off, cheaper occlusion, fewer cascades) and leaves the work that
+is invisible in a frame.
 
-1. **Shadows, 65 ms** - now unambiguously the largest single item, and still unbroken down per pass.
-   Start there: the shadow map pass, then the per pixel cost of `ShadowPCF=4` in the forward shader.
-2. **The post chain, 8 to 11 ms of real pass cost** - bloom, gamma/tonemap/fxaa, the scene copy.
-3. **The pre process pass, 4.3 ms with 93 draws** - draw bound; a screen size cull is the lever.
-4. Occlusion calc and blur merged, ~0.8 ms.
-5. Startup warmup, 1.9 s, not frame time but what a user sees first.
+The frame splits into a 67.8 ms cpu side and a 59.2 ms gpu side, so each item is filed under the side
+it helps. Ordered by what there is to gain.
+
+### Cpu side - submission, 67.8 ms for 211 draws and 15 passes
+
+1. **Fewer draws.** 211 draws for 159 visible objects, 76 of 238 instanced. A draw costs roughly 0.3 ms
+   of cpu in this frame, so merging static geometry and raising the instanced share is worth more than
+   anything on the gpu list. Measure first: how much of the 211 is the shadow pass (two cascades of the
+   same casters) and how much the frame.
+2. **Per draw overhead.** Jobs are drawn in scene order, so consecutive draws switch program, material
+   and uniform buffers rather than sharing them. Sorting opaque jobs by program and material, and
+   caching the bindings across a pass, is invisible in the picture by construction.
+3. **Shadow pass draws.** It renders the casters once per cascade. Anything already culled per cascade
+   should stay culled; anything drawn twice for the same cascade is pure loss.
+4. **Pass count.** Fifteen passes, and each one costs a framebuffer bind and a descriptor flush on the
+   cpu side as well as what it costs on the gpu. Merging is cheap to try and invisible if the pixels
+   come out the same.
+
+### Gpu side - 59.2 ms
+
+5. **The post chain.** Gamma Pass 8.2, cube map 7.1, the pre process 5.0, tonemap 1.5, a copy 0.7.
+   Bloom already runs on a pyramid; the copy and the gamma pass are separate full screen passes that
+   could be one. Nothing here changes the picture if the maths is kept.
+6. **The pre process pass, 5.0 ms.** Draw bound, not fill bound: making it depth only bought 0.3 ms, an
+   RGBA8 target 0.3 ms. The draws are the cost, so a screen size cull (a surface a few pixels across
+   contributes nothing to occlusion) is the lever - and it is invisible, which is what this list is for.
+7. **The shadow atlas and its blur, 2.5 and 4.4 ms.** The blur already stopped being the expensive
+   half; what is left is the caster draws, which is the same list as item 3 on the cpu side.
+8. **MSAA x2 resolve.** Not measured on its own yet. Resolves are per target and per frame, and the
+   picture depends on them, so only restructure this if the numbers ask for it.
+
+### Not on the list any more, and why
+
+- **Lower resolution, MSAA off, cheaper occlusion, fewer cascades** - all visible, so all out by the
+  rule above.
+- **Shadow map reuse for a static scene** - dropped by request.
+- **Depth only pre process target, RGBA8 target** - measured at 0.3 ms each, not worth the code.
+- **Reading the occlusion grid back inside the frame** - 51 to 21.8 fps, the read waits for the whole
+  queue.
+- **pcf taps** - done: four taps to none was 32 ms, and the variance blur already softened the edge.
+
+### How to measure a candidate
+
+One cold start each, interleaved A B A B, and read `PERF fps=` plus `engcpu` and `gpu` from the same
+line. The rule is that the frame period drops and the picture does not: capture a screenshot of each
+configuration with the camera in the same place and diff them, as `shadow-pcf-vs-vsm.md` did. Anything
+above about 1 percent of pixels differing needs a reason.
 ## State when this was written
 
 Both repositories are clean and pushed. The work in progress lives in stashes:
