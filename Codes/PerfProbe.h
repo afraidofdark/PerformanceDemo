@@ -923,6 +923,14 @@ namespace ToolKit
           shadows->ParamVSMBlurKernelSize().GetVar<MultiChoiceVariant>().CurrentVal = (uint) vsmKernel;
         }
 
+        // The cascade blend: 1 on (a second shadow evaluation inside the band), 0 off (a seam at the
+        // split). Off is a quality change, on is 14 load/store cycles per pixel.
+        const int cascadeBlend = ReadIntProperty("debug.tk.cascadeblend", -1);
+        if (cascadeBlend >= 0)
+        {
+          shadows->SetCascadeBlendVal(cascadeBlend != 0);
+        }
+
         const int vsmTaps = ReadIntProperty("debug.tk.vsmtaps", -1);
         if (vsmTaps >= 0 && vsmTaps <= 5)
         {
