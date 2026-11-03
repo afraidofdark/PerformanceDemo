@@ -491,6 +491,37 @@ On the phone, with the extension doing the multisampling for real, the project's
 Sixteen milliseconds, twenty five percent, with MSAA x2 still doing the edge work and the picture
 unchanged. The remaining cost is the two copies that replace the two blits - the extension cannot be
 read back any other way.
+## The cascade blend, measured on the current build, and kept
+
+The blend is a second cascade evaluation inside the transition band. With everything else at the
+project's settings, on the build that multisamples in place:
+
+| configuration | frame | fps | mean luma |
+| --- | --- | --- | --- |
+| blend on | 56.58 / 59.46 ms | 17.67 / 16.82 | 102.6 / 102.1 |
+| blend off | 37.67 / 36.95 ms | **26.54 / 27.06** | 102.0 / 102.1 |
+
+Twenty milliseconds, fifty five percent, for a change that moves **0.60 percent of pixels** by 24 or
+more (mean difference 2.08 of 765, largest 78, on the ground where the split falls at 23.84 m).
+
+It is the largest single lever left in the frame and it is being **kept on**. Two reasons, both about
+what the numbers cannot say:
+
+- The seam only shows where the two cascades disagree, and this camera happens to look down a street
+  whose far ground is in shadow at the split. A camera that walks that line - which is what the two
+  camera test exists for - will show it, and a frame capture of a still camera will not.
+- The same shader work is what pushes the forward shader over its register cliff: 72 bytes of spill
+  against 44 without the blend, at 64 registers and half occupancy. Removing it buys time by making
+  the renderer fragile in a way that reappears the moment a scene is authored differently.
+
+What was learned from the experiment, in the order it is useful:
+
+1. **A branch that is rarely taken still costs every pixel** when it needs registers. The blend spends
+   its 20 ms on all pixels, not on the band.
+2. **A still camera cannot judge a seam.** The comparison above is a picture, not an evaluation, and
+   the decision went against the picture.
+3. The measurement is worth having anyway: it is the price of the feature, and it says a scene that
+   does not need cascade transitions can have 55 percent more frame for free.
 ## So the order of work is
 
 1. **Cuts that cost no picture: the clear and bind budget.** A target that a pass overwrites in full
