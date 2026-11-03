@@ -549,6 +549,41 @@ placed.
 What is learned here: the in place composite was costing more than a pass. Two full screen draws at the
 render size plus a copy of an eleven megabyte hdr target is what "composite in place" means, and a host
 that already has to scale the frame can fold all of it into the pass it was going to run anyway.
+## A second device, and what it says about the two changes
+
+TECNO CL7 (Android 16, mt6855, **PowerVR BXM-8-256**, 1080x2436) on the same build and the same project
+settings, no probe overrides:
+
+| | Galaxy S8 | TECNO CL7 |
+| --- | --- | --- |
+| gpu | Mali-G71 MP20 | PowerVR BXM-8-256 |
+| render size | 918x1887 | 918x2071 |
+| multisampled in place | active | **active** |
+| frame | 45 - 54 ms, typical 53 | 59.2 - 59.8 ms |
+| fps | 18.5 - 22 | 16.7 - 16.9 |
+| picture | luma 102 | luma 101, same frame |
+
+Two things worth having from this.
+
+**The multisampled in place path is not a Mali trick.** PowerVR takes
+`GL_EXT_multisampled_render_to_texture` as well, the engine's by-name lookup finds it, and it engages
+without a change: the log says `918x2071 at 2 samples on the render-to-texture path` on both devices.
+The twenty five percent that came from it is a tile renderer property, not a vendor one.
+
+**The swap time on this device is the gpu, not the presentation.** The first read of its numbers said
+otherwise - `swap 42.5 ms` of a 59.4 ms frame with only 17 ms of engine cpu looks like a pacing problem -
+and it is not. Scaling the render resolution shows what the wait is:
+
+| render scale | frame | engine cpu | swap |
+| --- | --- | --- | --- |
+| 0.85, the project setting | 59.6 ms | 16.9 ms | **42.5 ms** |
+| 0.30 | 18.2 ms | 16.9 ms | **1.2 ms** |
+| 0.10 | 16.4 ms (60.9 fps) | 15.9 ms | **0.4 ms** |
+
+The cpu side stays at 16.9 ms whichever way the resolution goes, and the swap collapses with the work.
+So the swap is where this renderer waits for its gpu, and the gpu is the wall on both phones: the
+PowerVR part is simply slower than the Mali one at this frame. Pinning the display to 60 Hz and asking
+for `swap interval 0` changed neither (the driver answers `in use 1` either way).
 ## So the order of work is
 
 1. **Cuts that cost no picture: the clear and bind budget.** A target that a pass overwrites in full
