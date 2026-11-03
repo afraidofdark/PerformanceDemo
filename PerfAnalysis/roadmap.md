@@ -522,6 +522,33 @@ What was learned from the experiment, in the order it is useful:
    the decision went against the picture.
 3. The measurement is worth having anyway: it is the price of the feature, and it says a scene that
    does not need cascade transitions can have 55 percent more frame for free.
+## The post chain, merged into the host: eight to twelve milliseconds
+
+The capture showed the standalone game running two full screen composites per frame: the scene path
+composited tonemap and fxaa in place - two draws, because reading the attachment the pass writes needs
+a copy of the whole hdr target first - and then the game renderer ran a second pass that applied gamma
+and scaled the frame up to the window.
+
+Only the second is needed. The host owns the window sized target and the scale, so it now applies the
+tone curve, the gamma and the edges itself, and the scene path leaves the buffer as the bloom chain
+wrote it (SceneRenderPathParams::CompositeElsewhere). The editor composites nothing on its own - its ui
+and its gamma come after the scene path - so it leaves the flag false and keeps the pass exactly as it
+was. That is the split that makes the change safe: the game gets the merge, the editor keeps the order
+it depends on.
+
+| configuration | frame | fps |
+| --- | --- | --- |
+| two composites | 56.6 / 59.5 / 58.6 / 56.9 / 59.7 ms | 17.7 / 16.8 / 17.1 / 17.6 / 16.8 |
+| **one composite, after the scale** | **44.8 / 45.4** and **52.4 - 54.4** typical | **22.3 / 22.0**, typical **18.5 - 19.1** |
+
+So five to twelve milliseconds depending on how warm the phone is, and the frame is 18.5 to 22 fps
+instead of 17. **0.16 percent of pixels differ**, which is the tone curve moving to the output
+resolution - the correct order, and the reason the picture is not merely preserved but slightly better
+placed.
+
+What is learned here: the in place composite was costing more than a pass. Two full screen draws at the
+render size plus a copy of an eleven megabyte hdr target is what "composite in place" means, and a host
+that already has to scale the frame can fold all of it into the pass it was going to run anyway.
 ## So the order of work is
 
 1. **Cuts that cost no picture: the clear and bind budget.** A target that a pass overwrites in full
