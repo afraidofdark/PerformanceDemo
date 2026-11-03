@@ -414,6 +414,27 @@ Two things learned on the way and worth keeping:
   error, and it now logs the status, the size and the sample counts of both attachments.
 
 The experiment is not in the tree; it is reverted until the present path is dealt with.
+### Second attempt: copy the image out with a draw instead of a blit
+
+The obvious next step was tried: with the extension in use, `Renderer::ResolveFramebuffer` copies the
+image into the destination with a full quad (`CopyTexture`, which samples the resolved texture) instead
+of handing the framebuffer a blit. The destination framebuffer then holds a real single sample copy, the
+post chain runs on that, and the present blit has something to read.
+
+It gets further and stops in the same place:
+
+- the depth attachment has to come from the extension's storage call as well, otherwise the framebuffer
+  is incomplete at two samples on both sides;
+- with that, nothing logs an incomplete framebuffer, occlusion culling finds its 51 hidden entities
+  again, and the frame comes down to 61.2 ms - 16.4 fps - from 76.8;
+- and the picture is still black, luma 9 of 255, because **sampling the extension multisampled texture
+  in a later draw returns nothing on this driver**. It is not the blit, it is reading the texture at
+  all.
+
+So the extension is usable only for a target nothing reads again, and every target in this chain is
+read again - by the post chain, by the occlusion grid, by the present copy. That makes it a dead end
+for this renderer on this driver, and the change is reverted for the second time. Worth knowing before
+anyone tries it a third time: the 26 ms is real, the read back is what is missing.
 ## So the order of work is
 
 1. **Cuts that cost no picture: the clear and bind budget.** A target that a pass overwrites in full
