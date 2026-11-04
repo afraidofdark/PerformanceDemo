@@ -147,7 +147,7 @@ namespace ToolKit
     // camera that moves on its own can be measured. The component and its animation are authored in the scene;
     // the track only has to exist. A camera that moves is the only way to see what the renderer does when the
     // set of visible objects changes every frame, which the fixed measurements never exercise.
-    if (Perf::ReadIntProperty("debug.tk.camanim", 0) != 0)
+    if (Perf::ReadIntProperty("debug.tk.camanim", Perf::ReadEnvInt("TK_CAMANIM")) != 0)
     {
       if (CameraPtr animated = m_viewport->GetCamera())
       {
@@ -160,10 +160,32 @@ namespace ToolKit
           }
           else
           {
-            const String signal = records.begin()->first;
-            if (records.begin()->second != nullptr)
+            // debug.tk.camanimtrack picks the clip by number, in the order the controller stores them, so a
+            // run measures the one it is about instead of whichever happens to come first. A negative value
+            // takes the first track, which is what the default playback does.
+            const int wanted = Perf::ReadIntProperty("debug.tk.camanimtrack", Perf::ReadEnvInt("TK_CAMANIMTRACK") - 1);
+            String signal    = records.begin()->first;
+            if (wanted >= 0)
             {
-              records.begin()->second->m_loop = true;
+              const int index = wanted % (int) records.size();
+              int walk        = 0;
+              for (auto itr = records.begin(); itr != records.end(); ++itr, ++walk)
+              {
+                if (walk == index)
+                {
+                  signal = itr->first;
+                  break;
+                }
+              }
+            }
+            AnimRecordPtr* found = records.Find(signal);
+            if (found != nullptr && *found != nullptr)
+            {
+              (*found)->m_loop = true;
+            }
+            else
+            {
+              TK_ERR("Camera animation: no track named '%s'.", signal.c_str());
             }
             controller->Play(signal);
             TK_LOG("Camera animation: playing '%s' on %s.", signal.c_str(), animated->GetNameVal().c_str());
