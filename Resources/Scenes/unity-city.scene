@@ -56710,8 +56710,8 @@
 		<Entity pi="7340428095747041332">
 			<N is="1">
 				<T x="2.710000" y="0.000000" z="-2.550000"/>
-				<R x="0.000000" y="0.000001" z="0.000000" w="1.000000"/>
-				<S x="1.000000" y="1.000000" z="1.000000"/>
+				<R x="-0.040462" y="0.946494" z="-0.013675" w="-0.319883"/>
+				<S x="1.000012" y="1.000004" z="1.000015"/>
 			</N>
 			<Ca>
 				<Object Cl="MeshComponent">
@@ -285632,8 +285632,8 @@
 		</PB>
 		<Entity pi="13373250733597746452">
 			<N is="1">
-				<T x="0.000000" y="0.000000" z="0.000000"/>
-				<R x="0.000000" y="1.000000" z="0.000000" w="-0.000000"/>
+				<T x="-4.858584" y="-3.304935" z="0.593857"/>
+				<R x="0.075499" y="-0.869540" z="0.216242" w="-0.437539"/>
 				<S x="1.000000" y="1.000000" z="1.000000"/>
 			</N>
 			<Ca>
@@ -285649,10 +285649,13 @@
 					<PB>
 						<P t="11" name="Id" v="9397643272567629287"/>
 						<P t="16" name="Records">
-							<List size="1">
+							<List size="2">
 								<0 SignalName="cam-city" ApplyRootMotion="0">
 									<ResourceRef Class="Animation" File="cam-city.anim"/>
 								</0>
+								<1 SignalName="specular-alias" ApplyRootMotion="0">
+									<ResourceRef Class="Animation" File="specular-alias.anim"/>
+								</1>
 							</List>
 						</P>
 					</PB>
@@ -285661,7 +285664,7 @@
 					</Component>
 				</Object>
 			</Ca>
-			<Camera fov="0.926770" aspect="1.863959" near="0.300000" far="1000.000000" ortographic="0" left="-10.000000" right="10.000000" top="10.000000" bottom="-10.000000" scale="0.001000"/>
+			<Camera fov="0.926770" aspect="1.857711" near="0.300000" far="1000.000000" ortographic="0" left="-10.000000" right="10.000000" top="10.000000" bottom="-10.000000" scale="0.001000"/>
 		</Entity>
 	</Object>
 	<Object Cl="Entity">
