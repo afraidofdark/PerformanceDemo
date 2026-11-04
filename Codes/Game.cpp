@@ -9,6 +9,7 @@
 #include "Game.h"
 
 #include "Camera.h"
+#include "AnimationControllerComponent.h"
 #include "DirectionComponent.h"
 #include "PerfProbe.h"
 
@@ -141,6 +142,39 @@ namespace ToolKit
     // reports the frame's spans to the log. It runs after the scene is up because
     // half of the knobs are scene settings.
     Perf::Configure(scene.get(), m_viewport.get());
+
+    // debug.tk.camanim: play the first track the camera's animation controller carries, looping, so a
+    // camera that moves on its own can be measured. The component and its animation are authored in the scene;
+    // the track only has to exist. A camera that moves is the only way to see what the renderer does when the
+    // set of visible objects changes every frame, which the fixed measurements never exercise.
+    if (Perf::ReadIntProperty("debug.tk.camanim", 0) != 0)
+    {
+      if (CameraPtr animated = m_viewport->GetCamera())
+      {
+        if (AnimControllerComponentPtr controller = animated->GetComponent<AnimControllerComponent>())
+        {
+          AnimRecordPtrMap& records = controller->ParamRecords().GetVar<AnimRecordPtrMap>();
+          if (records.empty())
+          {
+            TK_ERR("Camera animation: the controller on %s carries no track.", animated->GetNameVal().c_str());
+          }
+          else
+          {
+            const String signal = records.begin()->first;
+            if (records.begin()->second != nullptr)
+            {
+              records.begin()->second->m_loop = true;
+            }
+            controller->Play(signal);
+            TK_LOG("Camera animation: playing '%s' on %s.", signal.c_str(), animated->GetNameVal().c_str());
+          }
+        }
+        else
+        {
+          TK_ERR("Camera animation: %s has no animation controller.", animated->GetNameVal().c_str());
+        }
+      }
+    }
 
     if (CameraPtr camera = m_viewport->GetCamera())
     {
