@@ -27,7 +27,7 @@ namespace ToolKit
   {
     /** The scene a standalone or web build opens; under PIE the editor brings its
      * own. */
-    constexpr const char* StartupScene = "unity-city.scene";
+    constexpr const char* StartupScene = "reflective.scene";
 
     /**
      * World bounds of the scene. The aabb tree is filled as entities are added, so
@@ -305,6 +305,22 @@ namespace ToolKit
 
   void Game::Frame(float deltaTime)
   {
+    // Test motion: sweep the sphere across the puddle so the reflection has to follow it while the
+    // camera stays where it is. The reflection of a moving object is the case the accumulation has to
+    // let go of, so this is the view that shows whether it does.
+    if (ScenePtr scene = GetSceneManager()->GetCurrentScene())
+    {
+      static float sSweepTime = 0.0f;
+      sSweepTime += deltaTime;
+
+      if (EntityPtr sphere = scene->GetFirstByName("Sphere"))
+      {
+        Vec3 position = sphere->m_node->GetTranslation(TransformationSpace::TS_WORLD);
+        position.x    = 31.0f + std::sin(sSweepTime * 0.0025f) * 1.5f;
+        sphere->m_node->SetTranslation(position, TransformationSpace::TS_WORLD);
+      }
+    }
+
     // Input upkeep per frame. The navigator is inert until Init() binds a camera,
     // so PIE pays nothing for it.
 #ifdef TK_GAME_STANDALONE

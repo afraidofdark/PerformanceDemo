@@ -285628,7 +285628,7 @@
 			<P t="2" name="FarClip" v="1000.000000"/>
 			<P t="10" name="Orthographic" v="0"/>
 			<P t="2" name="OrthographicScale" v="0.001000"/>
-			<P t="18" name="Free"/>
+			<P t="18" name="Poses"/>
 		</PB>
 		<Entity pi="13373250733597746452">
 			<N is="1">
@@ -285650,12 +285650,8 @@
 						<P t="11" name="Id" v="9397643272567629287"/>
 						<P t="16" name="Records">
 							<List size="2">
-								<0 SignalName="cam-city" ApplyRootMotion="0">
-									<ResourceRef Class="Animation" File="cam-city.anim"/>
-								</0>
-								<1 SignalName="specular-alias" ApplyRootMotion="0">
-									<ResourceRef Class="Animation" File="specular-alias.anim"/>
-								</1>
+								<0 SignalName="cam-city" ApplyRootMotion="0" Loop="0"/>
+								<1 SignalName="specular-alias" ApplyRootMotion="0" Loop="0"/>
 							</List>
 						</P>
 					</PB>
@@ -285696,6 +285692,7 @@
 			<P t="10" name="CastShadow" v="1"/>
 			<P t="2" name="ShadowBias" v="0.200000"/>
 			<P t="2" name="BleedingReduction" v="0.100000"/>
+			<P t="2" name="SourceAngle" v="0.265000"/>
 		</PB>
 		<Entity pi="9862732632747524939">
 			<N is="1">
@@ -286120,6 +286117,8 @@
 				<P t="2" name="BloomIntensity" v="1.000000"/>
 				<P t="2" name="BloomThreshold" v="1.000000"/>
 				<P t="3" name="BloomIterationCount" v="3"/>
+				<P t="2" name="BloomRadius" v="1.000000"/>
+				<P t="10" name="BloomBicubicUpscale" v="1"/>
 				<P t="10" name="GammaCorrectionEnabled" v="0"/>
 				<P t="2" name="Gamma" v="2.200000"/>
 				<P t="10" name="SSAOEnabled" v="0"/>
@@ -286136,12 +286135,17 @@
 					</List>
 				</P>
 				<P t="10" name="SSAOHalfResolution" v="1"/>
-				<P t="10" name="SSREnabled" v="0"/>
+				<P t="10" name="SSREnabled" v="1"/>
 				<P t="2" name="SSRIntensity" v="0.500000"/>
 				<P t="2" name="SSRMaxDistance" v="50.000000"/>
 				<P t="2" name="SSRThickness" v="0.400000"/>
 				<P t="3" name="SSRStepCount" v="256"/>
 				<P t="2" name="SSRRoughnessCutoff" v="0.600000"/>
+				<P t="2" name="SSREdgeFade" v="0.050000"/>
+				<P t="2" name="SSRScreenFadeStart" v="0.500000"/>
+				<P t="2" name="SSRRangeFadeStart" v="0.600000"/>
+				<P t="2" name="SSRHistoryWeight" v="0.950000"/>
+				<P t="2" name="SSRBRDFBias" v="0.000000"/>
 				<P t="10" name="SSRDebugView" v="0"/>
 				<P t="3" name="SSRDebugViewMode" v="0"/>
 				<P t="10" name="DepthOfFieldEnabled" v="0"/>
